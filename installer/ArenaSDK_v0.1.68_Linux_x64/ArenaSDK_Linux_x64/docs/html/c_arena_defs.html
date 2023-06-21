@@ -1,0 +1,1176 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Definitions &mdash; Arena 0.1.68.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.68.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C" href="c_arena.html"/>
+        <link rel="next" title="ImageFactory" href="c_arena_imagefactory.html"/>
+        <link rel="prev" title="Arena C" href="c_arena.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!---->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.68
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodemap.html">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_device.html">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="qt.html">Qt</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arena_api.html">Arena Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter_guide.html">Using LUCID’s ArenaView with Jupyter Notebooks</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+      <li>Definitions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="definitions">
+<h1>Definitions<a class="headerlink" href="#definitions" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acsystem">
+<h2>acSystem<a class="headerlink" href="#acsystem" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv48acSystem">
+<span id="_CPPv38acSystem"></span><span id="_CPPv28acSystem"></span><span id="acSystem"></span><span class="target" id="_arena_c_defs_8h_1a8f9d850de43750ac10b0d4e9951b8793"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">acSystem</span></span></span><a class="headerlink" href="#_CPPv48acSystem" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Representation of the system object, the entry point into Arena SDK. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="acdevice">
+<h2>acDevice<a class="headerlink" href="#acdevice" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv48acDevice">
+<span id="_CPPv38acDevice"></span><span id="_CPPv28acDevice"></span><span id="acDevice"></span><span class="target" id="_arena_c_defs_8h_1af4217f0e052ead17d9839158a5c59c50"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">acDevice</span></span></span><a class="headerlink" href="#_CPPv48acDevice" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Represents a device, used to configure and stream a device. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="acbuffer">
+<h2>acBuffer<a class="headerlink" href="#acbuffer" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv48acBuffer">
+<span id="_CPPv38acBuffer"></span><span id="_CPPv28acBuffer"></span><span id="acBuffer"></span><span class="target" id="_arena_c_defs_8h_1aa86ed3cb47d78973920d8b0581e9caac"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">acBuffer</span></span></span><a class="headerlink" href="#_CPPv48acBuffer" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Represents a buffer, which carries a payload of either an image or a chunk data. A buffer can hold image data and/or chunk data. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="acfeaturestream">
+<h2>acFeatureStream<a class="headerlink" href="#acfeaturestream" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv415acFeatureStream">
+<span id="_CPPv315acFeatureStream"></span><span id="_CPPv215acFeatureStream"></span><span id="acFeatureStream"></span><span class="target" id="_arena_c_defs_8h_1a1536f4a87fd1ab524d7c34d5f8567d5a"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">acFeatureStream</span></span></span><a class="headerlink" href="#_CPPv415acFeatureStream" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Represents a feature stream object, allowing node map configurations to be streamed to and from files. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnodemap">
+<h2>acNodeMap<a class="headerlink" href="#acnodemap" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv49acNodeMap">
+<span id="_CPPv39acNodeMap"></span><span id="_CPPv29acNodeMap"></span><span id="acNodeMap"></span><span class="target" id="_arena_c_defs_8h_1ad87a72f19b3c13a2e1e55ea13f0954fc"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">acNodeMap</span></span></span><a class="headerlink" href="#_CPPv49acNodeMap" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Represents a node map, or feature tree. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="acnode">
+<h2>acNode<a class="headerlink" href="#acnode" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv46acNode">
+<span id="_CPPv36acNode"></span><span id="_CPPv26acNode"></span><span id="acNode"></span><span class="target" id="_arena_c_defs_8h_1aad7e17ba23463a5be281b39b17d9148e"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">acNode</span></span></span><a class="headerlink" href="#_CPPv46acNode" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Represents a node, or feature. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="accallback">
+<h2>acCallback<a class="headerlink" href="#accallback" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv410acCallback">
+<span id="_CPPv310acCallback"></span><span id="_CPPv210acCallback"></span><span id="acCallback"></span><span class="target" id="_arena_c_defs_8h_1a3791d07d22acdba44503ace89d1d01fb"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">acCallback</span></span></span><a class="headerlink" href="#_CPPv410acCallback" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Represents a callback handle, used to deregister callbacks when they are no longer needed. </p>
+</dd></dl>
+
+</div>
+<div class="section" id="accallbackfunction">
+<h2>acCallbackFunction<a class="headerlink" href="#accallbackfunction" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv418acCallbackFunction">
+<span id="_CPPv318acCallbackFunction"></span><span id="_CPPv218acCallbackFunction"></span><span id="acCallbackFunction"></span><span class="target" id="_arena_c_defs_8h_1aa47692463efa897584fd60f264236ccc"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">acCallbackFunction</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="#_CPPv46acNode" title="acNode"><span class="n"><span class="pre">acNode</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv418acCallbackFunction" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The signature of a function needed to register a callback. An example of a function that could work might look something like the following.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// a function with the appropriate function signature to register as a callback</span>
+<span class="c1">// error handling skipped for brevity</span>
+<span class="p">{</span>
+    <span class="kt">void</span> <span class="n">onCallback</span><span class="p">(</span><span class="n">acNode</span> <span class="n">hNode</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">pUserData</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">UserDataStruct</span><span class="o">*</span> <span class="n">userData</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">UserDataStruct</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pUserData</span><span class="p">);</span>
+        
+        <span class="kt">char</span> <span class="n">pBuf</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+        <span class="kt">size_t</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+        <span class="n">acNodeGetName</span><span class="p">(</span><span class="n">hNode</span><span class="p">,</span> <span class="n">pBuf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">len</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-error-list">
+<h2>AC_ERROR_LIST<a class="headerlink" href="#ac-error-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv413AC_ERROR_LIST">
+<span id="_CPPv313AC_ERROR_LIST"></span><span id="_CPPv213AC_ERROR_LIST"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24f"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERROR_LIST</span></span></span><a class="headerlink" href="#_CPPv413AC_ERROR_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different errors that a function might return.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Use AC_ERROR integer values in place of AC_ERROR_LIST enum values </p></li>
+</ul>
+</p>
+</div>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST14AC_ERR_SUCCESSE">
+<span id="_CPPv3N13AC_ERROR_LIST14AC_ERR_SUCCESSE"></span><span id="_CPPv2N13AC_ERROR_LIST14AC_ERR_SUCCESSE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa6e457af8e96981d66126e5da256dec31"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_SUCCESS</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST14AC_ERR_SUCCESSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Success, no error </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST12AC_ERR_ERRORE">
+<span id="_CPPv3N13AC_ERROR_LIST12AC_ERR_ERRORE"></span><span id="_CPPv2N13AC_ERROR_LIST12AC_ERR_ERRORE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fac548a23926fc540287771199621ac1da"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_ERROR</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST12AC_ERR_ERRORE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Generic error </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST22AC_ERR_NOT_INITIALIZEDE">
+<span id="_CPPv3N13AC_ERROR_LIST22AC_ERR_NOT_INITIALIZEDE"></span><span id="_CPPv2N13AC_ERROR_LIST22AC_ERR_NOT_INITIALIZEDE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa91e442a4860d23d42a04277b2cbf0c10"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_NOT_INITIALIZED</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST22AC_ERR_NOT_INITIALIZEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Arena SDK not initialized </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST22AC_ERR_NOT_IMPLEMENTEDE">
+<span id="_CPPv3N13AC_ERROR_LIST22AC_ERR_NOT_IMPLEMENTEDE"></span><span id="_CPPv2N13AC_ERROR_LIST22AC_ERR_NOT_IMPLEMENTEDE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fac5431a0684daad0ada802047b25971c5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_NOT_IMPLEMENTED</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST22AC_ERR_NOT_IMPLEMENTEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function not implemented </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST22AC_ERR_RESOURCE_IN_USEE">
+<span id="_CPPv3N13AC_ERROR_LIST22AC_ERR_RESOURCE_IN_USEE"></span><span id="_CPPv2N13AC_ERROR_LIST22AC_ERR_RESOURCE_IN_USEE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa6ac623b141a1e7c21c10bcc75e48ce19"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_RESOURCE_IN_USE</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST22AC_ERR_RESOURCE_IN_USEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resource already in use </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST20AC_ERR_ACCESS_DENIEDE">
+<span id="_CPPv3N13AC_ERROR_LIST20AC_ERR_ACCESS_DENIEDE"></span><span id="_CPPv2N13AC_ERROR_LIST20AC_ERR_ACCESS_DENIEDE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fac03d5f2c48a873b37cf203ceeec4e2b8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_ACCESS_DENIED</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST20AC_ERR_ACCESS_DENIEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Incorrect access </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST21AC_ERR_INVALID_HANDLEE">
+<span id="_CPPv3N13AC_ERROR_LIST21AC_ERR_INVALID_HANDLEE"></span><span id="_CPPv2N13AC_ERROR_LIST21AC_ERR_INVALID_HANDLEE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa3aaafa51529334af6a18724555de5bf7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_INVALID_HANDLE</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST21AC_ERR_INVALID_HANDLEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Null/incorrect handle </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST17AC_ERR_INVALID_IDE">
+<span id="_CPPv3N13AC_ERROR_LIST17AC_ERR_INVALID_IDE"></span><span id="_CPPv2N13AC_ERROR_LIST17AC_ERR_INVALID_IDE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa69ec6775e1b5cf5c2c0b496e748464ec"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_INVALID_ID</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST17AC_ERR_INVALID_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Incorrect ID </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST14AC_ERR_NO_DATAE">
+<span id="_CPPv3N13AC_ERROR_LIST14AC_ERR_NO_DATAE"></span><span id="_CPPv2N13AC_ERROR_LIST14AC_ERR_NO_DATAE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fad28cec5de3e6b05ab9d1012ffecd9ad5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_NO_DATA</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST14AC_ERR_NO_DATAE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>No data available </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST24AC_ERR_INVALID_PARAMETERE">
+<span id="_CPPv3N13AC_ERROR_LIST24AC_ERR_INVALID_PARAMETERE"></span><span id="_CPPv2N13AC_ERROR_LIST24AC_ERR_INVALID_PARAMETERE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24faa8a9450ee80d0ef1b2a2e90d665f0ddf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_INVALID_PARAMETER</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST24AC_ERR_INVALID_PARAMETERE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Null/incorrect parameter </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST9AC_ERR_IOE">
+<span id="_CPPv3N13AC_ERROR_LIST9AC_ERR_IOE"></span><span id="_CPPv2N13AC_ERROR_LIST9AC_ERR_IOE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa6f1d4359fc11455a58970c4f9e4d5252"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_IO</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST9AC_ERR_IOE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Input/output error </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST14AC_ERR_TIMEOUTE">
+<span id="_CPPv3N13AC_ERROR_LIST14AC_ERR_TIMEOUTE"></span><span id="_CPPv2N13AC_ERROR_LIST14AC_ERR_TIMEOUTE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa27610d4ff2f60d971a73253f4920acf1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_TIMEOUT</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST14AC_ERR_TIMEOUTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Timed out </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST12AC_ERR_ABORTE">
+<span id="_CPPv3N13AC_ERROR_LIST12AC_ERR_ABORTE"></span><span id="_CPPv2N13AC_ERROR_LIST12AC_ERR_ABORTE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fafd4055aa46dee0935ac6b45cf92c56ee"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_ABORT</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST12AC_ERR_ABORTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function aborted </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST21AC_ERR_INVALID_BUFFERE">
+<span id="_CPPv3N13AC_ERROR_LIST21AC_ERR_INVALID_BUFFERE"></span><span id="_CPPv2N13AC_ERROR_LIST21AC_ERR_INVALID_BUFFERE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa3a3951f668720b8489a8e877e3d7c4ff"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_INVALID_BUFFER</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST21AC_ERR_INVALID_BUFFERE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Invalid buffer </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST20AC_ERR_NOT_AVAILABLEE">
+<span id="_CPPv3N13AC_ERROR_LIST20AC_ERR_NOT_AVAILABLEE"></span><span id="_CPPv2N13AC_ERROR_LIST20AC_ERR_NOT_AVAILABLEE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa2e1e4c7fef9de72c2a81492493b9a231"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_NOT_AVAILABLE</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST20AC_ERR_NOT_AVAILABLEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Function not available </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST22AC_ERR_INVALID_ADDRESSE">
+<span id="_CPPv3N13AC_ERROR_LIST22AC_ERR_INVALID_ADDRESSE"></span><span id="_CPPv2N13AC_ERROR_LIST22AC_ERR_INVALID_ADDRESSE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24faa8096100a0a9de304a4d457516e4c3ad"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_INVALID_ADDRESS</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST22AC_ERR_INVALID_ADDRESSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Invalid register address </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST23AC_ERR_BUFFER_TOO_SMALLE">
+<span id="_CPPv3N13AC_ERROR_LIST23AC_ERR_BUFFER_TOO_SMALLE"></span><span id="_CPPv2N13AC_ERROR_LIST23AC_ERR_BUFFER_TOO_SMALLE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa4a26148cc78ed29cf923bdc107070202"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_BUFFER_TOO_SMALL</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST23AC_ERR_BUFFER_TOO_SMALLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Buffer too small </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST20AC_ERR_INVALID_INDEXE">
+<span id="_CPPv3N13AC_ERROR_LIST20AC_ERR_INVALID_INDEXE"></span><span id="_CPPv2N13AC_ERROR_LIST20AC_ERR_INVALID_INDEXE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa5e2efa94f37aaed8c02cb48343077a2b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_INVALID_INDEX</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST20AC_ERR_INVALID_INDEXE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Invalid index </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST25AC_ERR_PARSING_CHUNK_DATAE">
+<span id="_CPPv3N13AC_ERROR_LIST25AC_ERR_PARSING_CHUNK_DATAE"></span><span id="_CPPv2N13AC_ERROR_LIST25AC_ERR_PARSING_CHUNK_DATAE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fafc969c41b6714e618c118eb8bf9faea3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_PARSING_CHUNK_DATA</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST25AC_ERR_PARSING_CHUNK_DATAE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Error parsing chunk data </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST20AC_ERR_INVALID_VALUEE">
+<span id="_CPPv3N13AC_ERROR_LIST20AC_ERR_INVALID_VALUEE"></span><span id="_CPPv2N13AC_ERROR_LIST20AC_ERR_INVALID_VALUEE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa19fa587e3cb3d5b67aaaf6929d0f2636"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_INVALID_VALUE</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST20AC_ERR_INVALID_VALUEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Invalid value </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST25AC_ERR_RESOURCE_EXHAUSTEDE">
+<span id="_CPPv3N13AC_ERROR_LIST25AC_ERR_RESOURCE_EXHAUSTEDE"></span><span id="_CPPv2N13AC_ERROR_LIST25AC_ERR_RESOURCE_EXHAUSTEDE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24faf3fbb78e490a42976807a6449c0d0262"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_RESOURCE_EXHAUSTED</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST25AC_ERR_RESOURCE_EXHAUSTEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Resource cannot perform more actions </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST20AC_ERR_OUT_OF_MEMORYE">
+<span id="_CPPv3N13AC_ERROR_LIST20AC_ERR_OUT_OF_MEMORYE"></span><span id="_CPPv2N13AC_ERROR_LIST20AC_ERR_OUT_OF_MEMORYE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fab508e1766f6d90214819cf38c1c31175"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_OUT_OF_MEMORY</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST20AC_ERR_OUT_OF_MEMORYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Not enough memory </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST11AC_ERR_BUSYE">
+<span id="_CPPv3N13AC_ERROR_LIST11AC_ERR_BUSYE"></span><span id="_CPPv2N13AC_ERROR_LIST11AC_ERR_BUSYE"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24faaf65ada357a1a13fe90490ff220bab61"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_BUSY</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST11AC_ERR_BUSYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Busy on anothe process </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N13AC_ERROR_LIST13AC_ERR_CUSTOME">
+<span id="_CPPv3N13AC_ERROR_LIST13AC_ERR_CUSTOME"></span><span id="_CPPv2N13AC_ERROR_LIST13AC_ERR_CUSTOME"></span><span class="target" id="_arena_c_defs_8h_1a10b7a50f52734b3e1abcd5b6e63fa24fa5ef0bdca71bd5e0376247738628958e4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERR_CUSTOM</span></span></span><a class="headerlink" href="#_CPPv4N13AC_ERROR_LIST13AC_ERR_CUSTOME" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Start adding custom error LIST here </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-error">
+<h2>AC_ERROR<a class="headerlink" href="#ac-error" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv48AC_ERROR">
+<span id="_CPPv38AC_ERROR"></span><span id="_CPPv28AC_ERROR"></span><span id="AC_ERROR"></span><span class="target" id="_arena_c_defs_8h_1a670036341e5d42f83d38ff7fc24d6ab5"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ERROR</span></span></span><a class="headerlink" href="#_CPPv48AC_ERROR" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the the error enum (AC_ERROR_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-access-mode-list">
+<h2>AC_ACCESS_MODE_LIST<a class="headerlink" href="#ac-access-mode-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv419AC_ACCESS_MODE_LIST">
+<span id="_CPPv319AC_ACCESS_MODE_LIST"></span><span id="_CPPv219AC_ACCESS_MODE_LIST"></span><span class="target" id="_arena_c_defs_8h_1ab8e8e232e57e4e71d60932243ca785e4"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ACCESS_MODE_LIST</span></span></span><a class="headerlink" href="#_CPPv419AC_ACCESS_MODE_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different access modes for a device or its features.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Use AC_ACCESS_MODE integer values in place of AC_ACCESS_MODE_LIST enum values </p></li>
+</ul>
+</p>
+</div>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_NIE">
+<span id="_CPPv3N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_NIE"></span><span id="_CPPv2N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_NIE"></span><span class="target" id="_arena_c_defs_8h_1ab8e8e232e57e4e71d60932243ca785e4aa6c5a4c8f781ba710e3cbef4152d2234"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ACCESS_MODE_NI</span></span></span><a class="headerlink" href="#_CPPv4N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_NIE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Not implemented </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_NAE">
+<span id="_CPPv3N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_NAE"></span><span id="_CPPv2N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_NAE"></span><span class="target" id="_arena_c_defs_8h_1ab8e8e232e57e4e71d60932243ca785e4a199f69e1f75d31a42b81c80b01ae707d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ACCESS_MODE_NA</span></span></span><a class="headerlink" href="#_CPPv4N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_NAE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Not available </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_WOE">
+<span id="_CPPv3N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_WOE"></span><span id="_CPPv2N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_WOE"></span><span class="target" id="_arena_c_defs_8h_1ab8e8e232e57e4e71d60932243ca785e4a5e31047e3686381158289e3d6fe0f06e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ACCESS_MODE_WO</span></span></span><a class="headerlink" href="#_CPPv4N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_WOE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write only </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_ROE">
+<span id="_CPPv3N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_ROE"></span><span id="_CPPv2N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_ROE"></span><span class="target" id="_arena_c_defs_8h_1ab8e8e232e57e4e71d60932243ca785e4ad9a6628380a76a64d22616ce332a6918"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ACCESS_MODE_RO</span></span></span><a class="headerlink" href="#_CPPv4N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_ROE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read only </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_RWE">
+<span id="_CPPv3N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_RWE"></span><span id="_CPPv2N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_RWE"></span><span class="target" id="_arena_c_defs_8h_1ab8e8e232e57e4e71d60932243ca785e4aaa10f8f6c02cd5ebe275932eb033fc8c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ACCESS_MODE_RW</span></span></span><a class="headerlink" href="#_CPPv4N19AC_ACCESS_MODE_LIST17AC_ACCESS_MODE_RWE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read and write </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N19AC_ACCESS_MODE_LIST24AC_ACCESS_MODE_UNDEFINEDE">
+<span id="_CPPv3N19AC_ACCESS_MODE_LIST24AC_ACCESS_MODE_UNDEFINEDE"></span><span id="_CPPv2N19AC_ACCESS_MODE_LIST24AC_ACCESS_MODE_UNDEFINEDE"></span><span class="target" id="_arena_c_defs_8h_1ab8e8e232e57e4e71d60932243ca785e4a467ecfd6787da8d08eba08fdad636757"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ACCESS_MODE_UNDEFINED</span></span></span><a class="headerlink" href="#_CPPv4N19AC_ACCESS_MODE_LIST24AC_ACCESS_MODE_UNDEFINEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Undefined </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-access-mode">
+<h2>AC_ACCESS_MODE<a class="headerlink" href="#ac-access-mode" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv414AC_ACCESS_MODE">
+<span id="_CPPv314AC_ACCESS_MODE"></span><span id="_CPPv214AC_ACCESS_MODE"></span><span id="AC_ACCESS_MODE"></span><span class="target" id="_arena_c_defs_8h_1a83d4c7c2262445adf3c7b4d0cffead7b"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_ACCESS_MODE</span></span></span><a class="headerlink" href="#_CPPv414AC_ACCESS_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the access mode enum (AC_ACCESS_MODE_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-caching-mode-list">
+<h2>AC_CACHING_MODE_LIST<a class="headerlink" href="#ac-caching-mode-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv420AC_CACHING_MODE_LIST">
+<span id="_CPPv320AC_CACHING_MODE_LIST"></span><span id="_CPPv220AC_CACHING_MODE_LIST"></span><span class="target" id="_arena_c_defs_8h_1a27090055fd8c351278fa0c9dbc8dfc85"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_CACHING_MODE_LIST</span></span></span><a class="headerlink" href="#_CPPv420AC_CACHING_MODE_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different caching modes a node might use.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Use AC_CACHING_MODE integer values in place of AC_CACHING_MODE_LIST enum values </p></li>
+</ul>
+</p>
+</div>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N20AC_CACHING_MODE_LIST24AC_CACHING_MODE_NO_CACHEE">
+<span id="_CPPv3N20AC_CACHING_MODE_LIST24AC_CACHING_MODE_NO_CACHEE"></span><span id="_CPPv2N20AC_CACHING_MODE_LIST24AC_CACHING_MODE_NO_CACHEE"></span><span class="target" id="_arena_c_defs_8h_1a27090055fd8c351278fa0c9dbc8dfc85ac502f731b0d630826497717f2cc85a30"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_CACHING_MODE_NO_CACHE</span></span></span><a class="headerlink" href="#_CPPv4N20AC_CACHING_MODE_LIST24AC_CACHING_MODE_NO_CACHEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Do not use cache </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N20AC_CACHING_MODE_LIST29AC_CACHING_MODE_WRITE_THROUGHE">
+<span id="_CPPv3N20AC_CACHING_MODE_LIST29AC_CACHING_MODE_WRITE_THROUGHE"></span><span id="_CPPv2N20AC_CACHING_MODE_LIST29AC_CACHING_MODE_WRITE_THROUGHE"></span><span class="target" id="_arena_c_defs_8h_1a27090055fd8c351278fa0c9dbc8dfc85abd51be22b82b834c9fb5bbb3e90f6585"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_CACHING_MODE_WRITE_THROUGH</span></span></span><a class="headerlink" href="#_CPPv4N20AC_CACHING_MODE_LIST29AC_CACHING_MODE_WRITE_THROUGHE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write to cache and register </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N20AC_CACHING_MODE_LIST28AC_CACHING_MODE_WRITE_AROUNDE">
+<span id="_CPPv3N20AC_CACHING_MODE_LIST28AC_CACHING_MODE_WRITE_AROUNDE"></span><span id="_CPPv2N20AC_CACHING_MODE_LIST28AC_CACHING_MODE_WRITE_AROUNDE"></span><span class="target" id="_arena_c_defs_8h_1a27090055fd8c351278fa0c9dbc8dfc85ac46ad45e30ee76d94d9c4260c07ba57f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_CACHING_MODE_WRITE_AROUND</span></span></span><a class="headerlink" href="#_CPPv4N20AC_CACHING_MODE_LIST28AC_CACHING_MODE_WRITE_AROUNDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Write to register, write to cache on read </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N20AC_CACHING_MODE_LIST25AC_CACHING_MODE_UNDEFINEDE">
+<span id="_CPPv3N20AC_CACHING_MODE_LIST25AC_CACHING_MODE_UNDEFINEDE"></span><span id="_CPPv2N20AC_CACHING_MODE_LIST25AC_CACHING_MODE_UNDEFINEDE"></span><span class="target" id="_arena_c_defs_8h_1a27090055fd8c351278fa0c9dbc8dfc85a2bb76e8af285856d9810336b57e39b45"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_CACHING_MODE_UNDEFINED</span></span></span><a class="headerlink" href="#_CPPv4N20AC_CACHING_MODE_LIST25AC_CACHING_MODE_UNDEFINEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Undefined </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-caching-mode">
+<h2>AC_CACHING_MODE<a class="headerlink" href="#ac-caching-mode" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv415AC_CACHING_MODE">
+<span id="_CPPv315AC_CACHING_MODE"></span><span id="_CPPv215AC_CACHING_MODE"></span><span id="AC_CACHING_MODE"></span><span class="target" id="_arena_c_defs_8h_1ad3673d2b2dfb19c2867647e316783291"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_CACHING_MODE</span></span></span><a class="headerlink" href="#_CPPv415AC_CACHING_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the caching mode enum (AC_CACHING_MODE_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-namespace-list">
+<h2>AC_NAMESPACE_LIST<a class="headerlink" href="#ac-namespace-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv417AC_NAMESPACE_LIST">
+<span id="_CPPv317AC_NAMESPACE_LIST"></span><span id="_CPPv217AC_NAMESPACE_LIST"></span><span class="target" id="_arena_c_defs_8h_1ab88e5a311d0f2120b9e1808faa801365"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_NAMESPACE_LIST</span></span></span><a class="headerlink" href="#_CPPv417AC_NAMESPACE_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents whether a node is in the standard or custom namespaces.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Use AC_NAMESPACE integer values in place of AC_NAMESPACE_LIST enum values </p></li>
+</ul>
+</p>
+</div>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N17AC_NAMESPACE_LIST19AC_NAMESPACE_CUSTOME">
+<span id="_CPPv3N17AC_NAMESPACE_LIST19AC_NAMESPACE_CUSTOME"></span><span id="_CPPv2N17AC_NAMESPACE_LIST19AC_NAMESPACE_CUSTOME"></span><span class="target" id="_arena_c_defs_8h_1ab88e5a311d0f2120b9e1808faa801365ab482613646f92b0ad985efc900e34b93"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_NAMESPACE_CUSTOM</span></span></span><a class="headerlink" href="#_CPPv4N17AC_NAMESPACE_LIST19AC_NAMESPACE_CUSTOME" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Name resides in custom namespace </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N17AC_NAMESPACE_LIST21AC_NAMESPACE_STANDARDE">
+<span id="_CPPv3N17AC_NAMESPACE_LIST21AC_NAMESPACE_STANDARDE"></span><span id="_CPPv2N17AC_NAMESPACE_LIST21AC_NAMESPACE_STANDARDE"></span><span class="target" id="_arena_c_defs_8h_1ab88e5a311d0f2120b9e1808faa801365ab681b86c4b880504e181ed002732ddb6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_NAMESPACE_STANDARD</span></span></span><a class="headerlink" href="#_CPPv4N17AC_NAMESPACE_LIST21AC_NAMESPACE_STANDARDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Name resides in one of the standard namespaces </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N17AC_NAMESPACE_LIST22AC_NAMESPACE_UNDEFINEDE">
+<span id="_CPPv3N17AC_NAMESPACE_LIST22AC_NAMESPACE_UNDEFINEDE"></span><span id="_CPPv2N17AC_NAMESPACE_LIST22AC_NAMESPACE_UNDEFINEDE"></span><span class="target" id="_arena_c_defs_8h_1ab88e5a311d0f2120b9e1808faa801365ad249728db0f78f876acbed642f4cf3c2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_NAMESPACE_UNDEFINED</span></span></span><a class="headerlink" href="#_CPPv4N17AC_NAMESPACE_LIST22AC_NAMESPACE_UNDEFINEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Undefined </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-namespace">
+<h2>AC_NAMESPACE<a class="headerlink" href="#ac-namespace" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv412AC_NAMESPACE">
+<span id="_CPPv312AC_NAMESPACE"></span><span id="_CPPv212AC_NAMESPACE"></span><span id="AC_NAMESPACE"></span><span class="target" id="_arena_c_defs_8h_1a0a343f33ff915288b0c08674f53657a3"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_NAMESPACE</span></span></span><a class="headerlink" href="#_CPPv412AC_NAMESPACE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the namespace enum (AC_NAMESPACE_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-interface-type-list">
+<h2>AC_INTERFACE_TYPE_LIST<a class="headerlink" href="#ac-interface-type-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv422AC_INTERFACE_TYPE_LIST">
+<span id="_CPPv322AC_INTERFACE_TYPE_LIST"></span><span id="_CPPv222AC_INTERFACE_TYPE_LIST"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_LIST</span></span></span><a class="headerlink" href="#_CPPv422AC_INTERFACE_TYPE_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the interface type of a node.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Use AC_INTERFACE_TYPE integer values in place of AC_INTERFACE_LIST enum values </p></li>
+</ul>
+</p>
+</div>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_INTERFACE_TYPE_LIST23AC_INTERFACE_TYPE_VALUEE">
+<span id="_CPPv3N22AC_INTERFACE_TYPE_LIST23AC_INTERFACE_TYPE_VALUEE"></span><span id="_CPPv2N22AC_INTERFACE_TYPE_LIST23AC_INTERFACE_TYPE_VALUEE"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1a5aeabb7b952d0adc50a9023cccd5cb6c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_VALUE</span></span></span><a class="headerlink" href="#_CPPv4N22AC_INTERFACE_TYPE_LIST23AC_INTERFACE_TYPE_VALUEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IValue interface </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_INTERFACE_TYPE_LIST22AC_INTERFACE_TYPE_BASEE">
+<span id="_CPPv3N22AC_INTERFACE_TYPE_LIST22AC_INTERFACE_TYPE_BASEE"></span><span id="_CPPv2N22AC_INTERFACE_TYPE_LIST22AC_INTERFACE_TYPE_BASEE"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1a58bdd9dc8e62163ee5dcf5f7d59ae442"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_BASE</span></span></span><a class="headerlink" href="#_CPPv4N22AC_INTERFACE_TYPE_LIST22AC_INTERFACE_TYPE_BASEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IBase interface </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_INTERFACE_TYPE_LIST25AC_INTERFACE_TYPE_INTEGERE">
+<span id="_CPPv3N22AC_INTERFACE_TYPE_LIST25AC_INTERFACE_TYPE_INTEGERE"></span><span id="_CPPv2N22AC_INTERFACE_TYPE_LIST25AC_INTERFACE_TYPE_INTEGERE"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1a445dcbe57f267b31224bb9bc10b555bb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_INTEGER</span></span></span><a class="headerlink" href="#_CPPv4N22AC_INTERFACE_TYPE_LIST25AC_INTERFACE_TYPE_INTEGERE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IInteger interface </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_INTERFACE_TYPE_LIST25AC_INTERFACE_TYPE_BOOLEANE">
+<span id="_CPPv3N22AC_INTERFACE_TYPE_LIST25AC_INTERFACE_TYPE_BOOLEANE"></span><span id="_CPPv2N22AC_INTERFACE_TYPE_LIST25AC_INTERFACE_TYPE_BOOLEANE"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1a0abc6939815e5727618b60bfe1f299c8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_BOOLEAN</span></span></span><a class="headerlink" href="#_CPPv4N22AC_INTERFACE_TYPE_LIST25AC_INTERFACE_TYPE_BOOLEANE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IBoolean interface </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_INTERFACE_TYPE_LIST25AC_INTERFACE_TYPE_COMMANDE">
+<span id="_CPPv3N22AC_INTERFACE_TYPE_LIST25AC_INTERFACE_TYPE_COMMANDE"></span><span id="_CPPv2N22AC_INTERFACE_TYPE_LIST25AC_INTERFACE_TYPE_COMMANDE"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1af4ccda412124a6f425f0ced038200cc1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_COMMAND</span></span></span><a class="headerlink" href="#_CPPv4N22AC_INTERFACE_TYPE_LIST25AC_INTERFACE_TYPE_COMMANDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ICommand interface </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_INTERFACE_TYPE_LIST23AC_INTERFACE_TYPE_FLOATE">
+<span id="_CPPv3N22AC_INTERFACE_TYPE_LIST23AC_INTERFACE_TYPE_FLOATE"></span><span id="_CPPv2N22AC_INTERFACE_TYPE_LIST23AC_INTERFACE_TYPE_FLOATE"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1a3424cbd52049f997cf8680abdbec69d0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_FLOAT</span></span></span><a class="headerlink" href="#_CPPv4N22AC_INTERFACE_TYPE_LIST23AC_INTERFACE_TYPE_FLOATE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IFloat interface </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_INTERFACE_TYPE_LIST24AC_INTERFACE_TYPE_STRINGE">
+<span id="_CPPv3N22AC_INTERFACE_TYPE_LIST24AC_INTERFACE_TYPE_STRINGE"></span><span id="_CPPv2N22AC_INTERFACE_TYPE_LIST24AC_INTERFACE_TYPE_STRINGE"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1a4deca867c82271080a28058edfba33cd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_STRING</span></span></span><a class="headerlink" href="#_CPPv4N22AC_INTERFACE_TYPE_LIST24AC_INTERFACE_TYPE_STRINGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IString interface </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_INTERFACE_TYPE_LIST26AC_INTERFACE_TYPE_REGISTERE">
+<span id="_CPPv3N22AC_INTERFACE_TYPE_LIST26AC_INTERFACE_TYPE_REGISTERE"></span><span id="_CPPv2N22AC_INTERFACE_TYPE_LIST26AC_INTERFACE_TYPE_REGISTERE"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1a4fa7882fef20413e85ef686e5a1ae537"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_REGISTER</span></span></span><a class="headerlink" href="#_CPPv4N22AC_INTERFACE_TYPE_LIST26AC_INTERFACE_TYPE_REGISTERE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IRegister interface </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_INTERFACE_TYPE_LIST26AC_INTERFACE_TYPE_CATEGORYE">
+<span id="_CPPv3N22AC_INTERFACE_TYPE_LIST26AC_INTERFACE_TYPE_CATEGORYE"></span><span id="_CPPv2N22AC_INTERFACE_TYPE_LIST26AC_INTERFACE_TYPE_CATEGORYE"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1a451325016fe71139a3fe7f3a67bebac7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_CATEGORY</span></span></span><a class="headerlink" href="#_CPPv4N22AC_INTERFACE_TYPE_LIST26AC_INTERFACE_TYPE_CATEGORYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>ICategory interface </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_INTERFACE_TYPE_LIST29AC_INTERFACE_TYPE_ENUMERATIONE">
+<span id="_CPPv3N22AC_INTERFACE_TYPE_LIST29AC_INTERFACE_TYPE_ENUMERATIONE"></span><span id="_CPPv2N22AC_INTERFACE_TYPE_LIST29AC_INTERFACE_TYPE_ENUMERATIONE"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1ade30ee98ef665e6ee49a5d3cbf76effe"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_ENUMERATION</span></span></span><a class="headerlink" href="#_CPPv4N22AC_INTERFACE_TYPE_LIST29AC_INTERFACE_TYPE_ENUMERATIONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IEnumeration interface </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_INTERFACE_TYPE_LIST27AC_INTERFACE_TYPE_ENUMENTRYE">
+<span id="_CPPv3N22AC_INTERFACE_TYPE_LIST27AC_INTERFACE_TYPE_ENUMENTRYE"></span><span id="_CPPv2N22AC_INTERFACE_TYPE_LIST27AC_INTERFACE_TYPE_ENUMENTRYE"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1a2c612db4fc9c72be348af0b4a75d3663"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_ENUMENTRY</span></span></span><a class="headerlink" href="#_CPPv4N22AC_INTERFACE_TYPE_LIST27AC_INTERFACE_TYPE_ENUMENTRYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IEnumEntry interface </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_INTERFACE_TYPE_LIST22AC_INTERFACE_TYPE_PORTE">
+<span id="_CPPv3N22AC_INTERFACE_TYPE_LIST22AC_INTERFACE_TYPE_PORTE"></span><span id="_CPPv2N22AC_INTERFACE_TYPE_LIST22AC_INTERFACE_TYPE_PORTE"></span><span class="target" id="_arena_c_defs_8h_1ad410e5c340bcfd2e63c8dd8bbeb273a1a030c3a8ec30decdb983de9fff80a6eae"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE_PORT</span></span></span><a class="headerlink" href="#_CPPv4N22AC_INTERFACE_TYPE_LIST22AC_INTERFACE_TYPE_PORTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IPort interface </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-interface-type">
+<h2>AC_INTERFACE_TYPE<a class="headerlink" href="#ac-interface-type" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv417AC_INTERFACE_TYPE">
+<span id="_CPPv317AC_INTERFACE_TYPE"></span><span id="_CPPv217AC_INTERFACE_TYPE"></span><span id="AC_INTERFACE_TYPE"></span><span class="target" id="_arena_c_defs_8h_1a542b7fcd428f065c0a9d1dc0a190b517"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INTERFACE_TYPE</span></span></span><a class="headerlink" href="#_CPPv417AC_INTERFACE_TYPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the interface type enum (AC_INTERFACE_TYPE_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-visibility-list">
+<h2>AC_VISIBILITY_LIST<a class="headerlink" href="#ac-visibility-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv418AC_VISIBILITY_LIST">
+<span id="_CPPv318AC_VISIBILITY_LIST"></span><span id="_CPPv218AC_VISIBILITY_LIST"></span><span class="target" id="_arena_c_defs_8h_1a66159aef11aca605517067270480bc60"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_VISIBILITY_LIST</span></span></span><a class="headerlink" href="#_CPPv418AC_VISIBILITY_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different visibilities of a node.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Use AC_VISIBILITY integer values in place of AC_VISIBILITY_LIST enum values </p></li>
+</ul>
+</p>
+</div>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N18AC_VISIBILITY_LIST22AC_VISIBILITY_BEGINNERE">
+<span id="_CPPv3N18AC_VISIBILITY_LIST22AC_VISIBILITY_BEGINNERE"></span><span id="_CPPv2N18AC_VISIBILITY_LIST22AC_VISIBILITY_BEGINNERE"></span><span class="target" id="_arena_c_defs_8h_1a66159aef11aca605517067270480bc60a5cebcfa52873e857f205d16e1e2c016a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_VISIBILITY_BEGINNER</span></span></span><a class="headerlink" href="#_CPPv4N18AC_VISIBILITY_LIST22AC_VISIBILITY_BEGINNERE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Always visible </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N18AC_VISIBILITY_LIST20AC_VISIBILITY_EXPERTE">
+<span id="_CPPv3N18AC_VISIBILITY_LIST20AC_VISIBILITY_EXPERTE"></span><span id="_CPPv2N18AC_VISIBILITY_LIST20AC_VISIBILITY_EXPERTE"></span><span class="target" id="_arena_c_defs_8h_1a66159aef11aca605517067270480bc60a3f3da15913bba484b510423b9b09fdf2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_VISIBILITY_EXPERT</span></span></span><a class="headerlink" href="#_CPPv4N18AC_VISIBILITY_LIST20AC_VISIBILITY_EXPERTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Visible for experts or gurus </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N18AC_VISIBILITY_LIST18AC_VISIBILITY_GURUE">
+<span id="_CPPv3N18AC_VISIBILITY_LIST18AC_VISIBILITY_GURUE"></span><span id="_CPPv2N18AC_VISIBILITY_LIST18AC_VISIBILITY_GURUE"></span><span class="target" id="_arena_c_defs_8h_1a66159aef11aca605517067270480bc60aaead3dba916359bd7de9cf30365184e9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_VISIBILITY_GURU</span></span></span><a class="headerlink" href="#_CPPv4N18AC_VISIBILITY_LIST18AC_VISIBILITY_GURUE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Visible for gurus </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N18AC_VISIBILITY_LIST23AC_VISIBILITY_INVISIBLEE">
+<span id="_CPPv3N18AC_VISIBILITY_LIST23AC_VISIBILITY_INVISIBLEE"></span><span id="_CPPv2N18AC_VISIBILITY_LIST23AC_VISIBILITY_INVISIBLEE"></span><span class="target" id="_arena_c_defs_8h_1a66159aef11aca605517067270480bc60a748b752b1e9c2b152df1e0a2a8abcd55"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_VISIBILITY_INVISIBLE</span></span></span><a class="headerlink" href="#_CPPv4N18AC_VISIBILITY_LIST23AC_VISIBILITY_INVISIBLEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Not visible </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N18AC_VISIBILITY_LIST23AC_VISIBILITY_UNDEFINEDE">
+<span id="_CPPv3N18AC_VISIBILITY_LIST23AC_VISIBILITY_UNDEFINEDE"></span><span id="_CPPv2N18AC_VISIBILITY_LIST23AC_VISIBILITY_UNDEFINEDE"></span><span class="target" id="_arena_c_defs_8h_1a66159aef11aca605517067270480bc60ad4723263bf46fc1803e3ef4316f26a20"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_VISIBILITY_UNDEFINED</span></span></span><a class="headerlink" href="#_CPPv4N18AC_VISIBILITY_LIST23AC_VISIBILITY_UNDEFINEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Undefined </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-visibility">
+<h2>AC_VISIBILITY<a class="headerlink" href="#ac-visibility" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv413AC_VISIBILITY">
+<span id="_CPPv313AC_VISIBILITY"></span><span id="_CPPv213AC_VISIBILITY"></span><span id="AC_VISIBILITY"></span><span class="target" id="_arena_c_defs_8h_1aaacc0f36a08a72abee43601bad3b13b8"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_VISIBILITY</span></span></span><a class="headerlink" href="#_CPPv413AC_VISIBILITY" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the visibility enum (AC_VISIBILITY_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-inc-mode-list">
+<h2>AC_INC_MODE_LIST<a class="headerlink" href="#ac-inc-mode-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv416AC_INC_MODE_LIST">
+<span id="_CPPv316AC_INC_MODE_LIST"></span><span id="_CPPv216AC_INC_MODE_LIST"></span><span class="target" id="_arena_c_defs_8h_1a25fcf6f22b0d9046f3e266eab72691b4"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INC_MODE_LIST</span></span></span><a class="headerlink" href="#_CPPv416AC_INC_MODE_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different increment modes of an integer/float node.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Use AC_INC_MODE integer values in place of AC_INC_MODE_LIST enum values </p></li>
+</ul>
+</p>
+</div>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N16AC_INC_MODE_LIST16AC_INC_MODE_NONEE">
+<span id="_CPPv3N16AC_INC_MODE_LIST16AC_INC_MODE_NONEE"></span><span id="_CPPv2N16AC_INC_MODE_LIST16AC_INC_MODE_NONEE"></span><span class="target" id="_arena_c_defs_8h_1a25fcf6f22b0d9046f3e266eab72691b4ae9198ce3ddfe66e0836e498a1cc05eba"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INC_MODE_NONE</span></span></span><a class="headerlink" href="#_CPPv4N16AC_INC_MODE_LIST16AC_INC_MODE_NONEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The feature has no increment </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N16AC_INC_MODE_LIST17AC_INC_MODE_FIXEDE">
+<span id="_CPPv3N16AC_INC_MODE_LIST17AC_INC_MODE_FIXEDE"></span><span id="_CPPv2N16AC_INC_MODE_LIST17AC_INC_MODE_FIXEDE"></span><span class="target" id="_arena_c_defs_8h_1a25fcf6f22b0d9046f3e266eab72691b4af1ab9b7de303e7ee56b72a5b90c03a15"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INC_MODE_FIXED</span></span></span><a class="headerlink" href="#_CPPv4N16AC_INC_MODE_LIST17AC_INC_MODE_FIXEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The feature has a fix increment </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N16AC_INC_MODE_LIST16AC_INC_MODE_LISTE">
+<span id="_CPPv3N16AC_INC_MODE_LIST16AC_INC_MODE_LISTE"></span><span id="_CPPv2N16AC_INC_MODE_LIST16AC_INC_MODE_LISTE"></span><span class="target" id="_arena_c_defs_8h_1a25fcf6f22b0d9046f3e266eab72691b4a820c90cfe9bf092a69fe226126946210"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INC_MODE_LIST</span></span></span><a class="headerlink" href="#_CPPv4N16AC_INC_MODE_LIST16AC_INC_MODE_LISTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The feature has a list of valid values </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-inc-mode">
+<h2>AC_INC_MODE<a class="headerlink" href="#ac-inc-mode" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv411AC_INC_MODE">
+<span id="_CPPv311AC_INC_MODE"></span><span id="_CPPv211AC_INC_MODE"></span><span id="AC_INC_MODE"></span><span class="target" id="_arena_c_defs_8h_1a8239c2306f5cd301c080705e1c119003"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_INC_MODE</span></span></span><a class="headerlink" href="#_CPPv411AC_INC_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the increment mode enum (AC_INC_MODE_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-representation-list">
+<h2>AC_REPRESENTATION_LIST<a class="headerlink" href="#ac-representation-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv422AC_REPRESENTATION_LIST">
+<span id="_CPPv322AC_REPRESENTATION_LIST"></span><span id="_CPPv222AC_REPRESENTATION_LIST"></span><span class="target" id="_arena_c_defs_8h_1ab357ba89df504c61312ffe7f0db6d5cd"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_REPRESENTATION_LIST</span></span></span><a class="headerlink" href="#_CPPv422AC_REPRESENTATION_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different representations of an integer/float node.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Use AC_REPRESENTATION integer values in place of AC_REPRESENTATION_LIST enum values </p></li>
+</ul>
+</p>
+</div>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_REPRESENTATION_LIST24AC_REPRESENTATION_LINEARE">
+<span id="_CPPv3N22AC_REPRESENTATION_LIST24AC_REPRESENTATION_LINEARE"></span><span id="_CPPv2N22AC_REPRESENTATION_LIST24AC_REPRESENTATION_LINEARE"></span><span class="target" id="_arena_c_defs_8h_1ab357ba89df504c61312ffe7f0db6d5cda764f28bffbfd7fe8adad6c4e8cd15a04"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_REPRESENTATION_LINEAR</span></span></span><a class="headerlink" href="#_CPPv4N22AC_REPRESENTATION_LIST24AC_REPRESENTATION_LINEARE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Slider with linear behavior </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_REPRESENTATION_LIST29AC_REPRESENTATION_LOGARITHMICE">
+<span id="_CPPv3N22AC_REPRESENTATION_LIST29AC_REPRESENTATION_LOGARITHMICE"></span><span id="_CPPv2N22AC_REPRESENTATION_LIST29AC_REPRESENTATION_LOGARITHMICE"></span><span class="target" id="_arena_c_defs_8h_1ab357ba89df504c61312ffe7f0db6d5cdaa1c5d191e16e976170d57b9205d81702"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_REPRESENTATION_LOGARITHMIC</span></span></span><a class="headerlink" href="#_CPPv4N22AC_REPRESENTATION_LIST29AC_REPRESENTATION_LOGARITHMICE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Slider with logarithmic behavior </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_REPRESENTATION_LIST25AC_REPRESENTATION_BOOLEANE">
+<span id="_CPPv3N22AC_REPRESENTATION_LIST25AC_REPRESENTATION_BOOLEANE"></span><span id="_CPPv2N22AC_REPRESENTATION_LIST25AC_REPRESENTATION_BOOLEANE"></span><span class="target" id="_arena_c_defs_8h_1ab357ba89df504c61312ffe7f0db6d5cda244c21ebd2e071c25e9d592e157c1463"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_REPRESENTATION_BOOLEAN</span></span></span><a class="headerlink" href="#_CPPv4N22AC_REPRESENTATION_LIST25AC_REPRESENTATION_BOOLEANE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check box </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_REPRESENTATION_LIST29AC_REPRESENTATION_PURE_NUMBERE">
+<span id="_CPPv3N22AC_REPRESENTATION_LIST29AC_REPRESENTATION_PURE_NUMBERE"></span><span id="_CPPv2N22AC_REPRESENTATION_LIST29AC_REPRESENTATION_PURE_NUMBERE"></span><span class="target" id="_arena_c_defs_8h_1ab357ba89df504c61312ffe7f0db6d5cdad84ab1f37b9240f20cd955b537e49d3a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_REPRESENTATION_PURE_NUMBER</span></span></span><a class="headerlink" href="#_CPPv4N22AC_REPRESENTATION_LIST29AC_REPRESENTATION_PURE_NUMBERE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Decimal number in an edit control </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_REPRESENTATION_LIST28AC_REPRESENTATION_HEX_NUMBERE">
+<span id="_CPPv3N22AC_REPRESENTATION_LIST28AC_REPRESENTATION_HEX_NUMBERE"></span><span id="_CPPv2N22AC_REPRESENTATION_LIST28AC_REPRESENTATION_HEX_NUMBERE"></span><span class="target" id="_arena_c_defs_8h_1ab357ba89df504c61312ffe7f0db6d5cdaff14ad071b90c6aeab0cf899067494f6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_REPRESENTATION_HEX_NUMBER</span></span></span><a class="headerlink" href="#_CPPv4N22AC_REPRESENTATION_LIST28AC_REPRESENTATION_HEX_NUMBERE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Hex number in an edit control </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_REPRESENTATION_LIST30AC_REPRESENTATION_IPV4_ADDRESSE">
+<span id="_CPPv3N22AC_REPRESENTATION_LIST30AC_REPRESENTATION_IPV4_ADDRESSE"></span><span id="_CPPv2N22AC_REPRESENTATION_LIST30AC_REPRESENTATION_IPV4_ADDRESSE"></span><span class="target" id="_arena_c_defs_8h_1ab357ba89df504c61312ffe7f0db6d5cdaa30f1fa13f0770d03a712869f27f0d34"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_REPRESENTATION_IPV4_ADDRESS</span></span></span><a class="headerlink" href="#_CPPv4N22AC_REPRESENTATION_LIST30AC_REPRESENTATION_IPV4_ADDRESSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>IP address </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_REPRESENTATION_LIST29AC_REPRESENTATION_MAC_ADDRESSE">
+<span id="_CPPv3N22AC_REPRESENTATION_LIST29AC_REPRESENTATION_MAC_ADDRESSE"></span><span id="_CPPv2N22AC_REPRESENTATION_LIST29AC_REPRESENTATION_MAC_ADDRESSE"></span><span class="target" id="_arena_c_defs_8h_1ab357ba89df504c61312ffe7f0db6d5cda051e4369751d4b92f4bb04c0ec1b7372"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_REPRESENTATION_MAC_ADDRESS</span></span></span><a class="headerlink" href="#_CPPv4N22AC_REPRESENTATION_LIST29AC_REPRESENTATION_MAC_ADDRESSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>MAC address </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N22AC_REPRESENTATION_LIST27AC_REPRESENTATION_UNDEFINEDE">
+<span id="_CPPv3N22AC_REPRESENTATION_LIST27AC_REPRESENTATION_UNDEFINEDE"></span><span id="_CPPv2N22AC_REPRESENTATION_LIST27AC_REPRESENTATION_UNDEFINEDE"></span><span class="target" id="_arena_c_defs_8h_1ab357ba89df504c61312ffe7f0db6d5cdacb55e5a9306e86a74085cae827ab34d0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_REPRESENTATION_UNDEFINED</span></span></span><a class="headerlink" href="#_CPPv4N22AC_REPRESENTATION_LIST27AC_REPRESENTATION_UNDEFINEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-representation">
+<h2>AC_REPRESENTATION<a class="headerlink" href="#ac-representation" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv417AC_REPRESENTATION">
+<span id="_CPPv317AC_REPRESENTATION"></span><span id="_CPPv217AC_REPRESENTATION"></span><span id="AC_REPRESENTATION"></span><span class="target" id="_arena_c_defs_8h_1a768062c5d26040923d2827cdd817bdbe"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_REPRESENTATION</span></span></span><a class="headerlink" href="#_CPPv417AC_REPRESENTATION" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the numeric representation enum (AC_REPRESENTATION_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-display-notation-list">
+<h2>AC_DISPLAY_NOTATION_LIST<a class="headerlink" href="#ac-display-notation-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv424AC_DISPLAY_NOTATION_LIST">
+<span id="_CPPv324AC_DISPLAY_NOTATION_LIST"></span><span id="_CPPv224AC_DISPLAY_NOTATION_LIST"></span><span class="target" id="_arena_c_defs_8h_1aea763818baa03bd9c9e23ed3ab4d5239"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_DISPLAY_NOTATION_LIST</span></span></span><a class="headerlink" href="#_CPPv424AC_DISPLAY_NOTATION_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the best way to display a float node.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Use AC_DISPLAY_NOTATION integer values in place of AC_DISPLAY_NOTATION_LIST enum values </p></li>
+</ul>
+</p>
+</div>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N24AC_DISPLAY_NOTATION_LIST29AC_DISPLAY_NOTATION_AUTOMATICE">
+<span id="_CPPv3N24AC_DISPLAY_NOTATION_LIST29AC_DISPLAY_NOTATION_AUTOMATICE"></span><span id="_CPPv2N24AC_DISPLAY_NOTATION_LIST29AC_DISPLAY_NOTATION_AUTOMATICE"></span><span class="target" id="_arena_c_defs_8h_1aea763818baa03bd9c9e23ed3ab4d5239a9014f55f063302866b0210fe1cac798d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_DISPLAY_NOTATION_AUTOMATIC</span></span></span><a class="headerlink" href="#_CPPv4N24AC_DISPLAY_NOTATION_LIST29AC_DISPLAY_NOTATION_AUTOMATICE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The notation if either scientific or fixed depending on what is shorter </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N24AC_DISPLAY_NOTATION_LIST25AC_DISPLAY_NOTATION_FIXEDE">
+<span id="_CPPv3N24AC_DISPLAY_NOTATION_LIST25AC_DISPLAY_NOTATION_FIXEDE"></span><span id="_CPPv2N24AC_DISPLAY_NOTATION_LIST25AC_DISPLAY_NOTATION_FIXEDE"></span><span class="target" id="_arena_c_defs_8h_1aea763818baa03bd9c9e23ed3ab4d5239a4d81a72d4abada5acac11665f61dee27"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_DISPLAY_NOTATION_FIXED</span></span></span><a class="headerlink" href="#_CPPv4N24AC_DISPLAY_NOTATION_LIST25AC_DISPLAY_NOTATION_FIXEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The notation is fixed, e.g. 123.4 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N24AC_DISPLAY_NOTATION_LIST30AC_DISPLAY_NOTATION_SCIENTIFICE">
+<span id="_CPPv3N24AC_DISPLAY_NOTATION_LIST30AC_DISPLAY_NOTATION_SCIENTIFICE"></span><span id="_CPPv2N24AC_DISPLAY_NOTATION_LIST30AC_DISPLAY_NOTATION_SCIENTIFICE"></span><span class="target" id="_arena_c_defs_8h_1aea763818baa03bd9c9e23ed3ab4d5239a307d4665552769b30089f5582cb15a20"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_DISPLAY_NOTATION_SCIENTIFIC</span></span></span><a class="headerlink" href="#_CPPv4N24AC_DISPLAY_NOTATION_LIST30AC_DISPLAY_NOTATION_SCIENTIFICE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The notation is scientific, e.g. 1.234e2 </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N24AC_DISPLAY_NOTATION_LIST29AC_DISPLAY_NOTATION_UNDEFINEDE">
+<span id="_CPPv3N24AC_DISPLAY_NOTATION_LIST29AC_DISPLAY_NOTATION_UNDEFINEDE"></span><span id="_CPPv2N24AC_DISPLAY_NOTATION_LIST29AC_DISPLAY_NOTATION_UNDEFINEDE"></span><span class="target" id="_arena_c_defs_8h_1aea763818baa03bd9c9e23ed3ab4d5239a1fe33e014e60fd79cf0d8b41f04e7144"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_DISPLAY_NOTATION_UNDEFINED</span></span></span><a class="headerlink" href="#_CPPv4N24AC_DISPLAY_NOTATION_LIST29AC_DISPLAY_NOTATION_UNDEFINEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Undefined </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-display-notation">
+<h2>AC_DISPLAY_NOTATION<a class="headerlink" href="#ac-display-notation" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv419AC_DISPLAY_NOTATION">
+<span id="_CPPv319AC_DISPLAY_NOTATION"></span><span id="_CPPv219AC_DISPLAY_NOTATION"></span><span id="AC_DISPLAY_NOTATION"></span><span class="target" id="_arena_c_defs_8h_1a2ad5f86f664a72386ea60a2f9004b88c"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_DISPLAY_NOTATION</span></span></span><a class="headerlink" href="#_CPPv419AC_DISPLAY_NOTATION" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the display notation enum (AC_DISPLAY_NOTATION_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-payload-type-list">
+<h2>AC_PAYLOAD_TYPE_LIST<a class="headerlink" href="#ac-payload-type-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv420AC_PAYLOAD_TYPE_LIST">
+<span id="_CPPv320AC_PAYLOAD_TYPE_LIST"></span><span id="_CPPv220AC_PAYLOAD_TYPE_LIST"></span><span class="target" id="_arena_c_defs_8h_1ac3ee50d5fb96e71657776fd6ba37d466"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_PAYLOAD_TYPE_LIST</span></span></span><a class="headerlink" href="#_CPPv420AC_PAYLOAD_TYPE_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different payload types of a buffer.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Use AC_PAYLOAD_TYPE integer values in place of AC_PAYLOAD_LIST enum values </p></li>
+</ul>
+</p>
+</div>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N20AC_PAYLOAD_TYPE_LIST21AC_PAYLOAD_TYPE_IMAGEE">
+<span id="_CPPv3N20AC_PAYLOAD_TYPE_LIST21AC_PAYLOAD_TYPE_IMAGEE"></span><span id="_CPPv2N20AC_PAYLOAD_TYPE_LIST21AC_PAYLOAD_TYPE_IMAGEE"></span><span class="target" id="_arena_c_defs_8h_1ac3ee50d5fb96e71657776fd6ba37d466a835a2bf55615f678f706d6e87644dc49"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_PAYLOAD_TYPE_IMAGE</span></span></span><a class="headerlink" href="#_CPPv4N20AC_PAYLOAD_TYPE_LIST21AC_PAYLOAD_TYPE_IMAGEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Image data only </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N20AC_PAYLOAD_TYPE_LIST36AC_PAYLOAD_TYPE_IMAGE_EXTENDED_CHUNKE">
+<span id="_CPPv3N20AC_PAYLOAD_TYPE_LIST36AC_PAYLOAD_TYPE_IMAGE_EXTENDED_CHUNKE"></span><span id="_CPPv2N20AC_PAYLOAD_TYPE_LIST36AC_PAYLOAD_TYPE_IMAGE_EXTENDED_CHUNKE"></span><span class="target" id="_arena_c_defs_8h_1ac3ee50d5fb96e71657776fd6ba37d466a01afda4c4ef1672ae37f1ce802c734a7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_PAYLOAD_TYPE_IMAGE_EXTENDED_CHUNK</span></span></span><a class="headerlink" href="#_CPPv4N20AC_PAYLOAD_TYPE_LIST36AC_PAYLOAD_TYPE_IMAGE_EXTENDED_CHUNKE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Image data extended with chunk data </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N20AC_PAYLOAD_TYPE_LIST25AC_PAYLOAD_TYPE_CHUNKDATAE">
+<span id="_CPPv3N20AC_PAYLOAD_TYPE_LIST25AC_PAYLOAD_TYPE_CHUNKDATAE"></span><span id="_CPPv2N20AC_PAYLOAD_TYPE_LIST25AC_PAYLOAD_TYPE_CHUNKDATAE"></span><span class="target" id="_arena_c_defs_8h_1ac3ee50d5fb96e71657776fd6ba37d466aa0764b9cd0751c86d151279f382bb8eb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_PAYLOAD_TYPE_CHUNKDATA</span></span></span><a class="headerlink" href="#_CPPv4N20AC_PAYLOAD_TYPE_LIST25AC_PAYLOAD_TYPE_CHUNKDATAE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Chunk data only; image data may be present as chunk </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-payload-type">
+<h2>AC_PAYLOAD_TYPE<a class="headerlink" href="#ac-payload-type" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv415AC_PAYLOAD_TYPE">
+<span id="_CPPv315AC_PAYLOAD_TYPE"></span><span id="_CPPv215AC_PAYLOAD_TYPE"></span><span id="AC_PAYLOAD_TYPE"></span><span class="target" id="_arena_c_defs_8h_1a5965de88d5bd0d9f348bc950134eeaa5"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_PAYLOAD_TYPE</span></span></span><a class="headerlink" href="#_CPPv415AC_PAYLOAD_TYPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the payload type enum (AC_PAYLOAD_TYPE_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-pixel-endianness-list">
+<h2>AC_PIXEL_ENDIANNESS_LIST<a class="headerlink" href="#ac-pixel-endianness-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv424AC_PIXEL_ENDIANNESS_LIST">
+<span id="_CPPv324AC_PIXEL_ENDIANNESS_LIST"></span><span id="_CPPv224AC_PIXEL_ENDIANNESS_LIST"></span><span class="target" id="_arena_c_defs_8h_1aa831c7c319f0ce1fdab0057aa35a965b"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_PIXEL_ENDIANNESS_LIST</span></span></span><a class="headerlink" href="#_CPPv424AC_PIXEL_ENDIANNESS_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different pixel endiannesses.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Use AC_PIXEL_ENDIANNESS integer values in place of AC_PIXEL_ENDIANNESS_LIST enum values </p></li>
+</ul>
+</p>
+</div>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N24AC_PIXEL_ENDIANNESS_LIST27AC_PIXEL_ENDIANNESS_UNKNOWNE">
+<span id="_CPPv3N24AC_PIXEL_ENDIANNESS_LIST27AC_PIXEL_ENDIANNESS_UNKNOWNE"></span><span id="_CPPv2N24AC_PIXEL_ENDIANNESS_LIST27AC_PIXEL_ENDIANNESS_UNKNOWNE"></span><span class="target" id="_arena_c_defs_8h_1aa831c7c319f0ce1fdab0057aa35a965ba57671deeae19960ea005495d469cf59a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_PIXEL_ENDIANNESS_UNKNOWN</span></span></span><a class="headerlink" href="#_CPPv4N24AC_PIXEL_ENDIANNESS_LIST27AC_PIXEL_ENDIANNESS_UNKNOWNE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Unknown pixel endianness </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N24AC_PIXEL_ENDIANNESS_LIST26AC_PIXEL_ENDIANNESS_LITTLEE">
+<span id="_CPPv3N24AC_PIXEL_ENDIANNESS_LIST26AC_PIXEL_ENDIANNESS_LITTLEE"></span><span id="_CPPv2N24AC_PIXEL_ENDIANNESS_LIST26AC_PIXEL_ENDIANNESS_LITTLEE"></span><span class="target" id="_arena_c_defs_8h_1aa831c7c319f0ce1fdab0057aa35a965bacc3dd7c381b5228ce795fe6c387f74b4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_PIXEL_ENDIANNESS_LITTLE</span></span></span><a class="headerlink" href="#_CPPv4N24AC_PIXEL_ENDIANNESS_LIST26AC_PIXEL_ENDIANNESS_LITTLEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Little endian </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N24AC_PIXEL_ENDIANNESS_LIST23AC_PIXEL_ENDIANNESS_BIGE">
+<span id="_CPPv3N24AC_PIXEL_ENDIANNESS_LIST23AC_PIXEL_ENDIANNESS_BIGE"></span><span id="_CPPv2N24AC_PIXEL_ENDIANNESS_LIST23AC_PIXEL_ENDIANNESS_BIGE"></span><span class="target" id="_arena_c_defs_8h_1aa831c7c319f0ce1fdab0057aa35a965bab51a1b70e5509076b1720414042aaed3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_PIXEL_ENDIANNESS_BIG</span></span></span><a class="headerlink" href="#_CPPv4N24AC_PIXEL_ENDIANNESS_LIST23AC_PIXEL_ENDIANNESS_BIGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Big endian </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-pixel-endianness">
+<h2>AC_PIXEL_ENDIANNESS<a class="headerlink" href="#ac-pixel-endianness" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv419AC_PIXEL_ENDIANNESS">
+<span id="_CPPv319AC_PIXEL_ENDIANNESS"></span><span id="_CPPv219AC_PIXEL_ENDIANNESS"></span><span id="AC_PIXEL_ENDIANNESS"></span><span class="target" id="_arena_c_defs_8h_1a9376bbf2b936503a16177d130800500e"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_PIXEL_ENDIANNESS</span></span></span><a class="headerlink" href="#_CPPv419AC_PIXEL_ENDIANNESS" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the pixel endianness enum (AC_PIXEL_ENDIANNESS_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-bayer-algorithm-list">
+<h2>AC_BAYER_ALGORITHM_LIST<a class="headerlink" href="#ac-bayer-algorithm-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv423AC_BAYER_ALGORITHM_LIST">
+<span id="_CPPv323AC_BAYER_ALGORITHM_LIST"></span><span id="_CPPv223AC_BAYER_ALGORITHM_LIST"></span><span class="target" id="_arena_c_defs_8h_1a52852646bce3fd0842b25f61a60e733c"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_BAYER_ALGORITHM_LIST</span></span></span><a class="headerlink" href="#_CPPv423AC_BAYER_ALGORITHM_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the different algorithms available to interpolate bayer image data.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Use AC_BAYER_ALGORITHM integer values in place of AC_BAYER_ALGORITHM_LIST enum values </p></li>
+</ul>
+</p>
+</div>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N23AC_BAYER_ALGORITHM_LIST44AC_BAYER_ALGORITHM_DIRECTIONAL_INTERPOLATIONE">
+<span id="_CPPv3N23AC_BAYER_ALGORITHM_LIST44AC_BAYER_ALGORITHM_DIRECTIONAL_INTERPOLATIONE"></span><span id="_CPPv2N23AC_BAYER_ALGORITHM_LIST44AC_BAYER_ALGORITHM_DIRECTIONAL_INTERPOLATIONE"></span><span class="target" id="_arena_c_defs_8h_1a52852646bce3fd0842b25f61a60e733ca8bd00830718feffe00460532a5b84ec5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_BAYER_ALGORITHM_DIRECTIONAL_INTERPOLATION</span></span></span><a class="headerlink" href="#_CPPv4N23AC_BAYER_ALGORITHM_LIST44AC_BAYER_ALGORITHM_DIRECTIONAL_INTERPOLATIONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Algorithm that averages nearest neighbours (faster) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N23AC_BAYER_ALGORITHM_LIST48AC_BAYER_ALGORITHM_ADAPTIVE_HOMOGENEITY_DIRECTEDE">
+<span id="_CPPv3N23AC_BAYER_ALGORITHM_LIST48AC_BAYER_ALGORITHM_ADAPTIVE_HOMOGENEITY_DIRECTEDE"></span><span id="_CPPv2N23AC_BAYER_ALGORITHM_LIST48AC_BAYER_ALGORITHM_ADAPTIVE_HOMOGENEITY_DIRECTEDE"></span><span class="target" id="_arena_c_defs_8h_1a52852646bce3fd0842b25f61a60e733caa527dcfcf56ba30324f3edfb030a4e13"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_BAYER_ALGORITHM_ADAPTIVE_HOMOGENEITY_DIRECTED</span></span></span><a class="headerlink" href="#_CPPv4N23AC_BAYER_ALGORITHM_LIST48AC_BAYER_ALGORITHM_ADAPTIVE_HOMOGENEITY_DIRECTEDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Adaptive algorithm that uses directional data (slower, more accurate coloring) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N23AC_BAYER_ALGORITHM_LIST26AC_BAYER_ALGORITHM_UNKNOWNE">
+<span id="_CPPv3N23AC_BAYER_ALGORITHM_LIST26AC_BAYER_ALGORITHM_UNKNOWNE"></span><span id="_CPPv2N23AC_BAYER_ALGORITHM_LIST26AC_BAYER_ALGORITHM_UNKNOWNE"></span><span class="target" id="_arena_c_defs_8h_1a52852646bce3fd0842b25f61a60e733ca404f09454aa057d9355ad2d6d4fba8d9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_BAYER_ALGORITHM_UNKNOWN</span></span></span><a class="headerlink" href="#_CPPv4N23AC_BAYER_ALGORITHM_LIST26AC_BAYER_ALGORITHM_UNKNOWNE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Undefined algorithm </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-bayer-algorithm">
+<h2>AC_BAYER_ALGORITHM<a class="headerlink" href="#ac-bayer-algorithm" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv418AC_BAYER_ALGORITHM">
+<span id="_CPPv318AC_BAYER_ALGORITHM"></span><span id="_CPPv218AC_BAYER_ALGORITHM"></span><span id="AC_BAYER_ALGORITHM"></span><span class="target" id="_arena_c_defs_8h_1a01b04407f754e7a87581894e8024f764"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_BAYER_ALGORITHM</span></span></span><a class="headerlink" href="#_CPPv418AC_BAYER_ALGORITHM" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the bayer algorithm enum (AC_BAYER_ALGORITHM_LIST). </p>
+</dd></dl>
+
+</div>
+<div class="section" id="ac-start-stream-flags-list">
+<h2>AC_START_STREAM_FLAGS_LIST<a class="headerlink" href="#ac-start-stream-flags-list" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv426AC_START_STREAM_FLAGS_LIST">
+<span id="_CPPv326AC_START_STREAM_FLAGS_LIST"></span><span id="_CPPv226AC_START_STREAM_FLAGS_LIST"></span><span class="target" id="_arena_c_defs_8h_1a52177b21bb2c0521de2c68100d304373"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_START_STREAM_FLAGS_LIST</span></span></span><a class="headerlink" href="#_CPPv426AC_START_STREAM_FLAGS_LIST" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This enum represents the transport layer flags for starting a stream. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N26AC_START_STREAM_FLAGS_LIST28AC_START_STREAM_FLAG_DEFAULTE">
+<span id="_CPPv3N26AC_START_STREAM_FLAGS_LIST28AC_START_STREAM_FLAG_DEFAULTE"></span><span id="_CPPv2N26AC_START_STREAM_FLAGS_LIST28AC_START_STREAM_FLAG_DEFAULTE"></span><span class="target" id="_arena_c_defs_8h_1a52177b21bb2c0521de2c68100d304373a3f82de477afbce5b8095beaf4715d392"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_START_STREAM_FLAG_DEFAULT</span></span></span><a class="headerlink" href="#_CPPv4N26AC_START_STREAM_FLAGS_LIST28AC_START_STREAM_FLAG_DEFAULTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>default behaviour for the underlying transport layer </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N26AC_START_STREAM_FLAGS_LIST32AC_START_STREAM_FLAG_GVSP_LEGACYE">
+<span id="_CPPv3N26AC_START_STREAM_FLAGS_LIST32AC_START_STREAM_FLAG_GVSP_LEGACYE"></span><span id="_CPPv2N26AC_START_STREAM_FLAGS_LIST32AC_START_STREAM_FLAG_GVSP_LEGACYE"></span><span class="target" id="_arena_c_defs_8h_1a52177b21bb2c0521de2c68100d304373a51e940364d0293fd64e384ddc6ec9812"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_START_STREAM_FLAG_GVSP_LEGACY</span></span></span><a class="headerlink" href="#_CPPv4N26AC_START_STREAM_FLAGS_LIST32AC_START_STREAM_FLAG_GVSP_LEGACYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Will try to start Gvsp 2.0 stream with 16bit block id if supported </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ac-start-stream-flags">
+<h2>AC_START_STREAM_FLAGS<a class="headerlink" href="#ac-start-stream-flags" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv421AC_START_STREAM_FLAGS">
+<span id="_CPPv321AC_START_STREAM_FLAGS"></span><span id="_CPPv221AC_START_STREAM_FLAGS"></span><span id="AC_START_STREAM_FLAGS"></span><span class="target" id="_arena_c_defs_8h_1a5abc2df50fe04bddb304418e5254b3ea"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AC_START_STREAM_FLAGS</span></span></span><a class="headerlink" href="#_CPPv421AC_START_STREAM_FLAGS" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Integer representation of the start stream flags (AC_START_STREAM_FLAGS_LIST). </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_imagefactory.html" class="btn btn-neutral float-right" title="ImageFactory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena.html" class="btn btn-neutral" title="Arena C" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.68.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

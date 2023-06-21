@@ -1,0 +1,560 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Distributing Arena SDK Programs for Windows &mdash; Arena 0.1.68.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.68.0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!---->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.68
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_api.html">Arena Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter_guide.html">Using LUCID’s ArenaView with Jupyter Notebooks</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Distributing Arena SDK Programs for Windows</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="distributing-arena-sdk-programs-for-windows">
+<h1>Distributing Arena SDK Programs for Windows<a class="headerlink" href="#distributing-arena-sdk-programs-for-windows" title="Permalink to this heading">¶</a></h1>
+<p>This document will describe the requirements you will need when distributing your Arena SDK-based program to another Windows system.</p>
+<div class="section" id="microsoft-visual-c-redistributables">
+<h2>Microsoft Visual C++ Redistributables<a class="headerlink" href="#microsoft-visual-c-redistributables" title="Permalink to this heading">¶</a></h2>
+<p>The Microsoft Visual C++ Redistributables should be installed first. The redistributable to be installed depends on the architecture of the program. For example, a 32-bit program will only need the 32-bit redistributables.</p>
+<p>Microsoft Visual C++ 2015 Redistributable:</p>
+<ul class="simple">
+<li><p>32-bit (x86): 14.0.24215</p></li>
+<li><p>64-bit (x64): 14.0.24215</p></li>
+<li><p><a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=53840">https://www.microsoft.com/en-us/download/details.aspx?id=53840</a></p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 93%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/lightbulb_icon.png"><img alt="lightbulb" src="_images/lightbulb_icon.png" style="width: 70px;" /></a></p></td>
+<td><p>For further information on the Microsoft Visual C++ Redistributables, please see Microsoft’s article titled <strong>Redistributing Visual C++ Files</strong>:</p>
+<ul class="simple">
+<li><p>For Visual Studio 2015: <a class="reference external" href="https://msdn.microsoft.com/en-us/library/ms235299(v=vs.140).aspx">https://msdn.microsoft.com/en-us/library/ms235299(v=vs.140).aspx</a></p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="microsoft-net-framework">
+<h2>Microsoft .NET Framework<a class="headerlink" href="#microsoft-net-framework" title="Permalink to this heading">¶</a></h2>
+<p>Microsoft .NET Framework version 4.5.2 or later is required for programs using the ArenaNET libraries. The  Microsoft .NET Framework offline installer for version 4.5.2 can be found at this link:
+<a class="reference external" href="https://www.microsoft.com/en-ca/download/details.aspx?id=42642">https://www.microsoft.com/en-ca/download/details.aspx?id=42642</a></p>
+</div>
+<div class="section" id="arena-sdk">
+<h2>Arena SDK<a class="headerlink" href="#arena-sdk" title="Permalink to this heading">¶</a></h2>
+<p>The following files must be placed in the same directory as your executable. This document describes distributing release versions of the Arena SDK libraries and its required dependencies. The debug libraries included with Arena SDK have an additional <strong>d</strong> after the library name (e.x. Arena<strong>d</strong>_v140.dll) and can be used for development purposes, however the debug libraries should not be distributed to production machines.</p>
+<p>✓ = file is required.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Arena SDK main libraries</strong></p></th>
+<th class="head"><p><strong>C++</strong></p></th>
+<th class="head"><p><strong>C</strong></p></th>
+<th class="head"><p><strong>.NET</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Arena_v140.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ArenaC_v140.dll</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ArenaNET_v140.dll</p></td>
+<td></td>
+<td></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Arena UI</strong></p></th>
+<th class="head"><p><strong>C++</strong></p></th>
+<th class="head"><p><strong>C</strong></p></th>
+<th class="head"><p><strong>.NET</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ArenaUI_v140.dll</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>LUCID Save API</strong></p></th>
+<th class="head"><p><strong>C++</strong></p></th>
+<th class="head"><p><strong>C</strong></p></th>
+<th class="head"><p><strong>C#</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Save_v140.dll</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SaveC_v140.dll</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>avcodec-58.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>avdevice-58.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>avfilter-7.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>avformat-58.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>avutil-56.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>postproc-55.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>swresample-3.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>swscale-5.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>FreeImage</strong></p></th>
+<th class="head"><p><strong>C++</strong></p></th>
+<th class="head"><p><strong>C</strong></p></th>
+<th class="head"><p><strong>.NET</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FreeImage_v140.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Logging</strong></p></th>
+<th class="head"><p><strong>C++</strong></p></th>
+<th class="head"><p><strong>C</strong></p></th>
+<th class="head"><p><strong>.NET</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>log4cpp.properties</p></td>
+<td colspan="3"><p>Optional</p></td>
+</tr>
+</tbody>
+</table>
+<p>If the log4cpp.properties file is included, Arena SDK and GenTL log files will be created in the executable’s path.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>GenTL</strong></p></th>
+<th class="head"><p><strong>C++</strong></p></th>
+<th class="head"><p><strong>C</strong></p></th>
+<th class="head"><p><strong>.NET</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GenTL_LUCID_v140.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>GenICam</strong></p></th>
+<th class="head"><p><strong>C++</strong></p></th>
+<th class="head"><p><strong>C</strong></p></th>
+<th class="head"><p><strong>.NET</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CLAllSerial_MD_VC140_v3_1_LUCID.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>CLProtocol_MD_VC140_v3_1_LUCID.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>GCBase_MD_VC140_v3_1_LUCID.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>GenApi_MD_VC140_v3_1_LUCID.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>Log_MD_VC140_v3_1_LUCID.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MathParser_MD_VC140_v3_1_LUCID.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>NodeMapData_MD_VC140_v3_1_LUCID.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ResUsageStat_MD_VC140_v3_1_LUCID.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>XmlParser_MD_VC140_v3_1_LUCID.dll</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<p>The following files must be placed in a subfolder named <strong>xml</strong>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 10%" />
+<col style="width: 8%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>GenTL Transport Layer XML files</strong></p></th>
+<th class="head"><p><strong>C++</strong></p></th>
+<th class="head"><p><strong>C</strong></p></th>
+<th class="head"><p><strong>.NET</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SFNC_GenTLBuffer_Reference_Version_1_0_0_Schema_1_1.xml</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SFNC_GenTLDataStream_Reference_Version_1_0_0_Schema_1_1.xml</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>SFNC_GenTLDevice_Reference_Version_1_0_0_Schema_1_1.xml</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SFNC_GenTLInterface_Reference_Version_1_0_0_Schema_1_1.xml</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>SFNC_GenTLSystem_Reference_Version_1_0_0_Schema_1_1.xml</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.68.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

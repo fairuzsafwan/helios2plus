@@ -1,0 +1,1362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IDevice &mdash; Arena 0.1.68.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.68.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C++" href="cpp_arena.html"/>
+        <link rel="next" title="IBuffer" href="cpp_arena_ibuffer.html"/>
+        <link rel="prev" title="InterfaceInfo" href="cpp_arena_interfaceinfo.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!---->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.68
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_arena.html">Arena C++</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_global.html">Global Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_iimage.html">IImage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_deviceinfo.html">DeviceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_isystem.html">ISystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_interfaceinfo.html">InterfaceInfo</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">IDevice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ibuffer.html">IBuffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ichunkdata.html">IChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_einterfacetypeclass.html">EInterfaceTypeClass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_eincmodeclass.html">EIncModeClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_save.html">Save C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qt.html">Qt</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arena_api.html">Arena Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter_guide.html">Using LUCID’s ArenaView with Jupyter Notebooks</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_arena.html">Arena C++</a> &raquo;</li>
+        
+      <li>IDevice</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="idevice">
+<h1>IDevice<a class="headerlink" href="#idevice" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="id1">
+<h2>IDevice<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDeviceE">
+<span id="_CPPv3N5Arena7IDeviceE"></span><span id="_CPPv2N5Arena7IDeviceE"></span><span id="Arena::IDevice"></span><span class="target" id="class_arena_1_1_i_device"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">IDevice</span></span></span><a class="headerlink" href="#_CPPv4N5Arena7IDeviceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>An interface to a device object</p>
+<p>Devices constitute the core of the Arena SDK, providing the means to interacting with physical devices. They are created and destroyed via the system (<a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system"><span class="std std-ref">Arena::ISystem</span></a>).</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// creating and destroying a device</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Arena</span><span class="o">::</span><span class="n">DeviceInfo</span><span class="o">&gt;</span> <span class="n">devInfos</span> <span class="o">=</span> <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">GetDevices</span><span class="p">();</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">IDevice</span><span class="o">*</span> <span class="n">pDevice</span> <span class="o">=</span> <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">CreateDevice</span><span class="p">(</span><span class="n">devInfos</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="c1">// ...</span>
+    <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">DestroyDevice</span><span class="p">(</span><span class="n">pDevice</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>A device manages its images and chunk data (<a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a>, <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>, <a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a>), events, and node maps (GenApi::INodeMap) by:<ul class="simple">
+<li><p>starting and stopping the stream (<a class="reference internal" href="#class_arena_1_1_i_device_1a156dc5c5aedf1ce7ae3c1a7f8adc35dc"><span class="std std-ref">Arena::IDevice::StartStream</span></a>, <a class="reference internal" href="#class_arena_1_1_i_device_1a9797c558da26ce5084c9852ae7250c3d"><span class="std std-ref">Arena::IDevice::StopStream</span></a>),</p></li>
+<li><p>retrieving and requeuing images and chunk data (<a class="reference internal" href="#class_arena_1_1_i_device_1aa9ab4b4d5bb5a35e0d33190b622248e9"><span class="std std-ref">Arena::IDevice::GetBuffer</span></a>, <a class="reference internal" href="#class_arena_1_1_i_device_1a3e576b282f47cfaf003298f279f3f3a1"><span class="std std-ref">Arena::IDevice::GetImage</span></a>, <a class="reference internal" href="#class_arena_1_1_i_device_1a978bd841ed2818fc717e706aac8218f6"><span class="std std-ref">Arena::IDevice::RequeueBuffer</span></a>),</p></li>
+<li><p>handling events (<a class="reference internal" href="#class_arena_1_1_i_device_1a4581dcea5acc898c8284852d4d3e130e"><span class="std std-ref">Arena::IDevice::InitializeEvents</span></a>, <a class="reference internal" href="#class_arena_1_1_i_device_1a3fbda09d53a663d75db3ca5a3dc641ee"><span class="std std-ref">Arena::IDevice::DeinitializeEvents</span></a>, <a class="reference internal" href="#class_arena_1_1_i_device_1a87f9267924a4605cc2c1c817131c4906"><span class="std std-ref">Arena::IDevice::WaitOnEvent</span></a>),</p></li>
+<li><p>and providing access to its node maps (Arena::IDevice::GetNodemap, <a class="reference internal" href="#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a>, <a class="reference internal" href="#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a>, <a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system"><span class="std std-ref">Arena::ISystem</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_deviceinfo.html#class_arena_1_1_device_info"><span class="std std-ref">Arena::DeviceInfo</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Must be destroyed; otherwise, memory will leak</p></li>
+</ul>
+</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="isconnected">
+<h2>IsConnected<a class="headerlink" href="#isconnected" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice11IsConnectedEv">
+<span id="_CPPv3N5Arena7IDevice11IsConnectedEv"></span><span id="_CPPv2N5Arena7IDevice11IsConnectedEv"></span><span id="Arena::IDevice::IsConnected"></span><span class="target" id="class_arena_1_1_i_device_1adae759b809332be0474cf06c6d862a42"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">IsConnected</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice11IsConnectedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><ul class="simple">
+<li><p>Type: bool</p></li>
+<li><p>Indicates if device is connected</p></li>
+</ul>
+</p>
+<p><strong> IsConnected </strong> returns true if a device has been opened and maintains a valid communication socket. The device is opened when (<a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a>) is called. If the connection to the device is lost this will return false.</p>
+<p>More specifically, for GigE devices, this flag is set to false when the Arena is not able to refresh the heartbeat on the device. If an operation times out more than 3 times the device will be flagged as not connected.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+</dd></dl>
+
+</div>
+<div class="section" id="startstream">
+<h2>StartStream<a class="headerlink" href="#startstream" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice11StartStreamE6size_t">
+<span id="_CPPv3N5Arena7IDevice11StartStreamE6size_t"></span><span id="_CPPv2N5Arena7IDevice11StartStreamE6size_t"></span><span id="Arena::IDevice::StartStream__s"></span><span class="target" id="class_arena_1_1_i_device_1a156dc5c5aedf1ce7ae3c1a7f8adc35dc"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">StartStream</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numBuffers</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">10</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice11StartStreamE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> StartStream </strong> causes the device to begin streaming image/chunk data (<a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a>, <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>, <a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a>). It must be called before image or chunk data buffers are retrieved (<a class="reference internal" href="#class_arena_1_1_i_device_1aa9ab4b4d5bb5a35e0d33190b622248e9"><span class="std std-ref">Arena::IDevice::GetBuffer</span></a>, <a class="reference internal" href="#class_arena_1_1_i_device_1a3e576b282f47cfaf003298f279f3f3a1"><span class="std std-ref">Arena::IDevice::GetImage</span></a>). The stream must be stopped (<a class="reference internal" href="#class_arena_1_1_i_device_1a9797c558da26ce5084c9852ae7250c3d"><span class="std std-ref">Arena::IDevice::StopStream</span></a>) when no longer needed.</p>
+<p>Basically, calling <strong> StartStream </strong> prepares and starts the underlying streaming engine. The streaming engine primarily consists of a number of buffers, an input and an output queue, and a worker thread to run off of the main thread. All buffers are first placed in the input queue. When a buffer reaches its turn, it is filled with data. Once complete, it is moved to the output queue. At this point a buffer might be retrieved by the user (<a class="reference internal" href="#class_arena_1_1_i_device_1aa9ab4b4d5bb5a35e0d33190b622248e9"><span class="std std-ref">Arena::IDevice::GetBuffer</span></a>, <a class="reference internal" href="#class_arena_1_1_i_device_1a3e576b282f47cfaf003298f279f3f3a1"><span class="std std-ref">Arena::IDevice::GetImage</span></a>) and then returned to the input queue (<a class="reference internal" href="#class_arena_1_1_i_device_1a978bd841ed2818fc717e706aac8218f6"><span class="std std-ref">Arena::IDevice::RequeueBuffer</span></a>).</p>
+<p>More specifically, <strong> StartStream </strong>:<ul class="simple">
+<li><p>allocates and announces a number of buffers according to the numBuffers parameter</p></li>
+<li><p>pushes all buffers to the input queue</p></li>
+<li><p>opens a stream channel socket</p></li>
+<li><p>configures the IP and port on the device</p></li>
+<li><p>fires a dummy packet to help with firewalls</p></li>
+<li><p>requests a test packet to ensure configured packet size is appropriate</p></li>
+<li><p>starts the worker thread and begins listening for packets related to the acquisition engine</p></li>
+<li><p>has the device lock out certain features (e.g. ‘Width’, ‘Height’) that cannot be changed during the stream</p></li>
+<li><p>executes the ‘AcquisitionStart’ feature in order to have the device start sending packets</p></li>
+</ul>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// setting width and height to max before starting the stream</span>
+<span class="c1">// because these features are locked out while streaming</span>
+<span class="p">{</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">INodeMap</span><span class="o">*</span> <span class="n">pNodeMap</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetNodeMap</span><span class="p">();</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CIntegerPtr</span> <span class="n">pWidth</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;Width&quot;</span><span class="p">);</span>
+    <span class="n">pWidth</span><span class="o">-&gt;</span><span class="n">SetValue</span><span class="p">(</span><span class="n">pWidth</span><span class="o">-&gt;</span><span class="n">GetMax</span><span class="p">());</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CIntegerPtr</span> <span class="n">pHeight</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;Height&quot;</span><span class="p">);</span>
+    <span class="n">pHeight</span><span class="o">-&gt;</span><span class="n">SetValue</span><span class="p">(</span><span class="n">pHeight</span><span class="o">-&gt;</span><span class="n">GetMax</span><span class="p">());</span>
+    
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StartStream</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>All stream configurations must be completed before starting the stream. This includes, among other things, the buffer handling mode (‘StreamBufferHandlingMode’) found on the stream node map (<a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>). Setting the buffer handling mode configures what the streaming engine does with buffers as they are filled and moved between queues. There are three modes to choose from:<ul class="simple">
+<li><p>’OldestFirst’ is the default buffer handling mode. As buffers are filled with data, they get pushed to the back of the output queue. When a buffer is requested (<a class="reference internal" href="#class_arena_1_1_i_device_1aa9ab4b4d5bb5a35e0d33190b622248e9"><span class="std std-ref">Arena::IDevice::GetBuffer</span></a>, Arena::IBuffer::GetImage), the buffer at the front of the queue is returned. If there are no input buffers available, the next incoming image is dropped and the lost frame count (‘StreamLostFrameCount’) is incremented.</p></li>
+<li><p>’OldestFirstOverwrite’ is similar to ‘OldestFirst’ except for what happens when there are no input buffers. Instead of dropping an image, the oldest buffer in the output queue gets returned to the input queue so that its data can be overwritten.</p></li>
+<li><p>’NewestOnly’ only ever has a single buffer in the output queue. If a second buffer gets placed into the output queue, the older buffer gets returned to the back of the input queue. If there are no input buffers available, the next image is dropped and the lost frame count (‘StreamLostFrameCount’) is incremented.</p></li>
+</ul>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// setting the buffer handling mode to &#39;NewestOnly&#39; before starting the stream</span>
+<span class="p">{</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">INodeMap</span><span class="o">*</span> <span class="n">pStreamNodeMap</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetTLStreamNodeMap</span><span class="p">();</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CEnumerationPtr</span> <span class="n">pStreamBufferHandlingMode</span> <span class="o">=</span> <span class="n">pStreamNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;StreamBufferHandlingMode&quot;</span><span class="p">);</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CEnumEntryPtr</span> <span class="n">pNewestOnly</span> <span class="o">=</span> <span class="n">pStreamBufferHandlingMode</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;NewestOnly&quot;</span><span class="p">);</span>
+    <span class="n">pStreamBufferHandlingMode</span><span class="o">-&gt;</span><span class="n">SetIntValue</span><span class="p">(</span><span class="n">pNewOnly</span><span class="o">-&gt;</span><span class="n">GetValue</span><span class="p">());</span>
+    
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StartStream</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1aa9ab4b4d5bb5a35e0d33190b622248e9"><span class="std std-ref">Arena::IDevice::GetBuffer</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a3e576b282f47cfaf003298f279f3f3a1"><span class="std std-ref">Arena::IDevice::GetImage</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a9797c558da26ce5084c9852ae7250c3d"><span class="std std-ref">Arena::IDevice::StopStream</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a978bd841ed2818fc717e706aac8218f6"><span class="std std-ref">Arena::IDevice::RequeueBuffer</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a></p></li>
+<li><p>Arena::IBuffer::GetImage </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Stream must already be configured prior to call</p></li>
+<li><p>Updates write access to certain nodes</p></li>
+<li><p>May only be called once per stream without stopping</p></li>
+<li><p>Stream must be stopped</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+<li><p>Minimum number of buffers is 1</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>numBuffers</strong> – <ul class="simple">
+<li><p>Type: size_t</p></li>
+<li><p>Default: 10</p></li>
+<li><p>Number of internal buffers to use in the acquisition engine</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="stopstream">
+<h2>StopStream<a class="headerlink" href="#stopstream" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice10StopStreamEv">
+<span id="_CPPv3N5Arena7IDevice10StopStreamEv"></span><span id="_CPPv2N5Arena7IDevice10StopStreamEv"></span><span id="Arena::IDevice::StopStream"></span><span class="target" id="class_arena_1_1_i_device_1a9797c558da26ce5084c9852ae7250c3d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">StopStream</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice10StopStreamEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> StopStream </strong> stops the device from streaming image/chunk data (<a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a>, <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>, <a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a>) and cleans up the stream. The stream must be stopped when streaming is no longer needed.</p>
+<p><strong> StopStream </strong> reverses the set up of the stream:<ul class="simple">
+<li><p>stops the worker thread</p></li>
+<li><p>shuts down the stream channel socket</p></li>
+<li><p>executes the ‘AcquisitionStop’ feature in order to stop the device from sending packets</p></li>
+<li><p>has the device unlock features that had been locked for streaming (e.g. ‘Width’, ‘Height’)</p></li>
+<li><p>revokes all buffers and cleans up their allocated memory</p></li>
+</ul>
+</p>
+<p>Buffers used internally are allocated when the stream has started (<a class="reference internal" href="#class_arena_1_1_i_device_1a156dc5c5aedf1ce7ae3c1a7f8adc35dc"><span class="std std-ref">Arena::IDevice::StartStream</span></a>) and deallocated when it has stopped (<a class="reference internal" href="#class_arena_1_1_i_device_1a9797c558da26ce5084c9852ae7250c3d"><span class="std std-ref">Arena::IDevice::StopStream</span></a>). If an image has been retrieved (<a class="reference internal" href="#class_arena_1_1_i_device_1a3e576b282f47cfaf003298f279f3f3a1"><span class="std std-ref">Arena::IDevice::GetImage</span></a>), it can be copied (<a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory_1ac4afabdb8619eafc3d94fef25c8f74eb"><span class="std std-ref">Arena::ImageFactory::Copy</span></a>) or saved before stopping the stream. If image data were accessed after stopping the stream, the memory would be deallocated and the behavior undefined.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// retrieving an image and copying it before requeuing its buffer and stopping the stream</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*</span> <span class="n">pImage</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetImage</span><span class="p">();</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*</span> <span class="n">pCopiedImage</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">ImageFactory</span><span class="o">::</span><span class="n">Copy</span><span class="p">(</span><span class="n">pImage</span><span class="p">);</span>
+    
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RequeueBuffer</span><span class="p">(</span><span class="n">pImage</span><span class="p">);</span>
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StopStream</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a156dc5c5aedf1ce7ae3c1a7f8adc35dc"><span class="std std-ref">Arena::IDevice::StartStream</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a9797c558da26ce5084c9852ae7250c3d"><span class="std std-ref">Arena::IDevice::StopStream</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a3e576b282f47cfaf003298f279f3f3a1"><span class="std std-ref">Arena::IDevice::GetImage</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory_1ac4afabdb8619eafc3d94fef25c8f74eb"><span class="std std-ref">Arena::ImageFactory::Copy</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Stream must be stopped</p></li>
+<li><p>Updates write access to certain nodes</p></li>
+<li><p>Disallows retrieval of image/chunk data from device</p></li>
+<li><p>Deallocates image/chunk data that has not been copied to memory or disk</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="getimage">
+<h2>GetImage<a class="headerlink" href="#getimage" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice8GetImageE8uint64_t">
+<span id="_CPPv3N5Arena7IDevice8GetImageE8uint64_t"></span><span id="_CPPv2N5Arena7IDevice8GetImageE8uint64_t"></span><span id="Arena::IDevice::GetImage__uint64_t"></span><span class="target" id="class_arena_1_1_i_device_1a3e576b282f47cfaf003298f279f3f3a1"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="cpp_arena_iimage.html#_CPPv4N5Arena6IImageE" title="Arena::IImage"><span class="n"><span class="pre">IImage</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GetImage</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice8GetImageE8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetImage </strong> retrieves an image (<a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>) from the device. It must be called after the stream has started (<a class="reference internal" href="#class_arena_1_1_i_device_1a156dc5c5aedf1ce7ae3c1a7f8adc35dc"><span class="std std-ref">Arena::IDevice::StartStream</span></a>) and before the stream has stopped (<a class="reference internal" href="#class_arena_1_1_i_device_1a9797c558da26ce5084c9852ae7250c3d"><span class="std std-ref">Arena::IDevice::StopStream</span></a>). Retrieved images must be requeued (<a class="reference internal" href="#class_arena_1_1_i_device_1a978bd841ed2818fc717e706aac8218f6"><span class="std std-ref">Arena::IDevice::RequeueBuffer</span></a>).</p>
+<p><strong> GetImage </strong> is essentially the same call as <strong> GetBuffer </strong> (<a class="reference internal" href="#class_arena_1_1_i_device_1aa9ab4b4d5bb5a35e0d33190b622248e9"><span class="std std-ref">Arena::IDevice::GetBuffer</span></a>), just with an additional step. Internally, <strong> GetImage </strong> calls <strong> GetBuffer </strong>, which returns a buffer. It then attempts to cast the buffer to an image before returning it. If the data in the buffer is that of an image, the cast succeeds and the image is returned successfully. If not, the cast fails and NULL is returned.</p>
+<p>When called, <strong> GetBuffer </strong> checks the output queue for image/chunk data, grabbing the first buffer in the queue. If nothing is in the output queue, the call will wait until something arrives. If nothing arrives before expiration of the timeout, a GenICam::TimeoutException is thrown.</p>
+<p><strong> GetBuffer </strong> is a blocking call. If it is called with a timeout of 20 seconds and nothing arrives in the output queue, then its thread will be blocked for the full 20 seconds. However, as the timeout is a maximum, as soon as something arrives in the output queue, it will be returned, not waiting for the full timeout. A timeout value of 0 ensures the call will not block, throwing instead of waiting if nothing is in the output queue.</p>
+<p><strong> GetImage </strong> does not verify image quality. If an incomplete image is returned, the call will not throw and the image will be returned as is. It is recommended to verify each image’s completion (<a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image_1a3746a731e7812019002340d99b821226"><span class="std std-ref">Arena::IImage::IsIncomplete</span></a>).</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// retrieving an image, verifying its completion, and requeuing its buffer</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*</span> <span class="n">pImage</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetImage</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pImage</span><span class="o">-&gt;</span><span class="n">IsIncomplete</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="c1">// handle error</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+    <span class="c1">// do something</span>
+    <span class="c1">// ...</span>
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RequeueBuffer</span><span class="p">(</span><span class="n">pImage</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>Best practices recommends that buffers be requeued (<a class="reference internal" href="#class_arena_1_1_i_device_1a978bd841ed2818fc717e706aac8218f6"><span class="std std-ref">Arena::IDevice::RequeueBuffer</span></a>) as soon as they are no longer needed in order to prevent starvation of the acquisition engine. If image data is needed for a longer period of time (i.e. for processing), it is recommended to copy the data (<a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a>) and requeue the buffer.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a156dc5c5aedf1ce7ae3c1a7f8adc35dc"><span class="std std-ref">Arena::IDevice::StartStream</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a9797c558da26ce5084c9852ae7250c3d"><span class="std std-ref">Arena::IDevice::StopStream</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a978bd841ed2818fc717e706aac8218f6"><span class="std std-ref">Arena::IDevice::RequeueBuffer</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1aa9ab4b4d5bb5a35e0d33190b622248e9"><span class="std std-ref">Arena::IDevice::GetBuffer</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image_1a3746a731e7812019002340d99b821226"><span class="std std-ref">Arena::IImage::IsIncomplete</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Does not guarantee valid image data</p></li>
+<li><p>Returns NULL for non-image formats</p></li>
+<li><p>Images should be requeued to prevent starvation of the acquisition engine</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timeout</strong> – <ul class="simple">
+<li><p>Type: uint64_t</p></li>
+<li><p>Unit: milliseconds</p></li>
+<li><p>Maximum time to wait for an image</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Type:: <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>*</p></li>
+<li><p>Pointer to the next buffer in the output queue if it contains image data</p></li>
+<li><p>Otherwise, null</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="getbuffer">
+<h2>GetBuffer<a class="headerlink" href="#getbuffer" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice9GetBufferE8uint64_t">
+<span id="_CPPv3N5Arena7IDevice9GetBufferE8uint64_t"></span><span id="_CPPv2N5Arena7IDevice9GetBufferE8uint64_t"></span><span id="Arena::IDevice::GetBuffer__uint64_t"></span><span class="target" id="class_arena_1_1_i_device_1aa9ab4b4d5bb5a35e0d33190b622248e9"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="cpp_arena_ibuffer.html#_CPPv4N5Arena7IBufferE" title="Arena::IBuffer"><span class="n"><span class="pre">IBuffer</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GetBuffer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice9GetBufferE8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetBuffer </strong> retrieves a buffer (<a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a>) from the device. It must be called after the stream has started (<a class="reference internal" href="#class_arena_1_1_i_device_1a156dc5c5aedf1ce7ae3c1a7f8adc35dc"><span class="std std-ref">Arena::IDevice::StartStream</span></a>) and before the stream has stopped (<a class="reference internal" href="#class_arena_1_1_i_device_1a9797c558da26ce5084c9852ae7250c3d"><span class="std std-ref">Arena::IDevice::StopStream</span></a>). Retrieved images must be requeued (<a class="reference internal" href="#class_arena_1_1_i_device_1a978bd841ed2818fc717e706aac8218f6"><span class="std std-ref">Arena::IDevice::RequeueBuffer</span></a>).</p>
+<p>The data returned from <strong> GetBuffer </strong> represents different payload types: an image without chunk, an image with chunk, or just chunk data. Note that a buffer of chunk data payload type may contain image data, but cannot be cast to an image because the image data is treated as a chunk. The payload type can be queried (<a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer_1acb478c804043bd99c389e9f0c364495d"><span class="std std-ref">Arena::IBuffer::GetPayloadType</span></a>), which returns an enum (Arena::EBufferPayloadType):<ul class="simple">
+<li><p>Arena::EBufferPayloadType::BufferPayloadTypeImage</p></li>
+<li><p>Arena::EBufferPayloadType::BufferPayloadTypeImageExtendedChunk</p></li>
+<li><p>Arena::EBufferPayloadType::BufferPayloadTypeChunkData</p></li>
+</ul>
+</p>
+<p><strong> GetBuffer </strong> is essentially the same call as <strong> GetImage </strong>, just more generic. Internally, <strong> GetImage </strong> calls <strong> GetBuffer </strong> and then casts the returned buffer to an image. <strong> GetBuffer </strong> does not perform the cast, instead returning the raw buffer data. The buffer object may be queried for its type (<a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer_1acb478c804043bd99c389e9f0c364495d"><span class="std std-ref">Arena::IBuffer::GetPayloadType</span></a>, <a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer_1a5311fdc30b40be01c5d09aa02b4e4b3f"><span class="std std-ref">Arena::IBuffer::HasImageData</span></a>, <a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer_1a13e85d81492f826ed4b62aa3b7e52458"><span class="std std-ref">Arena::IBuffer::HasChunkData</span></a>) and cast to the appropriate type.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// handling buffers with image data, chunk data, and both</span>
+<span class="c1">// notice the second if-statement does not contain &#39;else&#39;</span>
+<span class="c1">// this is because buffers may have both image and chunk data</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">IBuffer</span><span class="o">*</span> <span class="n">pBuffer</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetBuffer</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">HasImageData</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*</span> <span class="n">pImage</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pBuffer</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">pBuffer</span><span class="o">-&gt;</span><span class="n">HasChunkData</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">Arena</span><span class="o">::</span><span class="n">IChunkData</span><span class="o">*</span> <span class="n">pChunkData</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Arena</span><span class="o">::</span><span class="n">IChunkData</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pBuffer</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>When called, <strong> GetBuffer </strong> checks the output queue for image/chunk data, grabbing the first buffer in the queue. If nothing is in the output queue, the call will wait until something arrives. If nothing arrives before expiration of the timeout, a GenICam::TimeoutException is thrown.</p>
+<p><strong> GetBuffer </strong> is a blocking call. If it is called with a timeout of 20 seconds and nothing arrives in the output queue, then its thread will be blocked for the full 20 seconds. However, as the timeout is a maximum, as soon as something arrives in the output queue, it will be returned, not waiting for the full timeout. A timeout value of 0 ensures the call will not block, throwing instead of waiting if nothing is in the output queue.</p>
+<p>Best practices recommends that buffers be requeued (<a class="reference internal" href="#class_arena_1_1_i_device_1a978bd841ed2818fc717e706aac8218f6"><span class="std std-ref">Arena::IDevice::RequeueBuffer</span></a>) as soon as they are no longer needed. If image data is needed for a longer period of time (i.e. for processing), it is recommended to copy the data (<a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a>) and requeue the buffer.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a156dc5c5aedf1ce7ae3c1a7f8adc35dc"><span class="std std-ref">Arena::IDevice::StartStream</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a9797c558da26ce5084c9852ae7250c3d"><span class="std std-ref">Arena::IDevice::StopStream</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a978bd841ed2818fc717e706aac8218f6"><span class="std std-ref">Arena::IDevice::RequeueBuffer</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer_1acb478c804043bd99c389e9f0c364495d"><span class="std std-ref">Arena::IBuffer::GetPayloadType</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer_1a5311fdc30b40be01c5d09aa02b4e4b3f"><span class="std std-ref">Arena::IBuffer::HasImageData</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer_1a13e85d81492f826ed4b62aa3b7e52458"><span class="std std-ref">Arena::IBuffer::HasChunkData</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a></p></li>
+<li><p>Arena::EBufferPayloadType </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Does not guarantee valid data</p></li>
+<li><p>Buffers should be requeued</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timeout</strong> – <ul class="simple">
+<li><p>Type: uint64_t</p></li>
+<li><p>Unit: milliseconds</p></li>
+<li><p>Maximum time to wait for a buffer</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Type: <a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a>*</p></li>
+<li><p>Pointer to the next buffer in the output queue</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="requeuebuffer">
+<h2>RequeueBuffer<a class="headerlink" href="#requeuebuffer" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice13RequeueBufferEP7IBuffer">
+<span id="_CPPv3N5Arena7IDevice13RequeueBufferEP7IBuffer"></span><span id="_CPPv2N5Arena7IDevice13RequeueBufferEP7IBuffer"></span><span id="Arena::IDevice::RequeueBuffer__IBufferP"></span><span class="target" id="class_arena_1_1_i_device_1a978bd841ed2818fc717e706aac8218f6"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">RequeueBuffer</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cpp_arena_ibuffer.html#_CPPv4N5Arena7IBufferE" title="Arena::IBuffer"><span class="n"><span class="pre">IBuffer</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pBuffer</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice13RequeueBufferEP7IBuffer" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> RequeueBuffer </strong> relinquishes control of a buffer (<a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a>, <a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a>, <a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a>) back to Arena. It must be called after a buffer has been retrieved (<a class="reference internal" href="#class_arena_1_1_i_device_1aa9ab4b4d5bb5a35e0d33190b622248e9"><span class="std std-ref">Arena::IDevice::GetBuffer</span></a>, <a class="reference internal" href="#class_arena_1_1_i_device_1a3e576b282f47cfaf003298f279f3f3a1"><span class="std std-ref">Arena::IDevice::GetImage</span></a>).</p>
+<p>When called, <strong> RequeueBuffer </strong> deallocates any lazily instantiated memory and returns the internal buffer to the acquisition engine’s input queue, where it can be filled with new data. If enough buffers have been removed from the acquisition engine (i.e. not requeued), it is possible to starve the acquisition engine. If this happens and depending on the buffer handling mode (<a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>, ‘StreamBufferHandlingMode’), data may start being dropped or buffers may start being recycled.</p>
+<p>Best practices recommends that buffers be requeued as soon as they are no longer needed. If image data is needed for a longer period of time (i.e. for processing), it is recommended to copy the data (<a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a>) and requeue the buffer.</p>
+<p>It is important to only call <strong> RequeueBuffer </strong> on buffers retrieved from a device (<a class="reference internal" href="#class_arena_1_1_i_device_1aa9ab4b4d5bb5a35e0d33190b622248e9"><span class="std std-ref">Arena::IDevice::GetBuffer</span></a>, <a class="reference internal" href="#class_arena_1_1_i_device_1a3e576b282f47cfaf003298f279f3f3a1"><span class="std std-ref">Arena::IDevice::GetImage</span></a>), and not on images created through the image factory (<a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory"><span class="std std-ref">Arena::ImageFactory</span></a>).</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// one image is retrieved from a buffer and then requeued</span>
+<span class="c1">// another is created through the image factory and then destroyed</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*</span> <span class="n">pRetrievedImage</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetImage</span><span class="p">();</span>
+    <span class="c1">// ...</span>
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RequeueBuffer</span><span class="p">(</span><span class="n">pRetrievedImage</span><span class="p">);</span>
+    
+    <span class="n">Arena</span><span class="o">::</span><span class="n">IImage</span><span class="o">*</span> <span class="n">pCreatedImage</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">ImageFactory</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">pData</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">bpp</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">pixelFormat</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">ImageFactory</span><span class="o">::</span><span class="n">Destroy</span><span class="p">(</span><span class="n">pCreatedImage</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_iimage.html#class_arena_1_1_i_image"><span class="std std-ref">Arena::IImage</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_ichunkdata.html#class_arena_1_1_i_chunk_data"><span class="std std-ref">Arena::IChunkData</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory"><span class="std std-ref">Arena::ImageFactory</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1aa9ab4b4d5bb5a35e0d33190b622248e9"><span class="std std-ref">Arena::IDevice::GetBuffer</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a3e576b282f47cfaf003298f279f3f3a1"><span class="std std-ref">Arena::IDevice::GetImage</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory_1a8e1229ebce128ce5623323ee3ca7bf62"><span class="std std-ref">Arena::ImageFactory::Create</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_imagefactory.html#class_arena_1_1_image_factory_1a772c024ae2279e65bb80d7f8bd74aa29"><span class="std std-ref">Arena::ImageFactory::Destroy</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Buffers should be requeued</p></li>
+<li><p>Used only on buffers retrieved from a device, not on images created through the image factory</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pBuffer</strong> – <ul class="simple">
+<li><p>Type: <a class="reference internal" href="cpp_arena_ibuffer.html#class_arena_1_1_i_buffer"><span class="std std-ref">Arena::IBuffer</span></a>*</p></li>
+<li><p>Buffer to requeue</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="waitfornextleader">
+<h2>WaitForNextLeader<a class="headerlink" href="#waitfornextleader" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice17WaitForNextLeaderE8uint64_t">
+<span id="_CPPv3N5Arena7IDevice17WaitForNextLeaderE8uint64_t"></span><span id="_CPPv2N5Arena7IDevice17WaitForNextLeaderE8uint64_t"></span><span id="Arena::IDevice::WaitForNextLeader__uint64_t"></span><span class="target" id="class_arena_1_1_i_device_1af7a1d521a2b2debd579a3abe605d89b3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">WaitForNextLeader</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice17WaitForNextLeaderE8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> WaitForNextLeader </strong> will wait until the leader for the next image has arrived. It must be called after the stream has started (<a class="reference internal" href="#class_arena_1_1_i_device_1a156dc5c5aedf1ce7ae3c1a7f8adc35dc"><span class="std std-ref">Arena::IDevice::StartStream</span></a>) and before the stream has stopped (<a class="reference internal" href="#class_arena_1_1_i_device_1a9797c558da26ce5084c9852ae7250c3d"><span class="std std-ref">Arena::IDevice::StopStream</span></a>).</p>
+<p>This function can be used to determine when the host has received the leader for the next image. Note that if the time that the camera has finished the exposure for the next image is desired, it is recommended to use the GenICam ExposureEnd Event instead.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a156dc5c5aedf1ce7ae3c1a7f8adc35dc"><span class="std std-ref">Arena::IDevice::StartStream</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a9797c558da26ce5084c9852ae7250c3d"><span class="std std-ref">Arena::IDevice::StopStream</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timeout</strong> – <ul class="simple">
+<li><p>Type: uint64_t</p></li>
+<li><p>Unit: milliseconds</p></li>
+<li><p>Maximum time to wait for a buffer</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Type: none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="resetwaitfornextleader">
+<h2>ResetWaitForNextLeader<a class="headerlink" href="#resetwaitfornextleader" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice22ResetWaitForNextLeaderEv">
+<span id="_CPPv3N5Arena7IDevice22ResetWaitForNextLeaderEv"></span><span id="_CPPv2N5Arena7IDevice22ResetWaitForNextLeaderEv"></span><span id="Arena::IDevice::ResetWaitForNextLeader"></span><span class="target" id="class_arena_1_1_i_device_1a0671008f7262ed95d4b0e6ef9151b4cf"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ResetWaitForNextLeader</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice22ResetWaitForNextLeaderEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> ResetWaitForNextLeader &lt; / B&gt; clears any pending flag for a received leader event.</strong></p>
+<p><strong></strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>-Type: none</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="initializeevents">
+<h2>InitializeEvents<a class="headerlink" href="#initializeevents" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice16InitializeEventsEv">
+<span id="_CPPv3N5Arena7IDevice16InitializeEventsEv"></span><span id="_CPPv2N5Arena7IDevice16InitializeEventsEv"></span><span id="Arena::IDevice::InitializeEvents"></span><span class="target" id="class_arena_1_1_i_device_1a4581dcea5acc898c8284852d4d3e130e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">InitializeEvents</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice16InitializeEventsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> InitializeEvents </strong> causes the underlying events engine to start listening for events. It must be called before waiting on events (<a class="reference internal" href="#class_arena_1_1_i_device_1a87f9267924a4605cc2c1c817131c4906"><span class="std std-ref">Arena::IDevice::WaitOnEvent</span></a>). The event infrastructure must be turned off (<a class="reference internal" href="#class_arena_1_1_i_device_1a3fbda09d53a663d75db3ca5a3dc641ee"><span class="std std-ref">Arena::IDevice::DeinitializeEvents</span></a>) when no longer needed.</p>
+<p>The underlying events engine works very similarly to the acquisition engine, except that event data is processed instead of image data. It consists of 100 buffers, an input and an output queue, and event registration information. When an event fires, the events engine takes an event buffer from the input queue, stores all relevant data, and places it in the output queue. When <strong> WaitOnEvent </strong> (<a class="reference internal" href="#class_arena_1_1_i_device_1a87f9267924a4605cc2c1c817131c4906"><span class="std std-ref">Arena::IDevice::WaitOnEvent</span></a>) is called, the engine takes the buffer from the output queue, processes its data, and returns it to the input queue.</p>
+<p>More specifically, <strong> InitializeEvents </strong>:<ul class="simple">
+<li><p>allocates and registers 100 buffers for the events engine</p></li>
+<li><p>places all buffers into the input queue</p></li>
+<li><p>opens a message channel socket</p></li>
+<li><p>configures the IP and port, and sets the packet size</p></li>
+<li><p>fires a dummy packet to help with firewalls</p></li>
+<li><p>starts the worker thread listening for event packets</p></li>
+</ul>
+</p>
+<p>Events are transmitted from the device through the GigE Vision message channel. Arena processes event data internally, which it attaches to the device node map (not the GenTL device node map) using a GenApi::EventAdapter. The appropriate nodes are then updated in the node map. It can be helpful to incorporate callbacks (GenApi::Callback) to be notified when these events occur.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// initializing events, registering and firing a test event, and deinitializing an event</span>
+<span class="c1">// (same code snippet as Arena::IDevice::WaitOnEvent)</span>
+<span class="p">{</span>
+    <span class="kt">void</span> <span class="n">OnNodeCallback</span><span class="p">(</span><span class="n">GenApi</span><span class="o">::</span><span class="n">INode</span><span class="o">*</span> <span class="n">pNode</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">GenApi</span><span class="o">::</span><span class="n">CIntegerPtr</span> <span class="n">pTimestamp</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">INode</span><span class="o">*</span> <span class="n">pEventTestTimestamp</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;EventTestTimestamp&quot;</span><span class="p">);</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CCommandPtr</span> <span class="n">pTestEventGenerate</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;TestEventGenerate&quot;</span><span class="p">);</span>
+    
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">InitializeEvents</span><span class="p">();</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CallbackHandleType</span> <span class="n">hCallback</span> <span class="o">=</span> <span class="n">GenApi</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="n">pEventTestTimestamp</span><span class="p">,</span> <span class="n">OnNodeCallback</span><span class="p">);</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">pTestEventGenerate</span><span class="o">-&gt;</span><span class="n">Execute</span><span class="p">();</span>
+        <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">WaitOnEvent</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">Deregister</span><span class="p">(</span><span class="n">hCallback</span><span class="p">);</span>
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">DeinitializeEvents</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a87f9267924a4605cc2c1c817131c4906"><span class="std std-ref">Arena::IDevice::WaitOnEvent</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a3fbda09d53a663d75db3ca5a3dc641ee"><span class="std std-ref">Arena::IDevice::DeinitializeEvents</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Event infrastructure must be deinitialized</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="deinitializeevents">
+<h2>DeinitializeEvents<a class="headerlink" href="#deinitializeevents" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice18DeinitializeEventsEv">
+<span id="_CPPv3N5Arena7IDevice18DeinitializeEventsEv"></span><span id="_CPPv2N5Arena7IDevice18DeinitializeEventsEv"></span><span id="Arena::IDevice::DeinitializeEvents"></span><span class="target" id="class_arena_1_1_i_device_1a3fbda09d53a663d75db3ca5a3dc641ee"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">DeinitializeEvents</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice18DeinitializeEventsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> DeinitializeEvents </strong> stops the underlying events engine from listening for messages, shutting it down and cleaning it up. It should be called only after the events infrastructure has been initialized (<a class="reference internal" href="#class_arena_1_1_i_device_1a4581dcea5acc898c8284852d4d3e130e"><span class="std std-ref">Arena::IDevice::InitializeEvents</span></a>) and after all events have been processed (<a class="reference internal" href="#class_arena_1_1_i_device_1a87f9267924a4605cc2c1c817131c4906"><span class="std std-ref">Arena::IDevice::WaitOnEvent</span></a>).</p>
+<p>Roughly speaking, <strong> DeinitializeEvents </strong> takes all necessary steps to undoing and cleaning up the event infrastructure’s initialization (<a class="reference internal" href="#class_arena_1_1_i_device_1a4581dcea5acc898c8284852d4d3e130e"><span class="std std-ref">Arena::IDevice::InitializeEvents</span></a>). This includes:<ul class="simple">
+<li><p>stopping the worker thread set up to listen for events</p></li>
+<li><p>closes the message channel socket</p></li>
+<li><p>unregisters all event buffers and deallocates their memory</p></li>
+</ul>
+</p>
+<p><a class="reference internal" href="#class_arena_1_1_i_device_1a3fbda09d53a663d75db3ca5a3dc641ee"><span class="std std-ref">Arena::IDevice::DeinitializeEvents</span></a> will perform these actions:<ul class="simple">
+<li><p>Stop the listening thread</p></li>
+<li><p>shut down the message channel socket</p></li>
+<li><p>unregister all buffers and clean up memory that was allocated for them</p></li>
+</ul>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a4581dcea5acc898c8284852d4d3e130e"><span class="std std-ref">Arena::IDevice::InitializeEvents</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a87f9267924a4605cc2c1c817131c4906"><span class="std std-ref">Arena::IDevice::WaitOnEvent</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a3fbda09d53a663d75db3ca5a3dc641ee"><span class="std std-ref">Arena::IDevice::DeinitializeEvents</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Event infrastructure must be deinitialized</p></li>
+<li><p>Stops events processing</p></li>
+<li><p>Deallocates event data that has not yet been processed</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="waitonevent">
+<h2>WaitOnEvent<a class="headerlink" href="#waitonevent" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice11WaitOnEventE8uint64_t">
+<span id="_CPPv3N5Arena7IDevice11WaitOnEventE8uint64_t"></span><span id="_CPPv2N5Arena7IDevice11WaitOnEventE8uint64_t"></span><span id="Arena::IDevice::WaitOnEvent__uint64_t"></span><span class="target" id="class_arena_1_1_i_device_1a87f9267924a4605cc2c1c817131c4906"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">WaitOnEvent</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice11WaitOnEventE8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> WaitOnEvent </strong> waits for an event to occur in order to process its data. It must be called after the event infrastructure has been initialized (<a class="reference internal" href="#class_arena_1_1_i_device_1a4581dcea5acc898c8284852d4d3e130e"><span class="std std-ref">Arena::IDevice::InitializeEvents</span></a>) and before it is deinitialized (<a class="reference internal" href="#class_arena_1_1_i_device_1a3fbda09d53a663d75db3ca5a3dc641ee"><span class="std std-ref">Arena::IDevice::DeinitializeEvents</span></a>).</p>
+<p>Event processing has been designed to largely abstract away its complexities. When an event occurs, the data is stored in an event buffer and placed on the output queue. <strong> WaitOnEvent </strong> causes the data to be processed, updating all relevant nodes appropriately. This is why <strong> WaitOnEvent </strong> does not return any event data; when the data is processed, nodes are updated, which can then be queried for information through the node map. This is also why callbacks (GenApi::Callback) work so well with the events infrastructure; they provide a method of accessing nodes of interest as they change.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// initializing events infrastructure, registering and firing a test event, and deinitializing</span>
+<span class="c1">// (same code snippet as Arena::IDevice::InitializeEvents)</span>
+<span class="p">{</span>
+    <span class="kt">void</span> <span class="n">OnNodeCallback</span><span class="p">(</span><span class="n">GenApi</span><span class="o">::</span><span class="n">INode</span><span class="o">*</span> <span class="n">pNode</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">GenApi</span><span class="o">::</span><span class="n">CIntegerPtr</span> <span class="n">pTimestamp</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">INode</span><span class="o">*</span> <span class="n">pEventTestTimestamp</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;EventTestTimestamp&quot;</span><span class="p">);</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CCommandPtr</span> <span class="n">pTestEventGenerate</span> <span class="o">=</span> <span class="n">pNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;TestEventGenerate&quot;</span><span class="p">);</span>
+    
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">InitializeEvents</span><span class="p">();</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CallbackHandleType</span> <span class="n">hCallback</span> <span class="o">=</span> <span class="n">GenApi</span><span class="o">::</span><span class="n">Register</span><span class="p">(</span><span class="n">pEventTestTimestamp</span><span class="p">,</span> <span class="n">OnNodeCallback</span><span class="p">);</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">pTestEventGenerate</span><span class="o">-&gt;</span><span class="n">Execute</span><span class="p">();</span>
+        <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">WaitOnEvent</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">Deregister</span><span class="p">(</span><span class="n">hCallback</span><span class="p">);</span>
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">DeinitializeEvents</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>When called, <strong> WaitOnEvent </strong> checks the output queue for event data to process, grabbing the first buffer from the queue. If nothing is in the output queue, the call will wait until an event arrives. If nothing arrives before expiration of the timeout, a GenICam::TimeoutException is thrown.</p>
+<p><strong> WaitOnEvent </strong> is a blocking call. If it is called with a timeout of 20 seconds and nothing arrives in the output queue, then its thread will be blocked for the full 20 seconds. However, as the timeout is a maximum, when an event arrives in the output queue, the event will process, not waiting for the full timeout. A timeout value of 0 ensures the call will not block, throwing instead of waiting if nothing is in the output queue.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a4581dcea5acc898c8284852d4d3e130e"><span class="std std-ref">Arena::IDevice::InitializeEvents</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a3fbda09d53a663d75db3ca5a3dc641ee"><span class="std std-ref">Arena::IDevice::DeinitializeEvents</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Event data processed internally</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timeout</strong> – <ul class="simple">
+<li><p>Type: uint64_t</p></li>
+<li><p>Unit: milliseconds</p></li>
+<li><p>Maximum time to wait for an event</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="getnodemap">
+<h2>GetNodeMap<a class="headerlink" href="#getnodemap" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice10GetNodeMapEv">
+<span id="_CPPv3N5Arena7IDevice10GetNodeMapEv"></span><span id="_CPPv2N5Arena7IDevice10GetNodeMapEv"></span><span id="Arena::IDevice::GetNodeMap"></span><span class="target" id="class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">GenApi</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">INodeMap</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GetNodeMap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice10GetNodeMapEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetNodeMap </strong> retrieves the already initialized main node map (GenApi::INodeMap), used to access a device’s complete feature set of nodes (GenApi::INode).</p>
+<p>As a simple getter, <strong> GetNodeMap </strong> retrieves this node map without doing anything to initialize, manage, or maintain it. This node map is initialized when the device is created (<a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a>) and deinitialized when the device is destroyed (<a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1af1d2f9ae59259e0d6998b523607adc9b"><span class="std std-ref">Arena::ISystem::DestroyDevice</span></a>). Because node maps are cleaned up internally, retrieving multiple pointers to the same node map is permitted.</p>
+<p>The node map is built from XMLs stored on the device itself. The XML is downloaded and parsed before constructing and initializing the node map. This node map describes and provides access to all device features, and may vary from device to device. Lucid products conform to the SFNC 2.3 specification. Note that both chunk data and event data are updated on this node map.</p>
+<p>Arena provides access to five different node maps. This one comes from the device and describes all its features. Please check device documentation for more information regarding these features.<ul class="simple">
+<li><p>device (<a class="reference internal" href="#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p>The other four node maps describe and provide access to information and settings through the software rather than the device.<ul class="simple">
+<li><p>system GenTL (Arena::ISystem::GetNodeMap)</p></li>
+<li><p>stream GenTL (<a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>)</p></li>
+<li><p>device GenTL (<a class="reference internal" href="#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a>)</p></li>
+<li><p>interface GenTL (<a class="reference internal" href="#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p>The most noticable difference between the two device node maps is that the GenTL device node map has only a small set of features compared to the main node map. There are a few features that overlap. For example, the difference between retrieving the serial number (‘DeviceSerialNumber’) is that using the main node map queries the camera directly whereas the GenTL node map queries a set of information cached at device creation. The result, however, should be the same. Basically, the GenTL node map queries the software for information whereas the main node map queries the device.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1af1d2f9ae59259e0d6998b523607adc9b"><span class="std std-ref">Arena::ISystem::DestroyDevice</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a></p></li>
+<li><p>Arena::ISystem::GetNodeMap</p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Provides access to main node map, not to be confused with the GenTL device node map</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Type: GenApi::INodeMap*</p></li>
+<li><p>Pointer to the main node map for the device</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="gettldevicenodemap">
+<h2>GetTLDeviceNodeMap<a class="headerlink" href="#gettldevicenodemap" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice18GetTLDeviceNodeMapEv">
+<span id="_CPPv3N5Arena7IDevice18GetTLDeviceNodeMapEv"></span><span id="_CPPv2N5Arena7IDevice18GetTLDeviceNodeMapEv"></span><span id="Arena::IDevice::GetTLDeviceNodeMap"></span><span class="target" id="class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">GenApi</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">INodeMap</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GetTLDeviceNodeMap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice18GetTLDeviceNodeMapEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetTLDeviceNodeMap </strong> retrieves the already initialized GenTL device node map (GenApi::INodeMap), used to access a subset of cached device related nodes (GenApi::INode).</p>
+<p>As a simple getter, <strong> GetTLDeviceNodeMap </strong> retrieves this node map without doing anything to initialize, manage, or maintain it. This node map is initialized when the device is created (<a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a>) and deinitialized when the device is destroyed (<a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1af1d2f9ae59259e0d6998b523607adc9b"><span class="std std-ref">Arena::ISystem::DestroyDevice</span></a>). Because node maps are cleaned up internally, retrieving multiple pointers to the same node map is permitted.</p>
+<p>All available nodes can be viewed in the XML, SFNC_GenTLDevice_Reference_Version_1_0_0_Schema_1_1.xml, found in Arena/&lt;version&gt;/&lt;platform&gt;/xml. Nodes in this node map include nodes related to:<ul class="simple">
+<li><p>device discovery information</p></li>
+<li><p>GigE Vision IP configuration information</p></li>
+<li><p>the ability to select streams</p></li>
+</ul>
+</p>
+<p>Arena provides access to five different node maps. This one comes from the device and describes all its features. Please check device documentation for more information regarding these features.<ul class="simple">
+<li><p>device (<a class="reference internal" href="#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p>The other four, including this one, node maps describe and provide access to information and settings through the software rather than the device.<ul class="simple">
+<li><p>system GenTL (Arena::ISystem::GetNodeMap)</p></li>
+<li><p>stream GenTL (<a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>)</p></li>
+<li><p>device GenTL (<a class="reference internal" href="#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a>)</p></li>
+<li><p>interface GenTL (<a class="reference internal" href="#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p>The most noticable difference between the two device node maps is that the GenTL device node map has only a small set of features compared to the main node map. There are a few features that overlap. For example, the difference between retrieving the serial number (‘DeviceSerialNumber’) is that using the main node map queries the camera directly whereas the GenTL node map queries a set of information cached at device creation. The result, however, should be the same. Basically, the GenTL node map queries the software for information whereas the main node map queries the device.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1af1d2f9ae59259e0d6998b523607adc9b"><span class="std std-ref">Arena::ISystem::DestroyDevice</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a></p></li>
+<li><p>Arena::ISystem::GetNodeMap</p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Provides access to the GenTL device node map, not to be confused with the main device node map</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Type: GenApi::INodeMap*</p></li>
+<li><p>Pointer to the GenTL node map for the device</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="gettlstreamnodemap">
+<h2>GetTLStreamNodeMap<a class="headerlink" href="#gettlstreamnodemap" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice18GetTLStreamNodeMapEv">
+<span id="_CPPv3N5Arena7IDevice18GetTLStreamNodeMapEv"></span><span id="_CPPv2N5Arena7IDevice18GetTLStreamNodeMapEv"></span><span id="Arena::IDevice::GetTLStreamNodeMap"></span><span class="target" id="class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">GenApi</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">INodeMap</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GetTLStreamNodeMap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice18GetTLStreamNodeMapEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetTLStreamNodeMap </strong> retrieves the already initialized GenTL stream node map (GenApi::INodeMap), used to access stream related nodes (GenApi::INode).</p>
+<p>As a simple getter, <strong> GetTLStreamNodeMap </strong> retrieves this node map without doing anything to initialize, manage, or maintain it. This node map is initialized when the device is created (<a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a>) and deinitialized when the device is destroyed (<a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1af1d2f9ae59259e0d6998b523607adc9b"><span class="std std-ref">Arena::ISystem::DestroyDevice</span></a>). Because node maps are cleaned up internally, retrieving multiple pointers to the same node map is permitted.</p>
+<p>All available nodes can be viewed in the XML, SFNC_GenTLDataStream_Reference_Version_1_0_0_Schema_1_1.xml, found in Arena/&lt;version&gt;/&lt;platform&gt;/xml. Nodes in this node map include nodes related to:<ul class="simple">
+<li><p>stream ID and type</p></li>
+<li><p>buffer handling mode</p></li>
+<li><p>stream information such as the payload size or whether the device is currently streaming</p></li>
+<li><p>stream statistics such as lost frames, announced buffers, or missed packets</p></li>
+</ul>
+</p>
+<p>Arena provides access to five different node maps. This one comes from the device and describes all its features. Please check device documentation for more information regarding these features.<ul class="simple">
+<li><p>device (<a class="reference internal" href="#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p>The other four, including this one, node maps describe and provide access to information and settings through the software rather than the device.<ul class="simple">
+<li><p>system GenTL (Arena::ISystem::GetNodeMap)</p></li>
+<li><p>stream GenTL (<a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>)</p></li>
+<li><p>device GenTL (<a class="reference internal" href="#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a>)</p></li>
+<li><p>interface GenTL (<a class="reference internal" href="#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p>A common use case requiring this node map is to configure the buffer handling mode prior to starting the stream.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// setting the buffer handling mode to &#39;NewestOnly&#39; before starting the stream</span>
+<span class="p">{</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">INodeMap</span><span class="o">*</span> <span class="n">pStreamNodeMap</span> <span class="o">=</span> <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">GetTLStreamNodeMap</span><span class="p">();</span>
+    
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CEnumerationPtr</span> <span class="n">pStreamBufferHandlingMode</span> <span class="o">=</span> <span class="n">pStreamNodeMap</span><span class="o">-&gt;</span><span class="n">GetNode</span><span class="p">(</span><span class="s">&quot;StreamBufferHandlingMode&quot;</span><span class="p">);</span>
+    <span class="n">GenApi</span><span class="o">::</span><span class="n">CEnumEntry</span> <span class="n">pNewestOnly</span> <span class="o">=</span> <span class="n">pStreamBufferHandlingMode</span><span class="o">-&gt;</span><span class="n">GetEntryByName</span><span class="p">(</span><span class="s">&quot;NewestOnly&quot;</span><span class="p">);</span>
+    <span class="n">pStreamBufferHandlingMode</span><span class="o">-&gt;</span><span class="n">SetIntValue</span><span class="p">(</span><span class="n">pNewestOnly</span><span class="o">-&gt;</span><span class="n">GetValue</span><span class="p">());</span>
+    
+    <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StartStream</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1af1d2f9ae59259e0d6998b523607adc9b"><span class="std std-ref">Arena::ISystem::DestroyDevice</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a></p></li>
+<li><p>Arena::ISystem::GetNodeMap</p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Type: GenApi::INodeMap*</p></li>
+<li><p>Pointer to the GenTL node map for the stream</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="gettlinterfacenodemap">
+<h2>GetTLInterfaceNodeMap<a class="headerlink" href="#gettlinterfacenodemap" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice21GetTLInterfaceNodeMapEv">
+<span id="_CPPv3N5Arena7IDevice21GetTLInterfaceNodeMapEv"></span><span id="_CPPv2N5Arena7IDevice21GetTLInterfaceNodeMapEv"></span><span id="Arena::IDevice::GetTLInterfaceNodeMap"></span><span class="target" id="class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">GenApi</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">INodeMap</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GetTLInterfaceNodeMap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice21GetTLInterfaceNodeMapEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetTLInterfaceNodeMap </strong> retrieves the already initialized GenTL interface node map (GenApi::INodeMap), used to access interface related nodes (GenApi::INode).</p>
+<p>As a simple getter, <strong> GetTLInterfaceNodeMap </strong> retrieves this node map without doing anything to initialize, manage, or maintain it. This node map is initialized when the device is created (<a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a>) and deinitialized when the device is destroyed (<a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1af1d2f9ae59259e0d6998b523607adc9b"><span class="std std-ref">Arena::ISystem::DestroyDevice</span></a>). Because node maps are cleaned up internally, retrieving multiple pointers to the same node map is permitted.</p>
+<p>All available nodes can be viewed in the XML, SFNC_GenTLInterface_Reference_Version_1_0_0_Schema_1_1.xml, found in Arena/&lt;version&gt;/&lt;platform&gt;/xml. Nodes in this node map include nodes related to:<ul class="simple">
+<li><p>interface discovery information</p></li>
+<li><p>interface IP configuration information</p></li>
+<li><p>ability to update and select devices</p></li>
+<li><p>device discovery and IP configuration information</p></li>
+</ul>
+</p>
+<p>Arena provides access to five different node maps. This one comes from the device and describes all its features. Please check device documentation for more information regarding these features.<ul class="simple">
+<li><p>device (<a class="reference internal" href="#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p>The other four, including this one, node maps describe and provide access to information and settings through the software rather than the device.<ul class="simple">
+<li><p>system GenTL (Arena::ISystem::GetNodeMap)</p></li>
+<li><p>stream GenTL (<a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>)</p></li>
+<li><p>device GenTL (<a class="reference internal" href="#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a>)</p></li>
+<li><p>interface GenTL (<a class="reference internal" href="#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_isystem.html#class_arena_1_1_i_system_1af1d2f9ae59259e0d6998b523607adc9b"><span class="std std-ref">Arena::ISystem::DestroyDevice</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a></p></li>
+<li><p>Arena::ISystem::GetNodeMap</p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Type: GenApi::INodeMap*</p></li>
+<li><p>Pointer to the GenTL node map for the interface</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="registerimagecallback">
+<h2>RegisterImageCallback<a class="headerlink" href="#registerimagecallback" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice21RegisterImageCallbackEP14IImageCallback">
+<span id="_CPPv3N5Arena7IDevice21RegisterImageCallbackEP14IImageCallback"></span><span id="_CPPv2N5Arena7IDevice21RegisterImageCallbackEP14IImageCallback"></span><span id="Arena::IDevice::RegisterImageCallback__IImageCallbackP"></span><span class="target" id="class_arena_1_1_i_device_1a444c7b66e53fdea908b59fd1c099ccc7"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">RegisterImageCallback</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">IImageCallback</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">callback</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice21RegisterImageCallbackEP14IImageCallback" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="deregisterimagecallback">
+<h2>DeregisterImageCallback<a class="headerlink" href="#deregisterimagecallback" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice23DeregisterImageCallbackEP14IImageCallback">
+<span id="_CPPv3N5Arena7IDevice23DeregisterImageCallbackEP14IImageCallback"></span><span id="_CPPv2N5Arena7IDevice23DeregisterImageCallbackEP14IImageCallback"></span><span id="Arena::IDevice::DeregisterImageCallback__IImageCallbackP"></span><span class="target" id="class_arena_1_1_i_device_1a24673ada8cc06f62d89759ed4bf73fa8"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">DeregisterImageCallback</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">IImageCallback</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">callback</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice23DeregisterImageCallbackEP14IImageCallback" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> DeregisterImageCallback </strong> unregisters a previously registered callback object. Callbacks can be unregistered whether or not the device is currently streaming. To deregister all callbacks at once use DeregisterAllImageCallbacks.</p>
+<p>RegisterImageCallback will throw :<ul class="simple">
+<li><p>InvalidArgumentException if the callback argument is NULL</p></li>
+</ul>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Register callback object</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">camSerial</span> <span class="o">=</span> <span class="n">deviceInfos</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">SerialNumber</span><span class="p">();</span>
+  <span class="n">ImageCallback</span><span class="o">*</span> <span class="n">pCallbackHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ImageCallback</span><span class="p">(</span><span class="n">camSerial</span><span class="p">);</span>
+
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RegisterImageCallback</span><span class="p">(</span><span class="n">pCallbackHandler</span><span class="p">);</span>
+
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StartStream</span><span class="p">();</span>
+  <span class="n">Sleep</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StopStream</span><span class="p">();</span>
+
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">DeregisterImageCallback</span><span class="p">(</span><span class="n">pCallbackHandler</span><span class="p">);</span>
+
+  <span class="k">delete</span> <span class="n">pCallbackHandler</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p>Device:RegisterImageCallback</p></li>
+<li><p>Device:<a class="reference internal" href="#class_arena_1_1_i_device_1a0e093617e75dde7fa23671a581c0887b"><span class="std std-ref">DeregisterAllImageCallbacks</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>callback</strong> – <ul class="simple">
+<li><p>Type: IImageCallback*</p></li>
+<li><p>A pointer to an IImageCallback object which implements the OnImage() function</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Type: bool</p></li>
+<li><p>True if the specfied callback was in the list of registered callbacks. Otherwise false.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="deregisterallimagecallbacks">
+<h2>DeregisterAllImageCallbacks<a class="headerlink" href="#deregisterallimagecallbacks" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice27DeregisterAllImageCallbacksEv">
+<span id="_CPPv3N5Arena7IDevice27DeregisterAllImageCallbacksEv"></span><span id="_CPPv2N5Arena7IDevice27DeregisterAllImageCallbacksEv"></span><span id="Arena::IDevice::DeregisterAllImageCallbacks"></span><span class="target" id="class_arena_1_1_i_device_1a0e093617e75dde7fa23671a581c0887b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">DeregisterAllImageCallbacks</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice27DeregisterAllImageCallbacksEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> DeregisterAllImageCallbacks </strong> deregisters all previously registered callback objects. Callbacks can be unregistered whether or not the device is currently streaming. To deregister an individual callback, DeregisterImageCallback.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Register callback object</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">camSerial</span> <span class="o">=</span> <span class="n">deviceInfos</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">SerialNumber</span><span class="p">();</span>
+  <span class="n">ImageCallback</span><span class="o">*</span> <span class="n">pCallbackHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ImageCallback</span><span class="p">(</span><span class="n">camSerial</span><span class="p">);</span>
+
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RegisterImageCallback</span><span class="p">(</span><span class="n">pCallbackHandler</span><span class="p">);</span>
+
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StartStream</span><span class="p">();</span>
+  <span class="n">Sleep</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">StopStream</span><span class="p">();</span>
+
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">DeregisterAllImageCallbacks</span><span class="p">();</span>
+
+  <span class="k">delete</span> <span class="n">pCallbackHandler</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p>Device:RegisterImageCallback</p></li>
+<li><p>Device:<a class="reference internal" href="#class_arena_1_1_i_device_1a24673ada8cc06f62d89759ed4bf73fa8"><span class="std std-ref">DeregisterImageCallback</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Type: bool</p></li>
+<li><p>True if there were any callbacks registered before removing them all. Otherwise false.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="downloadxml">
+<h2>DownloadXml<a class="headerlink" href="#downloadxml" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDevice11DownloadXmlEv">
+<span id="_CPPv3N5Arena7IDevice11DownloadXmlEv"></span><span id="_CPPv2N5Arena7IDevice11DownloadXmlEv"></span><span id="Arena::IDevice::DownloadXml"></span><span class="target" id="class_arena_1_1_i_device_1a20ca00ea7de080ef37a615f97a08f7ca"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">DownloadXml</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7IDevice11DownloadXmlEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> DownloadXml </strong> downloads the on-camera XML file to the relative path &lt;serial&gt;.xml. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>~IDevice<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7IDeviceD0Ev">
+<span id="_CPPv3N5Arena7IDeviceD0Ev"></span><span id="_CPPv2N5Arena7IDeviceD0Ev"></span><span id="Arena::IDevice::~IDevice"></span><span class="target" id="class_arena_1_1_i_device_1ae712de44560b19edf7f0bb4fc252c86c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">~IDevice</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Arena7IDeviceD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A destructor </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_arena_ibuffer.html" class="btn btn-neutral float-right" title="IBuffer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_arena_interfaceinfo.html" class="btn btn-neutral" title="InterfaceInfo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.68.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

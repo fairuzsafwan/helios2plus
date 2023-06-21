@@ -1,0 +1,703 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Device &mdash; Arena 0.1.68.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.68.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C" href="c_arena.html"/>
+        <link rel="next" title="ChunkData" href="c_arena_chunkdata.html"/>
+        <link rel="prev" title="System" href="c_arena_system.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!---->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.68
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodemap.html">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="qt.html">Qt</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arena_api.html">Arena Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter_guide.html">Using LUCID’s ArenaView with Jupyter Notebooks</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+      <li>Device</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="device">
+<h1>Device<a class="headerlink" href="#device" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acdevicestartstream">
+<h2>acDeviceStartStream<a class="headerlink" href="#acdevicestartstream" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceStartStream” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceStartStream (acDevice hDevice)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceStartStream (acDevice hDevice)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceStartStream (acDevice hDevice)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdevicestartstreamnumbuffersandflags">
+<h2>acDeviceStartStreamNumBuffersAndFlags<a class="headerlink" href="#acdevicestartstreamnumbuffersandflags" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceStartStreamNumBuffersAndFlags” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceStartStreamNumBuffersAndFlags (acDevice hDevice, size_t numBuffers)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceStartStreamNumBuffersAndFlags (acDevice hDevice, size_t numBuffers)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceStartStreamNumBuffersAndFlags (acDevice hDevice, size_t numBuffers)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdevicestopstream">
+<h2>acDeviceStopStream<a class="headerlink" href="#acdevicestopstream" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceStopStream” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceStopStream (acDevice hDevice)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceStopStream (acDevice hDevice)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceStopStream (acDevice hDevice)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdevicegetbuffer">
+<h2>acDeviceGetBuffer<a class="headerlink" href="#acdevicegetbuffer" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceGetBuffer” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceGetBuffer (acDevice hDevice, uint64_t timeout, acBuffer *phBuffer)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceGetBuffer (acDevice hDevice, uint64_t timeout, acBuffer *phBuffer)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceGetBuffer (acDevice hDevice, uint64_t timeout, acBuffer *phBuffer)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdevicerequeuebuffer">
+<h2>acDeviceRequeueBuffer<a class="headerlink" href="#acdevicerequeuebuffer" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceRequeueBuffer” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceRequeueBuffer (acDevice hDevice, acBuffer pBuffer)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceRequeueBuffer (acDevice hDevice, acBuffer pBuffer)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceRequeueBuffer (acDevice hDevice, acBuffer pBuffer)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdeviceinitializeevents">
+<h2>acDeviceInitializeEvents<a class="headerlink" href="#acdeviceinitializeevents" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceInitializeEvents” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceInitializeEvents (acDevice hDevice)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceInitializeEvents (acDevice hDevice)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceInitializeEvents (acDevice hDevice)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdevicedeinitializeevents">
+<h2>acDeviceDeinitializeEvents<a class="headerlink" href="#acdevicedeinitializeevents" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceDeinitializeEvents” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceDeinitializeEvents (acDevice hDevice)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceDeinitializeEvents (acDevice hDevice)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceDeinitializeEvents (acDevice hDevice)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdevicewaitonevent">
+<h2>acDeviceWaitOnEvent<a class="headerlink" href="#acdevicewaitonevent" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceWaitOnEvent” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceWaitOnEvent (acDevice hDevice, int64_t timeout)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceWaitOnEvent (acDevice hDevice, int64_t timeout)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceWaitOnEvent (acDevice hDevice, int64_t timeout)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdeviceisconnected">
+<h2>acDeviceIsConnected<a class="headerlink" href="#acdeviceisconnected" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceIsConnected” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceIsConnected (acDevice hDevice, bool8_t *pIsConnected)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceIsConnected (acDevice hDevice, bool8_t *pIsConnected)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceIsConnected (acDevice hDevice, bool8_t *pIsConnected)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdevicegetnodemap">
+<h2>acDeviceGetNodeMap<a class="headerlink" href="#acdevicegetnodemap" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceGetNodeMap” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceGetNodeMap (acDevice hDevice, acNodeMap *phNodeMap)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceGetNodeMap (acDevice hDevice, acNodeMap *phNodeMap)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceGetNodeMap (acDevice hDevice, acNodeMap *phNodeMap)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdevicegettldevicenodemap">
+<h2>acDeviceGetTLDeviceNodeMap<a class="headerlink" href="#acdevicegettldevicenodemap" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceGetTLDeviceNodeMap” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceGetTLDeviceNodeMap (acDevice hDevice, acNodeMap *phNodeMap)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceGetTLDeviceNodeMap (acDevice hDevice, acNodeMap *phNodeMap)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceGetTLDeviceNodeMap (acDevice hDevice, acNodeMap *phNodeMap)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdevicegettlstreamnodemap">
+<h2>acDeviceGetTLStreamNodeMap<a class="headerlink" href="#acdevicegettlstreamnodemap" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceGetTLStreamNodeMap” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceGetTLStreamNodeMap (acDevice hDevice, acNodeMap *phNodeMap)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceGetTLStreamNodeMap (acDevice hDevice, acNodeMap *phNodeMap)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceGetTLStreamNodeMap (acDevice hDevice, acNodeMap *phNodeMap)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdevicegettlinterfacenodemap">
+<h2>acDeviceGetTLInterfaceNodeMap<a class="headerlink" href="#acdevicegettlinterfacenodemap" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceGetTLInterfaceNodeMap” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceGetTLInterfaceNodeMap (acDevice hDevice, acNodeMap *phNodeMap)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceGetTLInterfaceNodeMap (acDevice hDevice, acNodeMap *phNodeMap)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceGetTLInterfaceNodeMap (acDevice hDevice, acNodeMap *phNodeMap)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdeviceregisterimagecallback">
+<h2>acDeviceRegisterImageCallback<a class="headerlink" href="#acdeviceregisterimagecallback" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceRegisterImageCallback” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceRegisterImageCallback (acDevice hDevice, acCallback *phCallback, acImageCallbackFunction callbackFn, void *pParam)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceRegisterImageCallback (acDevice hDevice, acCallback *phCallback, acImageCallbackFunction callbackFn, void *pParam)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceRegisterImageCallback (acDevice hDevice, acCallback *phCallback, acImageCallbackFunction callbackFn, void *pParam)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdevicederegisterimagecallback">
+<h2>acDeviceDeregisterImageCallback<a class="headerlink" href="#acdevicederegisterimagecallback" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceDeregisterImageCallback” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceDeregisterImageCallback (acDevice hDevice, acCallback *phCallback)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceDeregisterImageCallback (acDevice hDevice, acCallback *phCallback)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceDeregisterImageCallback (acDevice hDevice, acCallback *phCallback)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdevicewaitfornextleader">
+<h2>acDeviceWaitForNextLeader<a class="headerlink" href="#acdevicewaitfornextleader" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceWaitForNextLeader” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceWaitForNextLeader (acDevice hDevice, int64_t timeout)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceWaitForNextLeader (acDevice hDevice, int64_t timeout)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceWaitForNextLeader (acDevice hDevice, int64_t timeout)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acdeviceresetwaitfornextleader">
+<h2>acDeviceResetWaitForNextLeader<a class="headerlink" href="#acdeviceresetwaitfornextleader" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acDeviceResetWaitForNextLeader” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acDeviceResetWaitForNextLeader (acDevice hDevice)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acDeviceResetWaitForNextLeader (acDevice hDevice)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acDeviceResetWaitForNextLeader (acDevice hDevice)
+      —————-^
+</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_chunkdata.html" class="btn btn-neutral float-right" title="ChunkData" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_system.html" class="btn btn-neutral" title="System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.68.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

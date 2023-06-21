@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using LUCID’s ArenaView with Jupyter Notebooks &mdash; Arena 0.1.68.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.68.0 documentation" href="index.html"/>
+        <link rel="prev" title="Arena Python API" href="arena_api.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!---->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.68
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_api.html">Arena Python API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using LUCID’s ArenaView with Jupyter Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction"><strong>Introduction</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements"><strong>Requirements</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#initial-setup"><strong>Initial Setup</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-jupyterlab-server"><strong>Enabling JupyterLab Server</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#opening-jupyter-notebooks"><strong>Opening Jupyter Notebooks</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jupyter-code-cells"><strong>Jupyter Code Cells</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jupyter-markdown-cells"><strong>Jupyter Markdown Cells</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sample-code-snippets"><strong>Sample Code Snippets</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#convert-a-jupyter-notebook-to-an-executable-program"><strong>Convert a Jupyter Notebook to an Executable Program</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-a-custom-virtual-environment"><strong>Using a Custom Virtual Environment</strong></a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Using LUCID’s ArenaView with Jupyter Notebooks</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-lucids-arenaview-with-jupyter-notebooks">
+<h1>Using LUCID’s ArenaView with Jupyter Notebooks<a class="headerlink" href="#using-lucids-arenaview-with-jupyter-notebooks" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="introduction">
+<h2><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>JupyterLab on ArenaView enables application designers to quickly test and validate all camera features and speed up their product qualification workflow without having to setup a custom development environment.
+JupyterLab provides a built-in and preconfigured interactive development environment that can be used for testing and documenting all SDK functions and camera performances.
+It is installed with Arena SDK using the Developer installation option. The following instructions explains how to launch and use JupyterLab within ArenaView.</p>
+<div class="section" id="requirements">
+<h3><strong>Requirements</strong><a class="headerlink" href="#requirements" title="Permalink to this heading">¶</a></h3>
+<p>Arena SDK:</p>
+<ul class="simple">
+<li><p>ArenaView v1.0.33.0 or newer</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/help_icon.png"><img alt="help" src="_images/help_icon.png" style="width: 70px;" /></a></p></td>
+<td><p>The Developer option must be chosen at installation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="initial-setup">
+<h3><strong>Initial Setup</strong><a class="headerlink" href="#initial-setup" title="Permalink to this heading">¶</a></h3>
+<p>Please make sure you have read and completed the initial setup section found in the Arena SDK
+documentation (<a class="reference external" href="https://support.thinklucid.com/arena-sdk-documentation/#4556">https://support.thinklucid.com/arena-sdk-documentation/#4556</a>).
+In particular, make sure you have turned on jumbo frames and set your receive buffer size.
+Atlas10 users that plan to use TCP should read and complete our setup guide for using TCP with Atlas10 cameras
+(<a class="reference external" href="https://support.thinklucid.com/knowledgebase/using-tcp-with-atlas10-cameras-on-windows/">https://support.thinklucid.com/knowledgebase/using-tcp-with-atlas10-cameras-on-windows/</a>).</p>
+</div>
+</div>
+<div class="section" id="enabling-jupyterlab-server">
+<h2><strong>Enabling JupyterLab Server</strong><a class="headerlink" href="#enabling-jupyterlab-server" title="Permalink to this heading">¶</a></h2>
+<p>Step 1: Open the Options Window</p>
+<p>Open the Options Windows by clicking View -&gt; Toolbar -&gt; Options.</p>
+<img alt="_images/jupyter_options_window.png" src="_images/jupyter_options_window.png" />
+<p>Step 2: Select the JupyterLab Options tab</p>
+<p>In the Options Window, click the hamburger button and choose the JupyterLab tab.</p>
+<img alt="_images/jupyter_options_tab_hamburger.png" src="_images/jupyter_options_tab_hamburger.png" />
+<img alt="_images/jupyter_options_tab_jp.png" src="_images/jupyter_options_tab_jp.png" />
+<p>Step 3: Turn on the JupyterLab server</p>
+<p>In the Jupyter Lab options tab, turn on the Jupyer Lab server. If this is your first time installing Jupyter
+Lab, ArenaView will download and install the required dependencies.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/help_icon.png"><img alt="help" src="_images/help_icon.png" style="width: 70px;" /></a></p></td>
+<td><p>An Internet connection is required for this step.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Step 3: Turn on the JupyterLab server</p>
+<p>In the JupyterLab options tab, turn on the Jupyer Lab server. If this is your first time installing
+JupyterLab, ArenaView will download and install the required dependencies.</p>
+<p>Step 4: Enter the JupyerLab server token</p>
+<p>If this is your first time installing JupyterLab, you will also be asked for a token to access the JuptyerLab
+server. This token is presented after ArenaView installs the JupyterLab dependencies. Enter the token
+into the “Password or token” field and press Log in.</p>
+<img alt="_images/jupyter_token.png" src="_images/jupyter_token.png" />
+<div class="section" id="opening-jupyter-notebooks">
+<h3><strong>Opening Jupyter Notebooks</strong><a class="headerlink" href="#opening-jupyter-notebooks" title="Permalink to this heading">¶</a></h3>
+<p>After starting the JupyterLab server, you will be presented with the Jupyer launch page. From this page,
+you can start your own Jupyter notebook or browse the preinstalled examples that come with the
+Arena SDK installation.</p>
+<p>By default, Jupyter notebooks are found at:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\ProgramData\LUCID Vision Labs\ArenaView\ArenaJp&quot;</span>
+</pre></div>
+</div>
+<img alt="_images/jupyter_open_notebooks.png" src="_images/jupyter_open_notebooks.png" />
+<p><strong>Using Jupyter Notebooks</strong></p>
+<p>The Jupyter Lab environment will let you write Arena Python code to control camera features and
+quickly integrate image analysis and processing.</p>
+</div>
+<div class="section" id="jupyter-code-cells">
+<h3><strong>Jupyter Code Cells</strong><a class="headerlink" href="#jupyter-code-cells" title="Permalink to this heading">¶</a></h3>
+<p>A Jupyter code cell contains Python code that is executed by the Jupyter kernel. When the cell type is
+set to <strong>Code</strong>:</p>
+<ul class="simple">
+<li><p>Press the + button to insert a new code cell. This will place a new cell under the currently selected cell.</p></li>
+<li><p>Press the ▶ button to execute a code cell. The code cell will display an asterisk (*) beside the cell while it is being executed, and it will show a number upon completion.</p></li>
+</ul>
+<img alt="_images/jupyter_cells_1.png" src="_images/jupyter_cells_1.png" />
+<img alt="_images/jupyter_cells_2.png" src="_images/jupyter_cells_2.png" />
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 92%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/help_icon.png"><img alt="help" src="_images/help_icon.png" style="width: 70px;" /></a></p></td>
+<td><p>Ensure the camera is not connected in ArenaView before running an example in Jupyter.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="jupyter-markdown-cells">
+<h3><strong>Jupyter Markdown Cells</strong><a class="headerlink" href="#jupyter-markdown-cells" title="Permalink to this heading">¶</a></h3>
+<p>Formatted text can be entered in a Jupyter notebook for displaying visually rich documentation. When the cell type is set to <strong>Markdown</strong>:</p>
+<ul class="simple">
+<li><p>Press the + button to insert a new markdown cell. This will place a new cell under the currently selected cell.</p></li>
+<li><p>Press the ▶ button to execute a markdown cell. The markdown cell will be formatted for display.</p></li>
+</ul>
+<img alt="_images/jupyter_barcode.png" src="_images/jupyter_barcode.png" />
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 92%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/help_icon.png"><img alt="help" src="_images/help_icon.png" style="width: 70px;" /></a></p></td>
+<td><p>For a list of markdown options, visit the Markdown Cells section in the Jupyter documentation.
+(<a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/latest/examples/Notebook/Working%20With%20Markdown%20Cells.html">https://jupyter-notebook.readthedocs.io/en/latest/examples/Notebook/Working%20With%20Markdown%20Cells.html</a>)</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>SDK Documentation</strong></p>
+<p>The Arena SDK Python documentation can be found at the ArenaView Start Page (View -&gt; Start Page).</p>
+<img alt="_images/jupyter_documentation.png" src="_images/jupyter_documentation.png" />
+<p>Within a Jupyter notebook, it is also possible to display a function’s documentation by adding “??” at the
+end of a function:</p>
+<img alt="_images/jupyter_documentation_q.png" src="_images/jupyter_documentation_q.png" />
+</div>
+<div class="section" id="sample-code-snippets">
+<h3><strong>Sample Code Snippets</strong><a class="headerlink" href="#sample-code-snippets" title="Permalink to this heading">¶</a></h3>
+<p>Create Device By Serial Number
+The following code snippet shows how to connect to a camera by its serial number.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_device_from_serial_number</span><span class="p">(</span><span class="n">serial_number</span><span class="p">):</span>
+        <span class="n">camera_found</span> <span class="o">=</span> <span class="bp">False</span>
+
+        <span class="n">device_infos</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">selected_index</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="n">device_infos</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">device_infos</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">device_infos</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="n">serial_number</span> <span class="o">==</span> <span class="n">device_infos</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;serial&#39;</span><span class="p">]:</span>
+                        <span class="n">selected_index</span> <span class="o">=</span> <span class="n">i</span>
+                        <span class="n">camera_found</span> <span class="o">=</span> <span class="bp">True</span>
+                        <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">camera_found</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+                <span class="n">selected_model</span> <span class="o">=</span> <span class="n">device_infos</span><span class="p">[</span><span class="n">selected_index</span><span class="p">][</span><span class="s1">&#39;model&#39;</span><span class="p">]</span>
+                <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Create device: {selected_model}...&quot;</span><span class="p">)</span>
+                <span class="n">device</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">create_device</span><span class="p">(</span><span class="n">device_infos</span><span class="o">=</span><span class="n">device_infos</span><span class="p">[</span><span class="n">selected_index</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;Serial number {serial_number} cannot be found&quot;</span><span class="p">)</span>
+
+<span class="k">return</span> <span class="n">device</span>
+</pre></div>
+</div>
+<p>Connect to the camera by calling:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">select_device_from_serial_number</span><span class="p">(</span><span class="s2">&quot;192900063&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Convert Image into OpenCV</strong></p>
+<p>The following code snippet shows how to convert an image into OpenCV:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install opencv-python
+
+[...]
+
+import cv2
+
+[...]
+
+image_buffer = device.get_buffer()
+nparray = np.ctypeslib.as_array(image_buffer.pdata,shape=(image_buffer.height, image_buffer.width, int(image_buffer.bits_per_pixel / 8))).reshape(image_buffer.height, image_buffer.width, int(image_buffer.bits_per_pixel / 8))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="convert-a-jupyter-notebook-to-an-executable-program">
+<h2><strong>Convert a Jupyter Notebook to an Executable Program</strong><a class="headerlink" href="#convert-a-jupyter-notebook-to-an-executable-program" title="Permalink to this heading">¶</a></h2>
+<p>ArenaView allows users to generate an executable program out of their Jupyter notebook.
+The following steps show converting the included Jupyter notebook, py_acquisition.ipynb, into an
+executable file.</p>
+<p>Step 1: Run the following command in your Jupyter notebook:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>!jupyter nbconvert --to script py_acquisition.ipynb
+</pre></div>
+</div>
+<p>This command will create a py file in the current directory:</p>
+<img alt="_images/jupyter_py_convert.png" src="_images/jupyter_py_convert.png" />
+<p>Step 2: Select the py file to convert to an exe file in the JupterLab Options</p>
+<p>Step 3: Convert the py file to an exe file in the JupterLab Options</p>
+<img alt="_images/jupyter_py_convert_window.png" src="_images/jupyter_py_convert_window.png" />
+<p>When you click the Convert button, you will be asked if you want to edit the pytoexe.bat file.</p>
+<img alt="_images/jupyter_py_convert_popup.png" src="_images/jupyter_py_convert_popup.png" />
+<p>Editing the pytoexe.bat file allows you to add additional paths and binaries to the pyinstaller command
+to ensure your exe file works correctly.</p>
+<p>Editing this file is necessary if:</p>
+<ul class="simple">
+<li><p>You are using a custom virtual environment</p></li>
+<li><p>You have downloaded additional libraries to the default environment, and are using the new libraries in your program</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/help_icon.png"><img alt="help" src="_images/help_icon.png" style="width: 70px;" /></a></p></td>
+<td><p>Only edit the pyinstaller command in this file.</p></td>
+</tr>
+</tbody>
+</table>
+<p>When the conversion is complete, you will be prompted to press a key to continue. This will open a
+window to the location of your new exe file.</p>
+<img alt="_images/jupyter_py_convert_exe.png" src="_images/jupyter_py_convert_exe.png" />
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 95%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/help_icon.png"><img alt="help" src="_images/help_icon.png" style="width: 70px;" /></a></p></td>
+<td><p>When running this exe file outside of ArenaView’s default virtual environment, make sure arena_api and its dependencies are installed on the new environment.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The arena_api wheel used by the ArenaJp virtual environment can be found at:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\ProgramData\LUCID Vision Labs\ArenaView\ArenaPy&quot;</span>
+</pre></div>
+</div>
+<p>The wheel file can be installed with a command similar to the following:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>pip install arena_api-<span class="p">&lt;</span>&gt;.<span class="p">&lt;</span>&gt;.<span class="p">&lt;</span>&gt;-py3-none-any.whl
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-a-custom-virtual-environment">
+<h2><strong>Using a Custom Virtual Environment</strong><a class="headerlink" href="#using-a-custom-virtual-environment" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>By default, ArenaView uses a preinstalled Miniconda virtual environment for the JupyterLab server.</p></li>
+</ul>
+<p>The preinstalled virtual environment is found at:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\ProgramData\LUCID Vision Labs\ArenaView\ArenaPy&quot;</span>
+</pre></div>
+</div>
+<p>It is possible to define the virtual environment used by ArenaView in the JupyerLab Options tab.
+Set the virtual environment slider to <strong>arena</strong> to use the preinstalled virtual environment:</p>
+<img alt="_images/jupyter_env_1.png" src="_images/jupyter_env_1.png" />
+<p>Set the virtual environment slider to <strong>venv</strong> and press the Browse button to select the to your custom virtual environment:</p>
+<img alt="_images/jupyter_env_2.png" src="_images/jupyter_env_2.png" />
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 92%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/help_icon.png"><img alt="help" src="_images/help_icon.png" style="width: 70px;" /></a></p></td>
+<td><p>It is recommended to use a virtual environment created by virtualenv or miniconda.
+In either case, installing packages using pip in your environment is recommended, as that works the best with pyinstaller.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Custom virtual environments must install the JupyterLab requirements in the <strong>jupyter_requirements_win.txt</strong> file found at:</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;C:\ProgramData\LUCID Vision Labs\ArenaView\ArenaPy&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>pip install -r jupyter_requirements_win.txt
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="arena_api.html" class="btn btn-neutral" title="Arena Python API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.68.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

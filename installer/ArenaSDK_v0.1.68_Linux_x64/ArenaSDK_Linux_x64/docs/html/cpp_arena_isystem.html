@@ -1,0 +1,1078 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ISystem &mdash; Arena 0.1.68.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.68.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C++" href="cpp_arena.html"/>
+        <link rel="next" title="InterfaceInfo" href="cpp_arena_interfaceinfo.html"/>
+        <link rel="prev" title="DeviceInfo" href="cpp_arena_deviceinfo.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!---->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.68
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp.html">Arena C++</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_arena.html">Arena C++</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_global.html">Global Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_iimage.html">IImage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_deviceinfo.html">DeviceInfo</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ISystem</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_interfaceinfo.html">InterfaceInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_idevice.html">IDevice</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ibuffer.html">IBuffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_ichunkdata.html">IChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_einterfacetypeclass.html">EInterfaceTypeClass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_arena_eincmodeclass.html">EIncModeClass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_genapi.html">GenApi C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_save.html">Save C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_examples.html">C++ Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="c.html">Arena C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qt.html">Qt</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arena_api.html">Arena Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter_guide.html">Using LUCID’s ArenaView with Jupyter Notebooks</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="cpp.html">Arena C++</a> &raquo;</li>
+        
+          <li><a href="cpp_arena.html">Arena C++</a> &raquo;</li>
+        
+      <li>ISystem</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="isystem">
+<h1>ISystem<a class="headerlink" href="#isystem" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="id1">
+<h2>ISystem<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystemE">
+<span id="_CPPv3N5Arena7ISystemE"></span><span id="_CPPv2N5Arena7ISystemE"></span><span id="Arena::ISystem"></span><span class="target" id="class_arena_1_1_i_system"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ISystem</span></span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystemE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>An interface to the system object</p>
+<p>The system is the entry point to the Arena SDK. It is retrieved and cleaned up through global functions (Arena::OpenSystem, Arena::CloseSystem).</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// opening and closing the system</span>
+<span class="p">{</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">ISystem</span><span class="o">*</span> <span class="n">pSystem</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">OpenSystem</span><span class="p">();</span>
+    <span class="c1">// do something</span>
+    <span class="c1">// ...</span>
+    <span class="n">Arena</span><span class="o">::</span><span class="n">CloseSystem</span><span class="p">(</span><span class="n">pSystem</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p>It manages devices (<a class="reference internal" href="cpp_arena_deviceinfo.html#class_arena_1_1_device_info"><span class="std std-ref">Arena::DeviceInfo</span></a>, <a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a>) and the system node map (GenApi::INodeMap) by:<ul class="simple">
+<li><p>maintaing a list of enumerated devices (<a class="reference internal" href="#class_arena_1_1_i_system_1a428383b6449ccc2add510d6801304de3"><span class="std std-ref">Arena::ISystem::UpdateDevices</span></a>, <a class="reference internal" href="#class_arena_1_1_i_system_1a0ccf4b568c69f06c9bf31d15b4adfbfd"><span class="std std-ref">Arena::ISystem::GetDevices</span></a>),</p></li>
+<li><p>creating and destroying devices (<a class="reference internal" href="#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a>, <a class="reference internal" href="#class_arena_1_1_i_system_1af1d2f9ae59259e0d6998b523607adc9b"><span class="std std-ref">Arena::ISystem::DestroyDevice</span></a>),</p></li>
+<li><p>and providing access to its node map (<a class="reference internal" href="#class_arena_1_1_i_system_1a1fd6ecd92156d75e01cc862407a41333"><span class="std std-ref">Arena::ISystem::GetTLSystemNodeMap</span></a>).</p></li>
+</ul>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system"><span class="std std-ref">Arena::ISystem</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_deviceinfo.html#class_arena_1_1_device_info"><span class="std std-ref">Arena::DeviceInfo</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>May only be opened once; subsequent attempts will throw</p></li>
+<li><p>Must be closed as final step with Arena; otherwise, memory will leak</p></li>
+</ul>
+</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="getinterfaces">
+<h2>GetInterfaces<a class="headerlink" href="#getinterfaces" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem13GetInterfacesEv">
+<span id="_CPPv3N5Arena7ISystem13GetInterfacesEv"></span><span id="_CPPv2N5Arena7ISystem13GetInterfacesEv"></span><span id="Arena::ISystem::GetInterfaces"></span><span class="target" id="class_arena_1_1_i_system_1a07302025ab6a9c8ac9afbbe0ca4f31f4"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="cpp_arena_interfaceinfo.html#_CPPv4N5Arena13InterfaceInfoE" title="Arena::InterfaceInfo"><span class="n"><span class="pre">InterfaceInfo</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GetInterfaces</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem13GetInterfacesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetInterfaces </strong> retrieves the internally maintained list of interface information objects (<a class="reference internal" href="cpp_arena_interfaceinfo.html#class_arena_1_1_interface_info"><span class="std std-ref">Arena::InterfaceInfo</span></a>).</p>
+<p>Internally, the system creates a list of information on all enumerated interfaces. <strong> GetInterface </strong> updates and retrieves this list. The interface information objects can be used to specify which interface to update devices on (<a class="reference internal" href="#class_arena_1_1_i_system_1a428383b6449ccc2add510d6801304de3"><span class="std std-ref">Arena::ISystem::UpdateDevices</span></a>).</p>
+<p>The device information objects (<a class="reference internal" href="cpp_arena_interfaceinfo.html#class_arena_1_1_interface_info"><span class="std std-ref">Arena::InterfaceInfo</span></a>) in the returned list merely house information in order to differentiate one interface from another. A standard vector (std::vector) is returned so that it can be searched and iterated over using the C++ standard library.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_interfaceinfo.html#class_arena_1_1_interface_info"><span class="std std-ref">Arena::InterfaceInfo</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system_1a428383b6449ccc2add510d6801304de3"><span class="std std-ref">Arena::ISystem::UpdateDevices</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Returns an empty list if no interfaces discovered</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Type: std::vector&lt;Arena::InterfaceInfo&gt;</p></li>
+<li><p>Vector of interface information objects</p></li>
+<li><p>Each interface information object refers to am interface on the system</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="updatedevices">
+<h2>UpdateDevices<a class="headerlink" href="#updatedevices" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem13UpdateDevicesE8uint64_t">
+<span id="_CPPv3N5Arena7ISystem13UpdateDevicesE8uint64_t"></span><span id="_CPPv2N5Arena7ISystem13UpdateDevicesE8uint64_t"></span><span id="Arena::ISystem::UpdateDevices__uint64_t"></span><span class="target" id="class_arena_1_1_i_system_1a428383b6449ccc2add510d6801304de3"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">UpdateDevices</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem13UpdateDevicesE8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> UpdateDevices </strong> updates the internal list of devices, (along with their relevant interfaces). It must be called before retrieving the list of devices (<a class="reference internal" href="#class_arena_1_1_i_system_1a0ccf4b568c69f06c9bf31d15b4adfbfd"><span class="std std-ref">Arena::ISystem::GetDevices</span></a>) or any time that an updated device list might be necessary.</p>
+<p>When called, the system broadcasts a discovery packet to all interfaces, waiting until the end of the timeout for any responses from enumerated devices. The new, updated list of devices is compared to the old list. If the contents of the list have changed, ‘true’ is returned; otherwise ‘false’.</p>
+<p>The GigE Vision spec requires devices respond to a broadcast discovery packet within one second unless set otherwise (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a>, ‘DiscoveryAckDelay’). Lucid devices are set to respond within 100 ms. Therefore, 100 works as an appropriate timeout value in many use cases. This response time can be customized through the ‘DiscoveryAckDelay’ feature, if supported. The timeout value should reflect any such changes.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system_1a0ccf4b568c69f06c9bf31d15b4adfbfd"><span class="std std-ref">Arena::ISystem::GetDevices</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Slightly affects bandwidth usage due to the broadcasting of discovery packets</p></li>
+<li><p>Discovers devices on all subnets, even when unable to communicate with them due to IP configuration</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timeout</strong> – <ul class="simple">
+<li><p>Type: uint64_t</p></li>
+<li><p>Unit: milliseconds</p></li>
+<li><p>Time to wait for connected devices to respond</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Type: bool</p></li>
+<li><p>True on first call that a device is found</p></li>
+<li><p>True if the device list has changed since the last call</p></li>
+<li><p>Otherwise, false</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id2">
+<h2>UpdateDevices<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem13UpdateDevicesE13InterfaceInfo8uint64_t">
+<span id="_CPPv3N5Arena7ISystem13UpdateDevicesE13InterfaceInfo8uint64_t"></span><span id="_CPPv2N5Arena7ISystem13UpdateDevicesE13InterfaceInfo8uint64_t"></span><span id="Arena::ISystem::UpdateDevices__InterfaceInfo.uint64_t"></span><span class="target" id="class_arena_1_1_i_system_1a54cbf6b0105bb07fabe5d54254c84e69"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">UpdateDevices</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cpp_arena_interfaceinfo.html#_CPPv4N5Arena13InterfaceInfoE" title="Arena::InterfaceInfo"><span class="n"><span class="pre">InterfaceInfo</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">ifaceInfo</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem13UpdateDevicesE13InterfaceInfo8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> UpdateDevices </strong> updates the internal list of devices, (along with their relevant interfaces). It must be called before retrieving the list of devices (<a class="reference internal" href="#class_arena_1_1_i_system_1a0ccf4b568c69f06c9bf31d15b4adfbfd"><span class="std std-ref">Arena::ISystem::GetDevices</span></a>) or any time that an updated device list might be necessary.</p>
+<p>When called, the system broadcasts a discovery packet to all interfaces, waiting until the end of the timeout for any responses from enumerated devices. The new, updated list of devices is compared to the old list. If the contents of the list have changed, ‘true’ is returned; otherwise ‘false’.</p>
+<p>The GigE Vision spec requires devices respond to a broadcast discovery packet within one second unless set otherwise (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a>, ‘DiscoveryAckDelay’). Lucid devices are set to respond within 100 ms. Therefore, 100 works as an appropriate timeout value in many use cases. This response time can be customized through the ‘DiscoveryAckDelay’ feature, if supported. The timeout value should reflect any such changes.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system_1a0ccf4b568c69f06c9bf31d15b4adfbfd"><span class="std std-ref">Arena::ISystem::GetDevices</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Slightly affects bandwidth usage due to the broadcasting of discovery packets</p></li>
+<li><p>Discovers devices on all subnets, even when unable to communicate with them due to IP configuration</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ifaceInfo</strong> – <ul>
+<li><p>Type: <a class="reference internal" href="cpp_arena_interfaceinfo.html#class_arena_1_1_interface_info"><span class="std std-ref">InterfaceInfo</span></a></p></li>
+<li><p>Specific interface to enumerate devices on</p></li>
+</ul>
+</p></li>
+<li><p><strong>timeout</strong> – <ul>
+<li><p>Type: uint64_t</p></li>
+<li><p>Unit: milliseconds</p></li>
+<li><p>Time to wait for connected devices to respond</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Type: bool</p></li>
+<li><p>True on first call that a device is found</p></li>
+<li><p>True if the device list has changed since the last call</p></li>
+<li><p>Otherwise, false</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="getdevices">
+<h2>GetDevices<a class="headerlink" href="#getdevices" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem10GetDevicesEv">
+<span id="_CPPv3N5Arena7ISystem10GetDevicesEv"></span><span id="_CPPv2N5Arena7ISystem10GetDevicesEv"></span><span id="Arena::ISystem::GetDevices"></span><span class="target" id="class_arena_1_1_i_system_1a0ccf4b568c69f06c9bf31d15b4adfbfd"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="cpp_arena_deviceinfo.html#_CPPv4N5Arena10DeviceInfoE" title="Arena::DeviceInfo"><span class="n"><span class="pre">DeviceInfo</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GetDevices</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem10GetDevicesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetDevices </strong> retrieves the internally maintained list of device information objects (<a class="reference internal" href="cpp_arena_deviceinfo.html#class_arena_1_1_device_info"><span class="std std-ref">Arena::DeviceInfo</span></a>). It must be called after the list has been updated (<a class="reference internal" href="#class_arena_1_1_i_system_1a428383b6449ccc2add510d6801304de3"><span class="std std-ref">Arena::ISystem::UpdateDevices</span></a>) and before a device is created (<a class="reference internal" href="#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a>).</p>
+<p>Internally, the system stores a list of information on all enumerated devices. As a simple getter, <strong> GetDevices </strong> retrieves this list without doing anything to update, maintain, or manage it.</p>
+<p>The device information objects (<a class="reference internal" href="cpp_arena_deviceinfo.html#class_arena_1_1_device_info"><span class="std std-ref">Arena::DeviceInfo</span></a>) in the returned list should not be confused with <a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a> objects. Whereas the latter are handles used to interact with a physical device, device information objects merely house information in order to differentiate one from another. A standard vector (std::vector) is returned so that it can be searched and iterated over using conventional means of the C++ standard library.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_deviceinfo.html#class_arena_1_1_device_info"><span class="std std-ref">Arena::DeviceInfo</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system_1a428383b6449ccc2add510d6801304de3"><span class="std std-ref">Arena::ISystem::UpdateDevices</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Returns an empty list if list never updated</p></li>
+<li><p>Returns objects containing device information, not device objects themselves</p></li>
+<li><p>Returns devices on all subnets, even when unable to communicate with them due to IP configuration</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Type: std::vector&lt;Arena::DeviceInfo&gt;</p></li>
+<li><p>Vector of device information objects</p></li>
+<li><p>Each device information object refers to a connected device</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="createdevice">
+<h2>CreateDevice<a class="headerlink" href="#createdevice" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem12CreateDeviceE10DeviceInfo">
+<span id="_CPPv3N5Arena7ISystem12CreateDeviceE10DeviceInfo"></span><span id="_CPPv2N5Arena7ISystem12CreateDeviceE10DeviceInfo"></span><span id="Arena::ISystem::CreateDevice__DeviceInfo"></span><span class="target" id="class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="cpp_arena_idevice.html#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">CreateDevice</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cpp_arena_deviceinfo.html#_CPPv4N5Arena10DeviceInfoE" title="Arena::DeviceInfo"><span class="n"><span class="pre">DeviceInfo</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">info</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem12CreateDeviceE10DeviceInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> CreateDevice </strong> creates and initializes a device using a single device information object (<a class="reference internal" href="cpp_arena_deviceinfo.html#class_arena_1_1_device_info"><span class="std std-ref">Arena::DeviceInfo</span></a>). It must be called after devices have been retrieved (<a class="reference internal" href="#class_arena_1_1_i_system_1a0ccf4b568c69f06c9bf31d15b4adfbfd"><span class="std std-ref">Arena::ISystem::GetDevices</span></a>). The device must be destroyed (<a class="reference internal" href="#class_arena_1_1_i_system_1af1d2f9ae59259e0d6998b523607adc9b"><span class="std std-ref">Arena::ISystem::DestroyDevice</span></a>) when no longer needed.</p>
+<p>When called, <strong> CreateDevice </strong> prepares the camera for user interaction, opening the control channel socket and initializing all node maps (GenApi::INodeMap). The returned device is ready to stream images, send events, and read or customize features.</p>
+<p>A single process may only create a single device once, but a single device may be opened on multiple processes. The first process to create the device is given read-write access. Additional processes are given read-only access. With read-only access, processes can read features and receive images and events; they cannot, however, write values, start the image stream or initialize events.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_deviceinfo.html#class_arena_1_1_device_info"><span class="std std-ref">Arena::DeviceInfo</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system_1a0ccf4b568c69f06c9bf31d15b4adfbfd"><span class="std std-ref">Arena::ISystem::GetDevices</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system_1af1d2f9ae59259e0d6998b523607adc9b"><span class="std std-ref">Arena::ISystem::DestroyDevice</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Provides read-write access only to initial process to create device; following processes given read-only access</p></li>
+<li><p>Devices must be destroyed</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>info</strong> – <ul class="simple">
+<li><p>Type: <a class="reference internal" href="cpp_arena_deviceinfo.html#class_arena_1_1_device_info"><span class="std std-ref">Arena::DeviceInfo</span></a></p></li>
+<li><p>Device information object of the device to create</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Type: <a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a>*</p></li>
+<li><p>Pointer to an initialized, ready-to-use device</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="destroydevice">
+<h2>DestroyDevice<a class="headerlink" href="#destroydevice" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem13DestroyDeviceEP7IDevice">
+<span id="_CPPv3N5Arena7ISystem13DestroyDeviceEP7IDevice"></span><span id="_CPPv2N5Arena7ISystem13DestroyDeviceEP7IDevice"></span><span id="Arena::ISystem::DestroyDevice__IDeviceP"></span><span class="target" id="class_arena_1_1_i_system_1af1d2f9ae59259e0d6998b523607adc9b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">DestroyDevice</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cpp_arena_idevice.html#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pDevice</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem13DestroyDeviceEP7IDevice" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> DestroyDevice </strong> destroys and cleans up the internal memory of a device (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a>). Devices that have been created (<a class="reference internal" href="#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a>) must be destroyed.</p>
+<p>When called, <strong> DestroyDevice </strong> deletes all internal memory associated with a device: if a stream has been left open, it is closed; all node maps and chunk data adapters are deallocated; events are unregistered and the message channel closed; finally, the control channel socket is closed, allowing the device to be opened in read-write mode again.</p>
+<p>Destroying a device does not reset device settings, and will not return a camera to a stable state. To reset settings or return to a stable state, power-cycle a device (unplug and plug back in) or reset it (‘DeviceReset’ feature).</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system_1a3d11a7c15755d2ede684fa1f5a7410ac"><span class="std std-ref">Arena::ISystem::CreateDevice</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>Devices must be destroyed</p></li>
+<li><p>Does not affect device settings</p></li>
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pDevice</strong> – <ul class="simple">
+<li><p>Type: <a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a>*</p></li>
+<li><p>Device to destroy</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="gettlsystemnodemap">
+<h2>GetTLSystemNodeMap<a class="headerlink" href="#gettlsystemnodemap" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem18GetTLSystemNodeMapEv">
+<span id="_CPPv3N5Arena7ISystem18GetTLSystemNodeMapEv"></span><span id="_CPPv2N5Arena7ISystem18GetTLSystemNodeMapEv"></span><span id="Arena::ISystem::GetTLSystemNodeMap"></span><span class="target" id="class_arena_1_1_i_system_1a1fd6ecd92156d75e01cc862407a41333"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">GenApi</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">INodeMap</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GetTLSystemNodeMap</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem18GetTLSystemNodeMapEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetTLSystemNodeMap </strong> retrieves the GenTL system node map (GenApi::INodeMap), used to access system related nodes (GenApi::INode).</p>
+<p>As a simple getter, <strong> GetTLSystemNodeMap </strong> retrieves this node map without doing anything to initialize, manage, or maintain it. This node map is initialized when the system is opened (Arena::OpenSystem) and deinitialized when the system is closed (Arena::CloseSystem). Because node maps are cleaned up internally, retrieving multiple pointers to the same node map is permitted.</p>
+<p>All available nodes can be viewed in ArenaView or the examples (Cpp_Explore_NodeMaps) example. Nodes in this node map include nodes related to:<ul class="simple">
+<li><p>Arena SDK information</p></li>
+<li><p>GenTL and GEV versioning information</p></li>
+<li><p>the ability to update and select interfaces</p></li>
+<li><p>interface discovery and IP configuration information</p></li>
+</ul>
+</p>
+<p>Arena provides access to five different node maps. This one comes from the device and describes all its features. Please check device documentation for more information regarding these features.<ul class="simple">
+<li><p>device (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p>The other four, including this one, node maps describe and provide access to information and settings through the software rather than the device.<ul class="simple">
+<li><p>system GenTL (<a class="reference internal" href="#class_arena_1_1_i_system_1a1fd6ecd92156d75e01cc862407a41333"><span class="std std-ref">Arena::ISystem::GetTLSystemNodeMap</span></a>)</p></li>
+<li><p>stream GenTL (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>)</p></li>
+<li><p>device GenTL (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a>)</p></li>
+<li><p>interface GenTL (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p>Arena::OpenSystem</p></li>
+<li><p>Arena::CloseSystem</p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system_1a1fd6ecd92156d75e01cc862407a41333"><span class="std std-ref">Arena::ISystem::GetTLSystemNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Type: GenApi::INodeMap*</p></li>
+<li><p>GenTL node map for the system</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="gettlinterfacenodemap">
+<h2>GetTLInterfaceNodeMap<a class="headerlink" href="#gettlinterfacenodemap" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem21GetTLInterfaceNodeMapE10DeviceInfo">
+<span id="_CPPv3N5Arena7ISystem21GetTLInterfaceNodeMapE10DeviceInfo"></span><span id="_CPPv2N5Arena7ISystem21GetTLInterfaceNodeMapE10DeviceInfo"></span><span id="Arena::ISystem::GetTLInterfaceNodeMap__DeviceInfo"></span><span class="target" id="class_arena_1_1_i_system_1ae06d76c322521f87c983eb47dbf0be5d"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">GenApi</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">INodeMap</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">GetTLInterfaceNodeMap</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cpp_arena_deviceinfo.html#_CPPv4N5Arena10DeviceInfoE" title="Arena::DeviceInfo"><span class="n"><span class="pre">DeviceInfo</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">devInfo</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem21GetTLInterfaceNodeMapE10DeviceInfo" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> GetTLInterfaceNodeMap </strong> retrieves the GenTL Interface node map (GenApi::INodeMap), used to access interface related nodes (GenApi::INode).</p>
+<p>As a simple getter, <strong> GetTLInterfaceNodeMap </strong> retrieves this node map without doing anything to initialize, manage, or maintain it. This node map is initialized when the system is opened (Arena::OpenSystem) and deinitialized when the system is closed (Arena::CloseSystem). Because node maps are cleaned up internally, retrieving multiple pointers to the same node map is permitted. This nodemap will be associated to the device indicated by the devInfo (<a class="reference internal" href="cpp_arena_deviceinfo.html#class_arena_1_1_device_info"><span class="std std-ref">Arena::DeviceInfo</span></a>) parameter.</p>
+<p>All available nodes can be viewed in the XML, SFNC_GenTLInterface_Reference_Version_1_0_0_Schema_1_1.xml, found in Arena/&lt;version&gt;/&lt;platform&gt;/xml. Nodes in this node map include nodes related to:<ul class="simple">
+<li><p>Interface information</p></li>
+<li><p>GenTL and GEV versioning information</p></li>
+<li><p>the ability to update and select devices</p></li>
+<li><p>device discovery and IP configuration information</p></li>
+</ul>
+</p>
+<p>Arena provides access to five different node maps. This one comes from the device and describes all its features. Please check device documentation for more information regarding these features.<ul class="simple">
+<li><p>device (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p>The other four, including this one, node maps describe and provide access to information and settings through the software rather than the device.<ul class="simple">
+<li><p>system GenTL (<a class="reference internal" href="#class_arena_1_1_i_system_1a1fd6ecd92156d75e01cc862407a41333"><span class="std std-ref">Arena::ISystem::GetTLSystemNodeMap</span></a>)</p></li>
+<li><p>stream GenTL (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a>)</p></li>
+<li><p>device GenTL (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a>)</p></li>
+<li><p>interface GenTL (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a>)</p></li>
+</ul>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="cpp_arena_deviceinfo.html#class_arena_1_1_device_info"><span class="std std-ref">Arena::DeviceInfo</span></a></p></li>
+<li><p>Arena::OpenSystem</p></li>
+<li><p>Arena::CloseSystem</p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1af5e97a2c24ecd66ff490db3f134b4d45"><span class="std std-ref">Arena::IDevice::GetNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system_1a1fd6ecd92156d75e01cc862407a41333"><span class="std std-ref">Arena::ISystem::GetTLSystemNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a3684196a7ca2bec87b2828bfa831aa1e"><span class="std std-ref">Arena::IDevice::GetTLStreamNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1afb9941fe984aa56fd87072ac8044ac6e"><span class="std std-ref">Arena::IDevice::GetTLDeviceNodeMap</span></a></p></li>
+<li><p><a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device_1a51ca9d604eaf950f03e23464af059eb3"><span class="std std-ref">Arena::IDevice::GetTLInterfaceNodeMap</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>May throw GenICam::GenericException or other derived exception</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>devInfo</strong> – <ul class="simple">
+<li><p>Type: <a class="reference internal" href="cpp_arena_deviceinfo.html#class_arena_1_1_device_info"><span class="std std-ref">DeviceInfo</span></a></p></li>
+<li><p>Device to get the interface nodemap for</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>Type: GenApi::INodeMap*</p></li>
+<li><p>GenTL node map for the system</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="forceip">
+<h2>ForceIp<a class="headerlink" href="#forceip" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem7ForceIpE8uint64_t8uint64_t8uint64_t8uint64_t">
+<span id="_CPPv3N5Arena7ISystem7ForceIpE8uint64_t8uint64_t8uint64_t8uint64_t"></span><span id="_CPPv2N5Arena7ISystem7ForceIpE8uint64_t8uint64_t8uint64_t8uint64_t"></span><span id="Arena::ISystem::ForceIp__uint64_t.uint64_t.uint64_t.uint64_t"></span><span class="target" id="class_arena_1_1_i_system_1abb80a69dd649838769af1d05eea6e512"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ForceIp</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">macAddress</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ipAddress</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">subnetMask</span></span>, <span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">defaultGateway</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem7ForceIpE8uint64_t8uint64_t8uint64_t8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>
+Forces the device that matches the macAddress to a temporary new ipAddress, subnetMask and defaultGateway</p>
+<p><a class="reference internal" href="#class_arena_1_1_i_system_1abb80a69dd649838769af1d05eea6e512"><span class="std std-ref">Arena::ISystem::ForceIp</span></a> will send a ForceIP command out on all the interfaces This call also updates the internal list of interfaces in case that has not been done yet. The ForceIP command will be a network wide broadcast 255.255.255.255 and will request an acknowledment to be broadcast back to the host.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system_1abb80a69dd649838769af1d05eea6e512"><span class="std std-ref">Arena::ISystem::ForceIp</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>This function may throw an exception derived from GenApi::GenericException upon failure</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>macAddress</strong> – <ul>
+<li><p>Type: uint64_t</p></li>
+<li><p>MAC address of the device to force</p></li>
+</ul>
+</p></li>
+<li><p><strong>ipAddress</strong> – <ul>
+<li><p>Type: uint64_t</p></li>
+<li><p>IP address to force</p></li>
+</ul>
+</p></li>
+<li><p><strong>subnetMask</strong> – <ul>
+<li><p>Type: uint64_t</p></li>
+<li><p>subnet mask to force</p></li>
+</ul>
+</p></li>
+<li><p><strong>defaultGateway</strong> – <ul>
+<li><p>Type: uint64_t</p></li>
+<li><p>default gateway to force</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id3">
+<h2>ForceIp<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem7ForceIpEPKcPKcPKcPKc">
+<span id="_CPPv3N5Arena7ISystem7ForceIpEPKcPKcPKcPKc"></span><span id="_CPPv2N5Arena7ISystem7ForceIpEPKcPKcPKcPKc"></span><span id="Arena::ISystem::ForceIp__cCP.cCP.cCP.cCP"></span><span class="target" id="class_arena_1_1_i_system_1ad5f42c229583b7340c696f317ab95513"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ForceIp</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pMacAddress</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pIpAddress</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pSubnetMask</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pDefaultGateway</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem7ForceIpEPKcPKcPKcPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>
+Forces the device that matches the macAddress to a temporary new ipAddress, subnetMask and defaultGateway</p>
+<p><a class="reference internal" href="#class_arena_1_1_i_system_1abb80a69dd649838769af1d05eea6e512"><span class="std std-ref">Arena::ISystem::ForceIp</span></a> will send a ForceIP command out on all the interfaces This call also updates the internal list of interfaces in case that has not been done yet. The ForceIP command will be a network wide broadcast 255.255.255.255 and will request an acknowledment to be broadcast back to the host.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p><a class="reference internal" href="#class_arena_1_1_i_system_1abb80a69dd649838769af1d05eea6e512"><span class="std std-ref">Arena::ISystem::ForceIp</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><ul class="simple">
+<li><p>This function may throw an exception derived from GenApi::GenericException upon failure</p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pMacAddress</strong> – <ul>
+<li><p>Type: const char*</p></li>
+<li><p>MAC address of the device to force</p></li>
+</ul>
+</p></li>
+<li><p><strong>pIpAddress</strong> – <ul>
+<li><p>Type: const char*</p></li>
+<li><p>IP address to force</p></li>
+</ul>
+</p></li>
+<li><p><strong>pSubnetMask</strong> – <ul>
+<li><p>Type: const char*</p></li>
+<li><p>subnet mask to force</p></li>
+</ul>
+</p></li>
+<li><p><strong>pDefaultGateway</strong> – <ul>
+<li><p>Type: const char*</p></li>
+<li><p>default gateway to force</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="registerdevicedisconnectcallback">
+<h2>RegisterDeviceDisconnectCallback<a class="headerlink" href="#registerdevicedisconnectcallback" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem32RegisterDeviceDisconnectCallbackEP7IDeviceP19IDisconnectCallback">
+<span id="_CPPv3N5Arena7ISystem32RegisterDeviceDisconnectCallbackEP7IDeviceP19IDisconnectCallback"></span><span id="_CPPv2N5Arena7ISystem32RegisterDeviceDisconnectCallbackEP7IDeviceP19IDisconnectCallback"></span><span id="Arena::ISystem::RegisterDeviceDisconnectCallback__IDeviceP.IDisconnectCallbackP"></span><span class="target" id="class_arena_1_1_i_system_1a5760b7a5f17f3b39d0369202215400ad"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">RegisterDeviceDisconnectCallback</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cpp_arena_idevice.html#_CPPv4N5Arena7IDeviceE" title="Arena::IDevice"><span class="n"><span class="pre">IDevice</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pDevice</span></span>, <span class="n"><span class="pre">IDisconnectCallback</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pCallback</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem32RegisterDeviceDisconnectCallbackEP7IDeviceP19IDisconnectCallback" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> RegisterDeviceDisconnectCallback </strong> registers a callback object derived from Arena::IDeviceDisconnectCallback, implementing the OnDeviceDisconnected() function. When an registered device is disconnected, the user-implemented OnDeviceDisconnected() will be called. The user-implemented OnDeviceDisconnected() will receive a pointer to the device that was disconnected. (<a class="reference internal" href="cpp_arena_idevice.html#class_arena_1_1_i_device"><span class="std std-ref">Arena::IDevice</span></a>* pDevice).</p>
+<p>Callbacks can be registered whether or not the device is currently connected. Multiple callbacks can be registered for a device and each will be called sequentially in the order that they have been registered in.</p>
+<p>RegisterDeviceDisconnectCallback will throw :<ul class="simple">
+<li><p>InvalidArgumentException if the callback argument is NULL</p></li>
+<li><p>LogicalErrorException if the callback has already been registered</p></li>
+</ul>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Register callback object</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">camSerial</span> <span class="o">=</span> <span class="n">deviceInfos</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">SerialNumber</span><span class="p">();</span>
+  <span class="n">DeviceDisconnectCallback</span><span class="o">*</span> <span class="n">pCallbackHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DeviceDisconnectCallback</span><span class="p">();</span>
+
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RegisterDeviceDisconnectCallback</span><span class="p">(</span><span class="n">pDevice</span><span class="p">,</span> <span class="n">pCallbackHandler</span><span class="p">);</span>
+
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">DeregisterDeviceDisconnectCallback</span><span class="p">(</span><span class="n">pCallbackHandler</span><span class="p">);</span>
+
+  <span class="k">delete</span> <span class="n">pCallbackHandler</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p>System:<a class="reference internal" href="#class_arena_1_1_i_system_1a3d1431f0138b2252a0753e845271e913"><span class="std std-ref">DeregisterDeviceDisconnectCallback</span></a></p></li>
+<li><p>System:<a class="reference internal" href="#class_arena_1_1_i_system_1adf1d29199f8fa11c6e9ec22bdc5c4059"><span class="std std-ref">DeregisterAllDeviceDisconnectCallbacks</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pCallback</strong> – <ul class="simple">
+<li><p>Type: IDeviceDisconnectCallback*</p></li>
+<li><p>A pointer to an IDeviceDisconnectCallback object which implements the OnDeviceDisconnected() function</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="deregisterdevicedisconnectcallback">
+<h2>DeregisterDeviceDisconnectCallback<a class="headerlink" href="#deregisterdevicedisconnectcallback" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem34DeregisterDeviceDisconnectCallbackEP19IDisconnectCallback">
+<span id="_CPPv3N5Arena7ISystem34DeregisterDeviceDisconnectCallbackEP19IDisconnectCallback"></span><span id="_CPPv2N5Arena7ISystem34DeregisterDeviceDisconnectCallbackEP19IDisconnectCallback"></span><span id="Arena::ISystem::DeregisterDeviceDisconnectCallback__IDisconnectCallbackP"></span><span class="target" id="class_arena_1_1_i_system_1a3d1431f0138b2252a0753e845271e913"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">DeregisterDeviceDisconnectCallback</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">IDisconnectCallback</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pCallback</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem34DeregisterDeviceDisconnectCallbackEP19IDisconnectCallback" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> DeregisterDeviceDisconnectCallback </strong> unregisters a previously registered callback object. Callbacks can be unregistered whether or not the device is currently connected. To deregister all callbacks at once use DeregisterAllDeviceDisconnectCallbacks.</p>
+<p>DeregisterDeviceDisconnectCallback will throw :<ul class="simple">
+<li><p>InvalidArgumentException if the callback argument is NULL</p></li>
+</ul>
+</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Register callback object</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">camSerial</span> <span class="o">=</span> <span class="n">deviceInfos</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">SerialNumber</span><span class="p">();</span>
+  <span class="n">DeviceDisconnectCallback</span><span class="o">*</span> <span class="n">pCallbackHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DeviceDisconnectCallback</span><span class="p">();</span>
+
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RegisterDeviceDisconnectCallback</span><span class="p">(</span><span class="n">pDevice</span><span class="p">,</span> <span class="n">pCallbackHandler</span><span class="p">);</span>
+
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">DeregisterDeviceDisconnectCallback</span><span class="p">(</span><span class="n">pCallbackHandler</span><span class="p">);</span>
+
+  <span class="k">delete</span> <span class="n">pCallbackHandler</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p>System:<a class="reference internal" href="#class_arena_1_1_i_system_1a5760b7a5f17f3b39d0369202215400ad"><span class="std std-ref">RegisterDeviceDisconnectCallback</span></a></p></li>
+<li><p>System:<a class="reference internal" href="#class_arena_1_1_i_system_1adf1d29199f8fa11c6e9ec22bdc5c4059"><span class="std std-ref">DeregisterAllDeviceDisconnectCallbacks</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pCallback</strong> – <ul class="simple">
+<li><p>Type: IDisconnectCallback*</p></li>
+<li><p>A pointer to an IDisconnectCallback object which implements the OnDeviceDisconnected() function</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="deregisteralldevicedisconnectcallbacks">
+<h2>DeregisterAllDeviceDisconnectCallbacks<a class="headerlink" href="#deregisteralldevicedisconnectcallbacks" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem38DeregisterAllDeviceDisconnectCallbacksEv">
+<span id="_CPPv3N5Arena7ISystem38DeregisterAllDeviceDisconnectCallbacksEv"></span><span id="_CPPv2N5Arena7ISystem38DeregisterAllDeviceDisconnectCallbacksEv"></span><span id="Arena::ISystem::DeregisterAllDeviceDisconnectCallbacks"></span><span class="target" id="class_arena_1_1_i_system_1adf1d29199f8fa11c6e9ec22bdc5c4059"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">DeregisterAllDeviceDisconnectCallbacks</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem38DeregisterAllDeviceDisconnectCallbacksEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> DeregisterAllDeviceDisconnectCallbacks </strong> deregisters all previously registered callback objects. Callbacks can be unregistered whether or not the device is currently connected. To deregister an individual callback, DeregisterDeviceDisconnectCallback.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Register callback object</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">camSerial</span> <span class="o">=</span> <span class="n">deviceInfos</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">SerialNumber</span><span class="p">();</span>
+  <span class="n">DeviceDisconnectCallback</span><span class="o">*</span> <span class="n">pCallbackHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DeviceDisconnectCallback</span><span class="p">();</span>
+
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">RegisterDeviceDisconnectCallback</span><span class="p">(</span><span class="n">pDevice</span><span class="p">,</span> <span class="n">pCallbackHandler</span><span class="p">);</span>
+
+  <span class="n">pDevice</span><span class="o">-&gt;</span><span class="n">DeregisterAllDeviceDisconnectCallbacks</span><span class="p">(</span><span class="n">pCallbackHandler</span><span class="p">);</span>
+
+  <span class="k">delete</span> <span class="n">pCallbackHandler</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p>System:<a class="reference internal" href="#class_arena_1_1_i_system_1a5760b7a5f17f3b39d0369202215400ad"><span class="std std-ref">RegisterDeviceDisconnectCallback</span></a></p></li>
+<li><p>System:<a class="reference internal" href="#class_arena_1_1_i_system_1a3d1431f0138b2252a0753e845271e913"><span class="std std-ref">DeregisterDeviceDisconnectCallback</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="addunicastdiscoverydevice">
+<h2>AddUnicastDiscoveryDevice<a class="headerlink" href="#addunicastdiscoverydevice" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem25AddUnicastDiscoveryDeviceEPKc">
+<span id="_CPPv3N5Arena7ISystem25AddUnicastDiscoveryDeviceEPKc"></span><span id="_CPPv2N5Arena7ISystem25AddUnicastDiscoveryDeviceEPKc"></span><span id="Arena::ISystem::AddUnicastDiscoveryDevice__cCP"></span><span class="target" id="class_arena_1_1_i_system_1a5f2215a4c0e8955c6a16e71ef28d846b"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">AddUnicastDiscoveryDevice</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pUnicastDeviceIP</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem25AddUnicastDiscoveryDeviceEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> AddUnicastDiscoveryDevice </strong> registers an IP address for a device on a different subnet than the host. Registered devices will be enumerated using unicast discovery messages. The list of remote devices will persist until they are removed using <a class="reference internal" href="#class_arena_1_1_i_system_1a13aa2b21f83744a30eae2457de43a037"><span class="std std-ref">RemoveUnicastDiscoveryDevice()</span></a> or until the application terminates. Unicast discovery’s will be sent when <a class="reference internal" href="#class_arena_1_1_i_system_1a428383b6449ccc2add510d6801304de3"><span class="std std-ref">UpdateDevices()</span></a> is called.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Add a device on a different subnet than the host to the remote devices list</span>
+<span class="p">{</span>
+  <span class="n">Arena</span><span class="o">::</span><span class="n">ISystem</span><span class="o">*</span> <span class="n">pSystem</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">OpenSystem</span><span class="p">();</span>
+
+  <span class="c1">// Add remote device to the unicast discovery list</span>
+  <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">AddUnicastDiscoveryDevice</span><span class="p">(</span><span class="s">&quot;192.168.0.10&quot;</span><span class="p">);</span>
+
+  <span class="c1">// Enumerate all devices including registered devices on different subnets.</span>
+  <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">UpdateDevices</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p>System:<a class="reference internal" href="#class_arena_1_1_i_system_1a13aa2b21f83744a30eae2457de43a037"><span class="std std-ref">RemoveUnicastDiscoveryDevice</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pUnicastDeviceIP</strong> – <ul class="simple">
+<li><p>Type: const char*</p></li>
+<li><p>A pointer to an ipAddress string</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="removeunicastdiscoverydevice">
+<h2>RemoveUnicastDiscoveryDevice<a class="headerlink" href="#removeunicastdiscoverydevice" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystem28RemoveUnicastDiscoveryDeviceEPKc">
+<span id="_CPPv3N5Arena7ISystem28RemoveUnicastDiscoveryDeviceEPKc"></span><span id="_CPPv2N5Arena7ISystem28RemoveUnicastDiscoveryDeviceEPKc"></span><span id="Arena::ISystem::RemoveUnicastDiscoveryDevice__cCP"></span><span class="target" id="class_arena_1_1_i_system_1a13aa2b21f83744a30eae2457de43a037"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">RemoveUnicastDiscoveryDevice</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pUnicastDeviceIP</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N5Arena7ISystem28RemoveUnicastDiscoveryDeviceEPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><strong> RemoveUnicastDiscoveryDevice </strong> unregisters an IP address for a device on a different subnet than the host. To remove all registered devices, pass NULL for the IP address argument.</p>
+<p><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Add a device on a different subnet than the host to the remote devices list</span>
+<span class="p">{</span>
+  <span class="n">Arena</span><span class="o">::</span><span class="n">ISystem</span><span class="o">*</span> <span class="n">pSystem</span> <span class="o">=</span> <span class="n">Arena</span><span class="o">::</span><span class="n">OpenSystem</span><span class="p">();</span>
+
+  <span class="c1">// Add remote device to the unicast discovery list</span>
+  <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">AddUnicastDiscoveryDevice</span><span class="p">(</span><span class="s">&quot;192.168.0.10&quot;</span><span class="p">);</span>
+
+  <span class="c1">// Enumerate all devices including registered devices on different subnets.</span>
+  <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">UpdateDevices</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+
+  <span class="c1">// do something</span>
+  <span class="c1">// ...</span>
+
+  <span class="c1">// Remove specific remote device from the unicast discovery list</span>
+  <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">RemoveUnicastDiscovery</span><span class="p">(</span><span class="s">&quot;192.168.0.10&quot;</span><span class="p">);</span>
+
+  <span class="c1">// Remove all remote devices from the unicast discovery list</span>
+  <span class="n">pSystem</span><span class="o">-&gt;</span><span class="n">RemoveUnicastDiscoveryDevice</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><ul class="simple">
+<li><p>System:<a class="reference internal" href="#class_arena_1_1_i_system_1a5f2215a4c0e8955c6a16e71ef28d846b"><span class="std std-ref">AddUnicastDiscoveryDevice</span></a> </p></li>
+</ul>
+</p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pUnicastDeviceIP</strong> – <ul class="simple">
+<li><p>Type: const char*</p></li>
+<li><p>A pointer to an ipAddress string</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>none</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h2>~ISystem<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N5Arena7ISystemD0Ev">
+<span id="_CPPv3N5Arena7ISystemD0Ev"></span><span id="_CPPv2N5Arena7ISystemD0Ev"></span><span id="Arena::ISystem::~ISystem"></span><span class="target" id="class_arena_1_1_i_system_1a34320cd30f90a9c0a8404bb39c02a23c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">Arena</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N5Arena7ISystemE" title="Arena::ISystem"><span class="n"><span class="pre">ISystem</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">~ISystem</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5Arena7ISystemD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A destructor </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cpp_arena_interfaceinfo.html" class="btn btn-neutral float-right" title="InterfaceInfo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cpp_arena_deviceinfo.html" class="btn btn-neutral" title="DeviceInfo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.68.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

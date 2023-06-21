@@ -1,0 +1,828 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NodeMap &mdash; Arena 0.1.68.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Arena 0.1.68.0 documentation" href="index.html"/>
+        <link rel="up" title="Arena C" href="c_arena.html"/>
+        <link rel="next" title="Buffer" href="c_arena_buffer.html"/>
+        <link rel="prev" title="Callback" href="c_arena_callback.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home">
+          
+
+          <!---->
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.68
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact_us.html">Contact Us</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_sdk_datasheet.html">Arena SDK Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_windows.html">Arena SDK for Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arena_sdk_linux.html">Arena SDK for Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="sdk.html">Code Reference &amp; Samples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gentl.html">GenTL Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp.html">Arena C++</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="c.html">Arena C</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="c_arena.html">Arena C</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="c_arena_defs.html">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_imagefactory.html">ImageFactory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_callback.html">Callback</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">NodeMap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_buffer.html">Buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_arena.html">Arena</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_system.html">System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_device.html">Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_chunkdata.html">ChunkData</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_featurestream.html">FeatureStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="c_arena_nodes.html">Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="c_save.html">Save C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_examples.html">C Code Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="qt.html">Qt</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="arena_api.html">Arena Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter_guide.html">Using LUCID’s ArenaView with Jupyter Notebooks</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Arena</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="sdk.html">Code Reference &amp; Samples</a> &raquo;</li>
+        
+          <li><a href="c.html">Arena C</a> &raquo;</li>
+        
+          <li><a href="c_arena.html">Arena C</a> &raquo;</li>
+        
+      <li>NodeMap</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nodemap">
+<h1>NodeMap<a class="headerlink" href="#nodemap" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="acnodemapgetnode">
+<h2>acNodeMapGetNode<a class="headerlink" href="#acnodemapgetnode" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapGetNode” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapGetNode (acNodeMap hNodeMap, const char *pNodeName, acNode *phNode)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapGetNode (acNodeMap hNodeMap, const char *pNodeName, acNode *phNode)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapGetNode (acNodeMap hNodeMap, const char *pNodeName, acNode *phNode)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapgetnodeandaccessmode">
+<h2>acNodeMapGetNodeAndAccessMode<a class="headerlink" href="#acnodemapgetnodeandaccessmode" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapGetNodeAndAccessMode” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapGetNodeAndAccessMode (acNodeMap hNodeMap, const char *pNodeName, acNode *phNode, AC_ACCESS_MODE *pNodeAccess)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapGetNodeAndAccessMode (acNodeMap hNodeMap, const char *pNodeName, acNode *phNode, AC_ACCESS_MODE *pNodeAccess)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapGetNodeAndAccessMode (acNodeMap hNodeMap, const char *pNodeName, acNode *phNode, AC_ACCESS_MODE *pNodeAccess)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapinvalidatenodes">
+<h2>acNodeMapInvalidateNodes<a class="headerlink" href="#acnodemapinvalidatenodes" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapInvalidateNodes” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapInvalidateNodes (acNodeMap hNodeMap)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapInvalidateNodes (acNodeMap hNodeMap)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapInvalidateNodes (acNodeMap hNodeMap)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapgetdevicename">
+<h2>acNodeMapGetDeviceName<a class="headerlink" href="#acnodemapgetdevicename" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapGetDeviceName” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapGetDeviceName (acNodeMap hNodeMap, char *pDeviceNameBuf, size_t *pBufLen)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapGetDeviceName (acNodeMap hNodeMap, char *pDeviceNameBuf, size_t *pBufLen)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapGetDeviceName (acNodeMap hNodeMap, char *pDeviceNameBuf, size_t *pBufLen)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemappoll">
+<h2>acNodeMapPoll<a class="headerlink" href="#acnodemappoll" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapPoll” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapPoll (acNodeMap hNodeMap, int64_t elapsedTime)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapPoll (acNodeMap hNodeMap, int64_t elapsedTime)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapPoll (acNodeMap hNodeMap, int64_t elapsedTime)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemaplock">
+<h2>acNodeMapLock<a class="headerlink" href="#acnodemaplock" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapLock” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapLock (acNodeMap hNodeMap)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapLock (acNodeMap hNodeMap)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapLock (acNodeMap hNodeMap)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapunlock">
+<h2>acNodeMapUnlock<a class="headerlink" href="#acnodemapunlock" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapUnlock” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapUnlock (acNodeMap hNodeMap)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapUnlock (acNodeMap hNodeMap)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapUnlock (acNodeMap hNodeMap)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemaptrylock">
+<h2>acNodeMapTryLock<a class="headerlink" href="#acnodemaptrylock" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapTryLock” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapTryLock (acNodeMap hNodeMap, bool8_t *pLocked)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapTryLock (acNodeMap hNodeMap, bool8_t *pLocked)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapTryLock (acNodeMap hNodeMap, bool8_t *pLocked)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapgetnumnodes">
+<h2>acNodeMapGetNumNodes<a class="headerlink" href="#acnodemapgetnumnodes" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapGetNumNodes” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapGetNumNodes (acNodeMap hNodeMap, uint64_t *pNumNodes)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapGetNumNodes (acNodeMap hNodeMap, uint64_t *pNumNodes)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapGetNumNodes (acNodeMap hNodeMap, uint64_t *pNumNodes)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapgetnodebyindex">
+<h2>acNodeMapGetNodeByIndex<a class="headerlink" href="#acnodemapgetnodebyindex" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapGetNodeByIndex” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapGetNodeByIndex (acNodeMap hNodeMap, size_t index, acNode *phNode)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapGetNodeByIndex (acNodeMap hNodeMap, size_t index, acNode *phNode)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapGetNodeByIndex (acNodeMap hNodeMap, size_t index, acNode *phNode)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapgetnodebyindexandaccessmode">
+<h2>acNodeMapGetNodeByIndexAndAccessMode<a class="headerlink" href="#acnodemapgetnodebyindexandaccessmode" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapGetNodeByIndexAndAccessMode” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapGetNodeByIndexAndAccessMode (acNodeMap hNodeMap, size_t index, acNode *phNode, AC_ACCESS_MODE *pNodeAccess)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapGetNodeByIndexAndAccessMode (acNodeMap hNodeMap, size_t index, acNode *phNode, AC_ACCESS_MODE *pNodeAccess)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapGetNodeByIndexAndAccessMode (acNodeMap hNodeMap, size_t index, acNode *phNode, AC_ACCESS_MODE *pNodeAccess)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapgetstringvalue">
+<h2>acNodeMapGetStringValue<a class="headerlink" href="#acnodemapgetstringvalue" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapGetStringValue” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapGetStringValue (acNodeMap hNodeMap, const char *pNodeName, char *pValueBuf, size_t *pBufLen)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapGetStringValue (acNodeMap hNodeMap, const char *pNodeName, char *pValueBuf, size_t *pBufLen)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapGetStringValue (acNodeMap hNodeMap, const char *pNodeName, char *pValueBuf, size_t *pBufLen)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapgetintegervalue">
+<h2>acNodeMapGetIntegerValue<a class="headerlink" href="#acnodemapgetintegervalue" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapGetIntegerValue” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapGetIntegerValue (acNodeMap hNodeMap, const char *pNodeName, int64_t *pValue)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapGetIntegerValue (acNodeMap hNodeMap, const char *pNodeName, int64_t *pValue)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapGetIntegerValue (acNodeMap hNodeMap, const char *pNodeName, int64_t *pValue)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapgetfloatvalue">
+<h2>acNodeMapGetFloatValue<a class="headerlink" href="#acnodemapgetfloatvalue" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapGetFloatValue” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapGetFloatValue (acNodeMap hNodeMap, const char *pNodeName, double *pValue)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapGetFloatValue (acNodeMap hNodeMap, const char *pNodeName, double *pValue)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapGetFloatValue (acNodeMap hNodeMap, const char *pNodeName, double *pValue)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapgetbooleanvalue">
+<h2>acNodeMapGetBooleanValue<a class="headerlink" href="#acnodemapgetbooleanvalue" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapGetBooleanValue” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapGetBooleanValue (acNodeMap hNodeMap, const char *pNodeName, bool8_t *pValue)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapGetBooleanValue (acNodeMap hNodeMap, const char *pNodeName, bool8_t *pValue)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapGetBooleanValue (acNodeMap hNodeMap, const char *pNodeName, bool8_t *pValue)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapgetenumerationvalue">
+<h2>acNodeMapGetEnumerationValue<a class="headerlink" href="#acnodemapgetenumerationvalue" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapGetEnumerationValue” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapGetEnumerationValue (acNodeMap hNodeMap, const char *pNodeName, char *pSymbolicBuf, size_t *pBufLen)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapGetEnumerationValue (acNodeMap hNodeMap, const char *pNodeName, char *pSymbolicBuf, size_t *pBufLen)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapGetEnumerationValue (acNodeMap hNodeMap, const char *pNodeName, char *pSymbolicBuf, size_t *pBufLen)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapsetstringvalue">
+<h2>acNodeMapSetStringValue<a class="headerlink" href="#acnodemapsetstringvalue" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapSetStringValue” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapSetStringValue (acNodeMap hNodeMap, const char *pNodeName, const char *pValue)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapSetStringValue (acNodeMap hNodeMap, const char *pNodeName, const char *pValue)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapSetStringValue (acNodeMap hNodeMap, const char *pNodeName, const char *pValue)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapsetintegervalue">
+<h2>acNodeMapSetIntegerValue<a class="headerlink" href="#acnodemapsetintegervalue" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapSetIntegerValue” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapSetIntegerValue (acNodeMap hNodeMap, const char *pNodeName, int64_t value)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapSetIntegerValue (acNodeMap hNodeMap, const char *pNodeName, int64_t value)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapSetIntegerValue (acNodeMap hNodeMap, const char *pNodeName, int64_t value)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapsetfloatvalue">
+<h2>acNodeMapSetFloatValue<a class="headerlink" href="#acnodemapsetfloatvalue" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapSetFloatValue” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapSetFloatValue (acNodeMap hNodeMap, const char *pNodeName, double value)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapSetFloatValue (acNodeMap hNodeMap, const char *pNodeName, double value)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapSetFloatValue (acNodeMap hNodeMap, const char *pNodeName, double value)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapsetbooleanvalue">
+<h2>acNodeMapSetBooleanValue<a class="headerlink" href="#acnodemapsetbooleanvalue" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapSetBooleanValue” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapSetBooleanValue (acNodeMap hNodeMap, const char *pNodeName, bool8_t value)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapSetBooleanValue (acNodeMap hNodeMap, const char *pNodeName, bool8_t value)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapSetBooleanValue (acNodeMap hNodeMap, const char *pNodeName, bool8_t value)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapsetenumerationvalue">
+<h2>acNodeMapSetEnumerationValue<a class="headerlink" href="#acnodemapsetenumerationvalue" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapSetEnumerationValue” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapSetEnumerationValue (acNodeMap hNodeMap, const char *pNodeName, const char *pSymbolic)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapSetEnumerationValue (acNodeMap hNodeMap, const char *pNodeName, const char *pSymbolic)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapSetEnumerationValue (acNodeMap hNodeMap, const char *pNodeName, const char *pSymbolic)
+      —————-^
+</p>
+</div>
+</div>
+<div class="section" id="acnodemapexecute">
+<h2>acNodeMapExecute<a class="headerlink" href="#acnodemapexecute" title="Permalink to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Unable to resolve function “acNodeMapExecute” with arguments “None”.
+Candidate function could not be parsed. Parsing error is
+Error when parsing function declaration.
+If the function has no return type:
+  Error in declarator or parameters-and-qualifiers
+  Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 9]
+    AC_ERROR AC_API acNodeMapExecute (acNodeMap hNodeMap, const char *pNodeName)
+    ———^
+If the function has a return type:
+  Error in declarator or parameters-and-qualifiers
+  If pointer to member declarator:
+    Invalid C++ declaration: Expected ‘::’ in pointer to member (function). [error at 16]
+      AC_ERROR AC_API acNodeMapExecute (acNodeMap hNodeMap, const char *pNodeName)
+      —————-^
+  If declarator-id:
+    Invalid C++ declaration: Expecting “(” in parameters-and-qualifiers. [error at 16]
+      AC_ERROR AC_API acNodeMapExecute (acNodeMap hNodeMap, const char *pNodeName)
+      —————-^
+</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_arena_buffer.html" class="btn btn-neutral float-right" title="Buffer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="c_arena_callback.html" class="btn btn-neutral" title="Callback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, Lucid Vision Labs, Inc.
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.68.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

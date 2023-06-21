@@ -1,0 +1,3 @@
+[submodule "installer/arena_camera_ros2"]
+	path = installer/arena_camera_ros2
+	url = git@github.com:lucidvisionlabs/arena_camera_ros.git
