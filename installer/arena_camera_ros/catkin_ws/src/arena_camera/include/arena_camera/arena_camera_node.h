@@ -123,6 +123,7 @@ protected:
   * @return
   */
   void setupRectification();
+  void calibrateRGBD();
 
   /**
   * Returns the total number of subscribers on any advertised image topic.

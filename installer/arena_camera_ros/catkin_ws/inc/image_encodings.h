@@ -55,6 +55,7 @@ const std::string MONO16 = "mono16";
 const std::string CONFIDENCE16 = "confidence16";
 const std::string COORD3D_ABC16 = "coord3d_abc16";
 const std::string COORD3D_ABCY16 = "coord3d_abcy16";
+const std::string COORD3D_C16 = "coord3d_c16";
 
 // OpenCV CvMat types
 const std::string TYPE_8UC1 = "8UC1";
@@ -130,7 +131,7 @@ static inline bool hasAlpha(const std::string &encoding) {
 
 static inline int numChannels(const std::string &encoding) {
   // First do the common-case encodings
-  if (encoding == MONO8 || encoding == MONO16 || encoding == CONFIDENCE16)
+  if (encoding == MONO8 || encoding == MONO16 || encoding == CONFIDENCE16 || encoding == COORD3D_C16)
     return 1;
   if (encoding == BGR8 || encoding == RGB8 || encoding == BGR16 ||
       encoding == RGB16)
@@ -172,7 +173,7 @@ static inline int numChannels(const std::string &encoding) {
 
 static inline int bitDepth(const std::string &encoding) {
   if (encoding == MONO16 || encoding == CONFIDENCE16 ||
-      encoding == COORD3D_ABC16 || encoding == COORD3D_ABCY16)
+      encoding == COORD3D_ABC16 || encoding == COORD3D_ABCY16 || encoding == COORD3D_C16)
     return 16;
   if (encoding == MONO8 || encoding == BGR8 || encoding == RGB8 ||
       encoding == BGRA8 || encoding == RGBA8 || encoding == BAYER_RGGB8 ||

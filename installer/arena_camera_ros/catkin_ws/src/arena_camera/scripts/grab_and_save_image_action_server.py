@@ -31,8 +31,8 @@ class GrabAndSaveImageActionServers():
         self._grab_imgs_raw_ac = SimpleActionClient('{}/grab_images_raw'.format(camera_name),
                                                     GrabImagesAction)
 
-        self._grab_imgs_rect_ac = SimpleActionClient('{}/grab_images_rect'.format(camera_name),
-                                                     GrabImagesAction)
+        # self._grab_imgs_rect_ac = SimpleActionClient('{}/grab_images_rect'.format(camera_name),
+        #                                              GrabImagesAction)
 
         if self._grab_imgs_raw_ac.wait_for_server(rospy.Duration(10.0)):
             self._grab_and_save_img_raw_as = SimpleActionServer(
@@ -47,18 +47,18 @@ class GrabAndSaveImageActionServers():
             rospy.logerr('Could not connect to action server at '
                          '{}/grab_images_raw'.format(camera_name))
 
-        if self._grab_imgs_rect_ac.wait_for_server(rospy.Duration(2.0)):
-            self._grab_and_save_img_rect_as = SimpleActionServer(
-                "~grab_and_save_image_rect",
-                GrabAndSaveImageAction,
-                execute_cb=self.grab_and_save_img_rect_execute_cb,
-                auto_start=False)
-            self._grab_and_save_img_rect_as.start()
-            rospy.loginfo('Found action server at '
-                          '{}/grab_images_rect'.format(camera_name))
-        else:
-            rospy.logwarn('Could not connect to action server at '
-                          '{}/grab_images_rect'.format(camera_name))
+        # if self._grab_imgs_rect_ac.wait_for_server(rospy.Duration(2.0)):
+        #     self._grab_and_save_img_rect_as = SimpleActionServer(
+        #         "~grab_and_save_image_rect",
+        #         GrabAndSaveImageAction,
+        #         execute_cb=self.grab_and_save_img_rect_execute_cb,
+        #         auto_start=False)
+        #     self._grab_and_save_img_rect_as.start()
+        #     rospy.loginfo('Found action server at '
+        #                   '{}/grab_images_rect'.format(camera_name))
+        # else:
+        #     rospy.logwarn('Could not connect to action server at '
+        #                   '{}/grab_images_rect'.format(camera_name))
 
     def convert_goals(self, grab_and_save_img_goal, grab_imgs_goal):
         grab_imgs_goal.exposure_given = grab_and_save_img_goal.exposure_given
@@ -81,10 +81,10 @@ class GrabAndSaveImageActionServers():
                                           self._grab_imgs_raw_ac,
                                           self._grab_and_save_img_raw_as)
 
-    def grab_and_save_img_rect_execute_cb(self, grab_and_save_img_goal):
-        self.grab_and_save_img_execute_cb(grab_and_save_img_goal,
-                                          self._grab_imgs_rect_ac,
-                                          self._grab_and_save_img_rect_as)
+    # def grab_and_save_img_rect_execute_cb(self, grab_and_save_img_goal):
+    #     self.grab_and_save_img_execute_cb(grab_and_save_img_goal,
+    #                                       self._grab_imgs_rect_ac,
+    #                                       self._grab_and_save_img_rect_as)
 
     def grab_and_save_img_execute_cb(self, grab_and_save_img_goal,
                                      action_client, action_server):
@@ -96,6 +96,7 @@ class GrabAndSaveImageActionServers():
         grab_imgs_result = action_client.get_result()
 
         grab_and_save_img_result = GrabAndSaveImageResult()
+        print("test")
 
         if grab_imgs_result is not None and grab_imgs_result.success:
             filename = grab_and_save_img_goal.img_storage_path_and_name
@@ -106,7 +107,7 @@ class GrabAndSaveImageActionServers():
                 rospy.logerr('Error converting img_msg_to_cv_img: ' +
                              str(exception))
                 grab_and_save_img_result.success = False
-
+            print("test2")
             rospy.loginfo('Writing image to ' + filename)
             cv2.imwrite(filename, cv_img)
             grab_and_save_img_result.success = True
