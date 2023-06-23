@@ -24,7 +24,7 @@
  * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
  * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- * POSSIBILITY OF SUCH DAMAGE.
+ * POSSIBILITY OF SUCH DAMAGE. 
  *****************************************************************************/
 
 // STD
@@ -46,29 +46,6 @@
 // Arena node
 #include <arena_camera/arena_camera_node.h>
 #include <arena_camera/encoding_conversions.h>
-
-
-// #include "stdafx.h" naze
-#include "ArenaApi.h"
-#include "SaveApi.h"
-
-#define TAB1 "  "
-#define TAB2 "    "
-
-#include <iostream>
-#include <fstream>
-#include <sstream> //std::stringstream
-
-#include <opencv2/core/mat.hpp>
-#include <opencv2/calib3d/calib3d.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/highgui/highgui.hpp>
-
-#define PIXEL_FORMAT "Coord3D_ABC16"
-#define PIXEL_FORMAT_BMP "Mono16"
-
-// image timeout
-#define IMAGE_TIMEOUT 2000
 
 using diagnostic_msgs::DiagnosticStatus;
 
@@ -100,7 +77,6 @@ ArenaCameraNode::ArenaCameraNode()
   // others
   , it_(new image_transport::ImageTransport(nh_))
   , img_raw_pub_(it_->advertiseCamera("image_raw", 1))
-  , img_depth_pub_(it_->advertiseCamera("depth", 1))
   , img_rect_pub_(nullptr)
   , grab_imgs_raw_as_(nh_, "grab_images_raw", boost::bind(&ArenaCameraNode::grabImagesRawActionExecuteCB, this, _1),
                       false)
@@ -111,9 +87,7 @@ ArenaCameraNode::ArenaCameraNode()
   , sampling_indices_()
   , brightness_exp_lut_()
   , is_sleeping_(false)
-  , img_depth_calib_pub_(nullptr)
-  , cv_bridge_img_depth_(nullptr)
-
+  , config_file_available_(false)
 {
   diagnostics_updater_.setHardwareID("none");
   diagnostics_updater_.add("camera_availability", this, &ArenaCameraNode::create_diagnostics);
@@ -126,15 +100,6 @@ ArenaCameraNode::ArenaCameraNode()
 void ArenaCameraNode::create_diagnostics(diagnostic_updater::DiagnosticStatusWrapper& stat)
 {
 }
-
-// store x, y, z data in mm and intensity for a given point
-struct PointData
-{
-	int16_t x;
-	int16_t y;
-	int16_t z;
-	int16_t intensity;
-};
 
 void ArenaCameraNode::create_camera_info_diagnostics(diagnostic_updater::DiagnosticStatusWrapper& stat)
 {
@@ -264,7 +229,7 @@ bool ArenaCameraNode::initAndRegister()
   }
   else
   {
-    ROS_INFO_STREAM("Camera " << arena_camera_parameter_set_.deviceUserID() << " is found!!!");
+    ROS_INFO_STREAM("Camera " << arena_camera_parameter_set_.deviceUserID() << " is found!");
   }
 
   if (!ros::ok())
@@ -374,7 +339,14 @@ std::string currentROSEncoding()
   {
     std::stringstream ss;
     ss << "No ROS equivalent to GenApi encoding '" << gen_api_encoding << "' found! This is bad because this case "
-                                               img_raw_msg_d::string& ros_encoding)
+                                                                          "should never occur!";
+    throw std::runtime_error(ss.str());
+    return "NO_ENCODING";
+  }
+  return ros_encoding;
+}
+
+bool ArenaCameraNode::setImageEncoding(const std::string& ros_encoding)
 {
   std::string gen_api_encoding;
   bool conversion_found = encoding_conversions::ros2GenAPI(ros_encoding, gen_api_encoding);
@@ -400,6 +372,7 @@ std::string currentROSEncoding()
     GenApi::CEnumerationPtr pPixelFormat = pDevice_->GetNodeMap()->GetNode("PixelFormat");
     if (GenApi::IsWritable(pPixelFormat))
     {
+      ROS_INFO("Pixel Format: %s", gen_api_encoding.c_str());
       Arena::SetNodeValue<GenICam::gcstring>(pDevice_->GetNodeMap(), "PixelFormat", gen_api_encoding.c_str());
       if (currentROSEncoding() == "16UC3" || currentROSEncoding() == "16UC4")
         ROS_WARN_STREAM("ROS grabbing image data from 3D pixel format, unable to display in image viewer");
@@ -476,12 +449,12 @@ bool ArenaCameraNode::startGrabbing()
       ROS_INFO("Framerate is set to: %.2f Hz", cmdlnParamFrameRate);
     }
 
-    // //
-    // // EXPOSURE AUTO & EXPOSURE
-    // //
-    // // Edited Safwan
-    // // exposure_auto_ will be already set to false if exposure_given_ is true
-    // // read params () solved the priority between them
+    // NOTE: it will be occur error "RuntimeException: Node ExposureAuto not implemented (GenApiCustom.cpp, SetNodeValue)"
+    // EXPOSURE AUTO & EXPOSURE
+    //
+
+    // exposure_auto_ will be already set to false if exposure_given_ is true
+    // read params () solved the priority between them
     // if (arena_camera_parameter_set_.exposure_auto_)
     // {
     //   Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "ExposureAuto", "Continuous");
@@ -507,12 +480,12 @@ bool ArenaCameraNode::startGrabbing()
     //   }
     // }
 
-    // //
-    // // GAIN
-    // //
-    // // Edited Safwan
-    // // gain_auto_ will be already set to false if gain_given_ is true
-    // // read params () solved the priority between them
+    //
+    // GAIN
+    //
+    
+    // gain_auto_ will be already set to false if gain_given_ is true
+    // read params () solved the priority between them
     // if (arena_camera_parameter_set_.gain_auto_)
     // {
     //   Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "GainAuto", "Continuous");
@@ -557,9 +530,12 @@ bool ArenaCameraNode::startGrabbing()
     setupInitialCameraInfo(initial_cam_info);
     camera_info_manager_->setCameraInfo(initial_cam_info);
 
+    
     if (arena_camera_parameter_set_.cameraInfoURL().empty() ||
         !camera_info_manager_->validateURL(arena_camera_parameter_set_.cameraInfoURL()))
     {
+      config_file_available_ = false;
+
       ROS_INFO_STREAM("CameraInfoURL needed for rectification! ROS-Param: "
                       << "'" << nh_.getNamespace() << "/camera_info_url' = '"
                       << arena_camera_parameter_set_.cameraInfoURL() << "' is invalid!");
@@ -570,6 +546,7 @@ bool ArenaCameraNode::startGrabbing()
     }
     else
     {
+      //camera name is assigned in this block
       // override initial camera info if the url is valid
       if (camera_info_manager_->loadCameraInfo(arena_camera_parameter_set_.cameraInfoURL()))
       {
@@ -577,7 +554,10 @@ bool ArenaCameraNode::startGrabbing()
         // set the correct tf frame_id
         CameraInfoPtr cam_info(new CameraInfo(camera_info_manager_->getCameraInfo()));
         cam_info->header.frame_id = img_raw_msg_.header.frame_id;
+
         camera_info_manager_->setCameraInfo(*cam_info);
+
+        config_file_available_ = true;
       }
       else
       {
@@ -617,19 +597,37 @@ bool ArenaCameraNode::startGrabbing()
     // 	}
     // }
 
-    GenICam::gcstring operatingModeInitial = Arena::GetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dOperatingMode");
-
+  
     Arena::SetNodeValue<GenICam::gcstring>(pDevice_->GetTLStreamNodeMap(), "StreamBufferHandlingMode", "NewestOnly");
     
-    //Set Working Distance Mode Distance3000mmSingleFreq
-    Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dOperatingMode", "Distance1250mmSingleFreq");
+    //Set Working Distance Mode
+    GenICam::gcstring operatingModeInitial = Arena::GetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dOperatingMode");
+    std::string distMode_ = arena_camera_parameter_set_.distanceMode();
+    Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dOperatingMode", distMode_.c_str());
+    GenICam::gcstring distanceModeCurrent = Arena::GetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dOperatingMode");
+    ROS_INFO("Distance Mode: %s", distanceModeCurrent.c_str());
 
-    Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dHDRMode", "StandardHDR");
+    //Set HDR Mode
+    GenICam::gcstring hdrModeInitial = Arena::GetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dHDRMode");
+    std::string hdrMode_ = arena_camera_parameter_set_.hdrMode();
+    Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dHDRMode", hdrMode_.c_str());
+    GenICam::gcstring hdrModeCurrent = Arena::GetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dHDRMode");
+    ROS_INFO("HDR Mode: %s", hdrModeCurrent.c_str());
+
+
+    // if (arena_camera_parameter_set_.hdrMode())
+    // {
+    //   Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dHDRMode", "StandardHD");
+    //   ROS_INFO("HDR Mode: on");
+    // }
+    // else
+    // {
+    //   Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dHDRMode", "Off");
+    //   ROS_INFO("HDR Mode: off");
+    // }
     //
     // Trigger Image
     //
-
-    
 
     pDevice_->StartStream();
     bool isTriggerArmed = false;
@@ -690,222 +688,6 @@ bool ArenaCameraNode::startGrabbing()
   return true;
 }
 
-void ArenaCameraNode::calibrateRGBD()
-{
-  if (!img_depth_calib_pub_)
-  {
-    img_depth_calib_pub_ = new ros::Publisher(nh_.advertise<sensor_msgs::Image>("calibrated_depth", 1));
-  }
-  // if (!cv_bridge_img_depth_)
-  // {
-  //   cv_bridge_img_depth_ = new cv_bridge::CvImage();
-  //   sensor_msgs::ImagePtr outputDepthImage = cv_bridge::CvImage(std_msgs::Header(), "16UC1", depth_calib).toImageMsg();
-  // }
-  // cv_bridge_img_depth_->header = img_raw_msg_.header;
-  // cv_bridge_img_depth_->header.frame_id = arena_camera_parameter_set_.cameraFrame();
-  // //cv_bridge_img_depth_->encoding = img_raw_msg_.encoding;
-}
-
-void AcquireImageAndInterpretData(Arena::IDevice* pDevice, cv::Mat& cv_image)
-{
-	GenApi::INodeMap* pNodeMap = pDevice->GetNodeMap();
-
-	// validate if Scan3dCoordinateSelector node exists. If not - probaly not
-	// Helios camera used running the example
-	GenApi::CEnumerationPtr checkpCoordSelector = pNodeMap->GetNode("Scan3dCoordinateSelector");
-	if (!checkpCoordSelector)
-	{
-		std::cout << TAB1 << "Scan3dCoordinateSelector node is not found. Please make sure that Helios device is used for the example.\n";
-		return;
-	}
-
-	// validate if Scan3dCoordinateOffset node exists. If not - probaly Helios
-	// has an old firmware
-	GenApi::CFloatPtr checkpCoord = pNodeMap->GetNode("Scan3dCoordinateOffset");
-	if (!checkpCoord)
-	{
-		std::cout << TAB1 << "Scan3dCoordinateOffset node is not found. Please update Helios firmware.\n";
-		return;
-	}
-
-	// check if Helios2 camera used for the example
-	bool isHelios2 = false;
-	GenICam::gcstring deviceModelName = Arena::GetNodeValue<GenICam::gcstring>(pDevice->GetNodeMap(), "DeviceModelName");
-	std::string deviceModelName_tmp = deviceModelName.c_str();
-	if (deviceModelName_tmp.rfind("HLT", 0) == 0 || deviceModelName_tmp.rfind("HTP", 0) == 0)
-	{
-		isHelios2 = true;
-	}
-
-
-	// get node values that will be changed in order to return their values at
-	// the end of the example
-	GenICam::gcstring pixelFormatInitial = Arena::GetNodeValue<GenICam::gcstring>(pNodeMap, "PixelFormat");
-	GenICam::gcstring operatingModeInitial = Arena::GetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dOperatingMode");
-
-	//Set Working Distance Mode Distance3000mmSingleFreq
-  Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dOperatingMode", "Distance1250mmSingleFreq");
-
-  //Set HDR mode
-  Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dHDRMode", "StandardHDR");
-
-	// Set pixel format
-	//    Warning: HLT003S-001 / Helios2 - has only Coord3D_ABCY16 in this case
-	//    This example demonstrates data interpretation for both a signed or
-	//    unsigned pixel format. Default PIXEL_FORMAT here is set to
-	//    Coord3D_ABCY16 but this can be modified to be a signed pixel format by
-	//    changing it to Coord3D_ABCY16s.
-	std::cout << TAB1 << "Set " << PIXEL_FORMAT << " to pixel format\n";
-
-	Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "PixelFormat", PIXEL_FORMAT);
-
-	// set operating mode distance
-	if (isHelios2)
-	{
-		std::cout << TAB1 << "Set 3D operating mode to Distance1250mm\n";
-		Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dOperatingMode", "Distance1250mmSingleFreq");
-	}
-	else
-	{
-		std::cout << TAB1 << "Set 3D operating mode to Distance1500mm\n";
-		Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dOperatingMode", "Distance1500mm");
-	}
-
-	// get the coordinate scale in order to convert x, y and z values to mm as
-	// well as the offset for x and y to correctly adjust values when in an
-	// unsigned pixel format
-	std::cout << TAB1 << "Get xyz coordinate scales and offsets\n\n";
-
-	Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dCoordinateSelector", "CoordinateA");
-	// getting scaleX as float by casting since SetPly() will expect it passed as
-	// float
-	float scaleX = static_cast<float>(Arena::GetNodeValue<double>(pNodeMap, "Scan3dCoordinateScale"));
-	// getting offsetX as float by casting since SetPly() will expect it passed
-	// as float
-	float offsetX = static_cast<float>(Arena::GetNodeValue<double>(pNodeMap, "Scan3dCoordinateOffset"));
-	Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dCoordinateSelector", "CoordinateB");
-	double scaleY = Arena::GetNodeValue<double>(pNodeMap, "Scan3dCoordinateScale");
-	// getting offsetY as float by casting since SetPly() will expect it passed
-	// as float
-	float offsetY = static_cast<float>(Arena::GetNodeValue<double>(pNodeMap, "Scan3dCoordinateOffset"));
-	Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dCoordinateSelector", "CoordinateC");
-	double scaleZ = Arena::GetNodeValue<double>(pNodeMap, "Scan3dCoordinateScale");
-
-	// enable stream auto negotiate packet size
-	Arena::SetNodeValue<bool>(pDevice->GetTLStreamNodeMap(), "StreamAutoNegotiatePacketSize", true);
-
-	// enable stream packet resend
-	Arena::SetNodeValue<bool>(pDevice->GetTLStreamNodeMap(), "StreamPacketResendEnable", true);
-
-	// retrieve image
-	std::cout << TAB2 << "Acquire image\n";
-
-	pDevice->StartStream();
-	Arena::IImage* pImage = pDevice->GetImage(IMAGE_TIMEOUT);
-
-	// prepare info from input buffer
-	size_t width = pImage->GetWidth();
-	size_t height = pImage->GetHeight();
-	size_t size = width * height;
-	size_t srcBpp = pImage->GetBitsPerPixel();
-	size_t srcPixelSize = srcBpp / 8;
-	const uint8_t* pInput = pImage->GetData();
-	const uint8_t* pIn = pInput;
-
-	// prepare memory output buffer
-	size_t dstBpp = 16;//Arena::GetBitsPerPixel(PIXEL_FORMAT_BMP);
-	size_t dstPixelSize = dstBpp / 8;				  // divide by the number of bits in a byte
-	size_t dstDataSize = width * height * dstBpp / 8; // divide by the number of bits in a byte
-	uint16_t* pOutput = new uint16_t[dstDataSize];
-	memset(pOutput, 0, dstDataSize);
-	uint16_t* pOut = pOutput;
-
-	// find points with min and max z values
-	std::cout << TAB2 << "Find points with min and max z values\n";
-
-	// using strcmp to avoid conversion issue
-	int compareResult_ABCY16s = strcmp(PIXEL_FORMAT, "Coord3D_ABCY16s"); // if they are equal compareResult_ABCY16s = 0
-	//int compareResult_ABCY16 = strcmp(PIXEL_FORMAT, "Coord3D_ABCY16");	 // if they are equal compareResult_ABCY16 = 0
-	int compareResult_ABC16 = strcmp(PIXEL_FORMAT, "Coord3D_ABC16");	 // if they are equal compareResult_ABCY16 = 0
-
-	bool isSignedPixelFormat = false;
-
-	cv::Mat cv_image = cv::Mat(height, width, CV_32FC1,cv::Scalar(std::numeric_limits<float>::max()));
-	int countA = 0;
-	int countB = 0;
-
-	float img_array[size] = {};
-
-	// if PIXEL_FORMAT is equal to Coord3D_ABCY16s
-	if (compareResult_ABCY16s == 0)
-	{
-		isSignedPixelFormat = true;
-
-		for (size_t i = 0; i < size; i++)
-		{
-			int16_t z = *reinterpret_cast<const int16_t*>((pIn + 4));
-
-			z = int16_t(double(z) * scaleZ);
-    
-      img_array[i] = z;
-
-			pIn += srcPixelSize;
-		}
-	}
-	// if PIXEL_FORMAT is equal to Coord3D_ABCY16
-	else if (compareResult_ABC16 == 0)
-	{
-		size_t pixel_x = 0;
-		size_t pixel_y = 0;
-		
-		for (size_t i = 0; i < size; i++)
-		{
-			uint16_t z = *reinterpret_cast<const uint16_t*>((pIn + 4));
-
-			// if z is less than max value, as invalid values get filtered to
-			// 65535
-			if (z < 65535)
-			{
-				z = uint16_t(double(z) * scaleZ);
-				img_array[i] = z;				
-			}
-			*pOut = static_cast<int16_t>(z);
-			pIn += srcPixelSize;
-			pOut += dstPixelSize;
-		}
-	}
-	else
-	{
-		std::cout << "This example requires the camera to be in either 3D image format Coord3D_ABCY16 or Coord3D_ABCY16s\n\n";
-	}
-	
-	//Create mat object of data type 32FC1
-	cv::Mat cv_image = cv::Mat(height, width, CV_32FC1, img_array);;
-
-	//Convert from 32FC1 to 16UC1
-	cv_image.convertTo(cv_image, CV_16UC1);
-	//cv::imwrite(FILE_NAME_DEPTHMAP_16UC1_2, cv_image2_16UC1);
-
-
-	// clean up
-	pInput = NULL;
-	pOutput = NULL;
-	delete[] pInput;
-	delete[] pOutput;
-	pIn = NULL;
-	pOut = NULL;
-	delete[] pIn;
-	delete[] pOut;
-	pDevice->RequeueBuffer(pImage);
-	pDevice->StopStream();
-
-	// return nodes to their initial values
-	Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "Scan3dOperatingMode", operatingModeInitial);
-	Arena::SetNodeValue<GenICam::gcstring>(pNodeMap, "PixelFormat", pixelFormatInitial);
-
-  return cv_image;
-}
-
 void ArenaCameraNode::setupRectification()
 {
   if (!img_rect_pub_)
@@ -958,14 +740,9 @@ uint32_t ArenaCameraNode::getNumSubscribersRaw() const
   return ((CameraPublisherLocal*)(&img_raw_pub_))->impl_->image_pub_.getNumSubscribers();
 }
 
-uint32_t ArenaCameraNode::getNumSubscribersDepth() const
-{
-  return ((CameraPublisherLocal*)(&img_depth_pub_))->impl_->image_pub_.getNumSubscribers();
-}
-
 void ArenaCameraNode::spin()
 {
-  if (camera_info_manager_->isCalibrated())
+  if (config_file_available_)
   {
     ROS_INFO_ONCE("Camera is calibrated");
   }
@@ -990,7 +767,7 @@ void ArenaCameraNode::spin()
     return;
   }
 
-  if (!isSleeping() && (img_raw_pub_.getNumSubscribers() || getNumSubscribersRect() || img_depth_pub_.getNumSubscribers()))
+  if (!isSleeping() && (img_raw_pub_.getNumSubscribers() || getNumSubscribersRect()))
   {
     if (getNumSubscribersRaw() || getNumSubscribersRect())
     {
@@ -1010,10 +787,10 @@ void ArenaCameraNode::spin()
 
       // Publish via image_transport
       img_raw_pub_.publish(img_raw_msg_, *cam_info);
-      ROS_INFO_ONCE("Number subscribers_ received");
+      ROS_INFO_ONCE("Number subscribers received");
     }
 
-    if (getNumSubscribersRect() > 0 && camera_info_manager_->isCalibrated())
+    if (getNumSubscribersRect() > 0 && config_file_available_)
     {
       cv_bridge_img_rect_->header.stamp = img_raw_msg_.header.stamp;
       assert(pinhole_model_->initialized());
@@ -1023,126 +800,7 @@ void ArenaCameraNode::spin()
       img_rect_pub_->publish(*cv_bridge_img_rect_);
       ROS_INFO_ONCE("Number subscribers rect received");
     }
-
-    if (img_depth_pub_.getNumSubscribers() > 0)
-    {
-      cv::Mat cv_image;
-      // get actual cam_info-object in every frame, because it might have
-      // changed due to a 'set_camera_info'-service call
-      sensor_msgs::CameraInfoPtr cam_info(new sensor_msgs::CameraInfo(camera_info_manager_->getCameraInfo()));
-      cam_info->header.stamp = img_raw_msg_.header.stamp;
-
-      //convert to depth map
-      cv_bridge_img_rect_->header = img_raw_msg_.header;
-      cv_bridge_img_rect_->header.frame_id = arena_camera_parameter_set_.cameraFrame();
-      cv_bridge_img_rect_->encoding = img_raw_msg_.encoding;
-
-      AcquireImageAndInterpretData(pDevice_, cv_image);
-
-      cv::Mat image = cv::imread(argv[1], cv::IMREAD_COLOR);
-      std_msgs::msg::Header hdr;
-      sensor_msgs::msg::Image::SharedPtr msg;
-      img_depth_msg = cv_bridge::CvImage(hdr, "CV_16UC1", cv_image).toImageMsg();
-
-      // Publish via image_transport
-      img_depth_pub_.publish(img_depth_msg, *cam_info);
-      ROS_INFO_ONCE("Number depth subscribers received");
-    }
-
-
-
-    //publish calibrated depth map
-    // sensor_msgs::ImagePtr outputDepthImage = cv_bridge::CvImage(std_msgs::Header(), "16UC1", depth_calib).toImageMsg();
-    // outputDepthImage->header = img_raw_msg_.header;
-    // outputDepthImage->header.frame_id = arena_camera_parameter_set_.cameraFrame();
-    // outputDepthImage->header.stamp = img_raw_msg_.header.stamp;
-
-    //assert(pinhole_model_->initialized());
-    //cv_bridge::CvImagePtr cv_img_raw = cv_bridge::toCvCopy(img_raw_msg_, img_raw_msg_.encoding);
-    //pinhole_model_->fromCameraInfo(camera_info_manager_->getCameraInfo());
-    //pinhole_model_->rectifyImage(cv_img_raw->image, cv_bridge_img_rect_->image);
-
-
-    // img_depth_calib_pub_->publish(*outputDepthImage);
-    ROS_INFO_ONCE("Number subscribers calibrated_depth received");
   }
-}
-
-
-void getImageHLT(Arena::IDevice* pHeliosDevice, Arena::IImage** ppOutImage, cv::Mat& xyz_mm, size_t& width, size_t& height, double& xyz_scale_mm, double& x_offset_mm, double& y_offset_mm, double& z_offset_mm)
-{
-	// Read the scale factor and offsets to convert from unsigned 16-bit values 
-	//    in the Coord3D_ABCY16 pixel format to coordinates in mm
-	GenApi::INodeMap* node_map = pHeliosDevice->GetNodeMap();
-	xyz_scale_mm = Arena::GetNodeValue<double>(node_map, "Scan3dCoordinateScale");
-	Arena::SetNodeValue<GenICam::gcstring>(node_map, "Scan3dCoordinateSelector", "CoordinateA");
-	x_offset_mm = Arena::GetNodeValue<double>(node_map, "Scan3dCoordinateOffset");
-	Arena::SetNodeValue<GenICam::gcstring>(node_map, "Scan3dCoordinateSelector", "CoordinateB");
-	y_offset_mm = Arena::GetNodeValue<double>(node_map, "Scan3dCoordinateOffset");
-	Arena::SetNodeValue<GenICam::gcstring>(node_map, "Scan3dCoordinateSelector", "CoordinateC");
-	z_offset_mm = Arena::GetNodeValue<double>(node_map, "Scan3dCoordinateOffset");
-
-	pHeliosDevice->StartStream();
-	Arena::IImage* pHeliosImage = pHeliosDevice->GetImage(2000);
-
-	// copy image because original will be delited after function call
-	Arena::IImage* pCopyImage = Arena::ImageFactory::Copy(pHeliosImage);
-	*ppOutImage = pCopyImage;
-
-	width = pHeliosImage->GetWidth();
-	height = pHeliosImage->GetHeight();
-
-	xyz_mm = cv::Mat((int)height, (int)width, CV_32FC3);
-
-	const uint16_t* input_data = reinterpret_cast<const uint16_t*>(pHeliosImage->GetData());
-	for (unsigned int ir = 0; ir < height; ++ir)
-	{
-		for (unsigned int ic = 0; ic < width; ++ic)
-		{
-			// Get unsigned 16 bit values for X,Y,Z coordinates
-			ushort x_u16 = input_data[0];
-			ushort y_u16 = input_data[1];
-			ushort z_u16 = input_data[2];
-
-			// Convert 16-bit X,Y,Z to float values in mm
-			xyz_mm.at<cv::Vec3f>(ir, ic)[0] = (float)(x_u16 * xyz_scale_mm + x_offset_mm);
-			xyz_mm.at<cv::Vec3f>(ir, ic)[1] = (float)(y_u16 * xyz_scale_mm + y_offset_mm);
-			xyz_mm.at<cv::Vec3f>(ir, ic)[2] = (float)(z_u16 * xyz_scale_mm + z_offset_mm);
-
-			input_data += 4;
-		}
-	}
-	pHeliosDevice->RequeueBuffer(pHeliosImage);
-	pHeliosDevice->StopStream();
-}
-
-
-void getImageTRI(Arena::IDevice* pDeviceTriton, Arena::IImage** ppOutImage, cv::Mat& triton_rgb, size_t& width_TRI, size_t& height_TRI)
-{
-	#if defined(_WIN32)
-		Arena::SetNodeValue<GenICam::gcstring>(pDeviceTriton->GetNodeMap(), "PixelFormat", "RGB8");
-	#elif defined(__linux__)
-		Arena::SetNodeValue<GenICam::gcstring>(pDeviceTriton->GetNodeMap(), "PixelFormat", "BGR8");
-	#endif
-
-	pDeviceTriton->StartStream();
-	Arena::IImage* pImage = pDeviceTriton->GetImage(2000);
-
-	// copy image because original will be delited after function call
-	Arena::IImage* pCopyImage = Arena::ImageFactory::Copy(pImage);
-	*ppOutImage = pCopyImage;
-
-	//size_t triHeight, triWidth;
-	height_TRI = pImage->GetHeight();
-	width_TRI = pImage->GetWidth();
-	triton_rgb = cv::Mat((int)height_TRI, (int)width_TRI, CV_8UC3);
-	memcpy(triton_rgb.data, pImage->GetData(), height_TRI * width_TRI * 3);
-
-	pCopyImage = NULL;
-	delete pCopyImage;
-
-	pDeviceTriton->RequeueBuffer(pImage);
-	pDeviceTriton->StopStream();
 }
 
 bool ArenaCameraNode::grabImage()
@@ -1188,7 +846,7 @@ void ArenaCameraNode::grabImagesRawActionExecuteCB(const camera_control_msgs::Gr
 void ArenaCameraNode::grabImagesRectActionExecuteCB(const camera_control_msgs::GrabImagesGoal::ConstPtr& goal)
 {
   camera_control_msgs::GrabImagesResult result;
-  if (!camera_info_manager_->isCalibrated())
+  if (!config_file_available_)
   {
     result.success = false;
     grab_imgs_rect_as_->setSucceeded(result);
@@ -1451,7 +1109,7 @@ const std::string& ArenaCameraNode::cameraFrame() const
 
 uint32_t ArenaCameraNode::getNumSubscribersRect() const
 {
-  return camera_info_manager_->isCalibrated() ? img_rect_pub_->getNumSubscribers() : 0;
+  return config_file_available_ ? img_rect_pub_->getNumSubscribers() : 0;
 }
 
 uint32_t ArenaCameraNode::getNumSubscribers() const
@@ -1498,22 +1156,9 @@ void ArenaCameraNode::setupInitialCameraInfo(sensor_msgs::CameraInfo& cam_info_m
   //     [ 0  0  1]
   // Projects 3D points in the camera coordinate frame to 2D pixel coordinates
   // using the focal lengths (fx, fy) and principal point (cx, cy).
+  cam_info_msg.K.assign(0.0);
 
-  //Instrinsic Camera Parameters (K)
-	auto focal_X = Arena::GetNodeValue<double>(pDevice_->GetNodeMap(), "CalibFocalLengthX");
-	auto focal_Y = Arena::GetNodeValue<double>(pDevice_->GetNodeMap(), "CalibFocalLengthY");
-	auto center_X = Arena::GetNodeValue<double>(pDevice_->GetNodeMap(), "CalibOpticalCenterX");
-	auto center_Y = Arena::GetNodeValue<double>(pDevice_->GetNodeMap(), "CalibOpticalCenterY");
-	auto distort_val = Arena::GetNodeValue<double>(pDevice_->GetNodeMap(), "CalibLensDistortionValue");
-
-  // float k_mat[3][3] = {
-  //     {focal_X, 0, center_X},
-  //     {0, focal_Y, center_Y},
-  //     {0, 0, 1}
-  //     };
-
-  cam_info_msg.K = {focal_X, 0, center_X, 0, focal_Y, center_Y, 0, 0, 1};
-  //cam_info_msg.K.assign(0.0);
+  assignCameraIntrinsicParameters(cam_info_msg);
 
   // Rectification matrix (stereo cameras only)
   // A rotation matrix aligning the camera coordinate system to the ideal
@@ -1564,6 +1209,24 @@ void ArenaCameraNode::setupInitialCameraInfo(sensor_msgs::CameraInfo& cam_info_m
   cam_info_msg.roi.x_offset = cam_info_msg.roi.y_offset = 0;
   cam_info_msg.roi.height = cam_info_msg.roi.width = 0;
 }
+
+void ArenaCameraNode::assignCameraIntrinsicParameters(sensor_msgs::CameraInfo& cam_info_K)
+{
+  auto focal_X = Arena::GetNodeValue<double>(pDevice_->GetNodeMap(), "CalibFocalLengthX");
+  auto focal_Y = Arena::GetNodeValue<double>(pDevice_->GetNodeMap(), "CalibFocalLengthY");
+  auto center_X = Arena::GetNodeValue<double>(pDevice_->GetNodeMap(), "CalibOpticalCenterX");
+  auto center_Y = Arena::GetNodeValue<double>(pDevice_->GetNodeMap(), "CalibOpticalCenterY");
+  //auto distort_val = Arena::GetNodeValue<double>(pDevice_->GetNodeMap(), "CalibLensDistortionValue");
+
+  cam_info_K.K[0] = focal_X;  // Focal length along x-axis
+  cam_info_K.K[2] = center_X;  // Principal point x-coordinate
+  cam_info_K.K[4] = focal_Y;  // Focal length along y-axis
+  cam_info_K.K[5] = center_Y;  // Principal point y-coordinate
+  cam_info_K.K[8] = 1.0; // Fixed value for a pinhole camera model
+
+  ROS_INFO("Camera Intrinsic Parameters successfully set!");
+}
+
 
 bool ArenaCameraNode::setROI(const sensor_msgs::RegionOfInterest target_roi, sensor_msgs::RegionOfInterest& reached_roi)
 {
@@ -2372,12 +2035,6 @@ ArenaCameraNode::~ArenaCameraNode()
     img_rect_pub_ = nullptr;
   }
 
-  if (img_depth_calib_pub_)
-  {
-    delete img_depth_calib_pub_;
-    img_depth_calib_pub_ = nullptr;
-  }
-  
   if (cv_bridge_img_rect_)
   {
     delete cv_bridge_img_rect_;

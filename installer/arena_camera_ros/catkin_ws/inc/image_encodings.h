@@ -30,7 +30,7 @@
  *  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
  *  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
  *  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
- *  POSSIBILITY OF SUCH DAMAGE.
+ *  POSSIBILITY OF SUCH DAMAGE. 
  *********************************************************************/
 
 #ifndef SENSOR_MSGS_IMAGE_ENCODINGS_H
@@ -131,7 +131,7 @@ static inline bool hasAlpha(const std::string &encoding) {
 
 static inline int numChannels(const std::string &encoding) {
   // First do the common-case encodings
-  if (encoding == MONO8 || encoding == MONO16 || encoding == CONFIDENCE16 || encoding == COORD3D_C16)
+  if (encoding == MONO8 || encoding == MONO16 || encoding == CONFIDENCE16)
     return 1;
   if (encoding == BGR8 || encoding == RGB8 || encoding == BGR16 ||
       encoding == RGB16)
@@ -170,7 +170,7 @@ static inline int numChannels(const std::string &encoding) {
   throw std::runtime_error("Unknown encoding " + encoding);
   return -1;
 }
-
+ 
 static inline int bitDepth(const std::string &encoding) {
   if (encoding == MONO16 || encoding == CONFIDENCE16 ||
       encoding == COORD3D_ABC16 || encoding == COORD3D_ABCY16 || encoding == COORD3D_C16)

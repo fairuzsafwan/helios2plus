@@ -47,7 +47,7 @@ if(EXISTS ${_arena_sdk_conf})
 		set(ArenaSDK_Build "Linux64_ARM")
 		
 	else()
-		message( FATAL_ERROR "LUCID GenICam not found. Please reisntall ArenaSDK "
+		message( FATAL_ERROR "LUCID GenICam not found in ${arena_sdk_installation_root}. Please reisntall ArenaSDK "
 					 "If having issues, contact: "
 					 "LUCID support team (support@thinklucid.com). ")
 	endif()

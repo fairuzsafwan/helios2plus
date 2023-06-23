@@ -35,14 +35,37 @@
 
     -->
     <!-- CAM1-->
-    <node name="$(arg node_name)" pkg="arena_camera" type="arena_camera_node" output="screen"
+    <node name="$(arg node_name)_color" pkg="arena_camera" type="arena_camera_node" output="screen"
           respawn="$(arg respawn)" launch-prefix="$(arg launch_prefix)">
-        <param name="device_user_id" type="string" value="cam1"/>
-
+        <param name="device_user_id" type="string" value="color"/>
+        <param name="camera_frame" type="string" value="arena_camera_color"/>
+        <param name="camera_info_url" type="string" value=""/>
+        <param name="image_encoding" type="string" value="rgb8"/>
+        <param name="frame_rate" type="double" value="5.0"/>
+        <param name="exposure" type="double" value="10000.0"/>
+        <param name="gain" type="double" value="0.5"/>
+        <param name="gamma" type="double" value="1.0"/>
+        <param name="brightness" type="int" value="100"/>
+        <param name="brightness_continuous" type="bool" value="true"/>
+        <param name="exposure_auto" type="bool" value="false"/>
+        <param name="gain_auto" type="bool" value="false"/>
+        <param name="mtu_size" type="int" value="9000"/>
     </node>
     <!-- CAM1 -->
-    <node name="$(arg node_name)_2" pkg="arena_camera" type="arena_camera_node" output="screen"
+    <node name="$(arg node_name)_depth" pkg="arena_camera" type="arena_camera_node" output="screen"
         respawn="$(arg respawn)" launch-prefix="$(arg launch_prefix)">
-        <param name="device_user_id" type="string" value="cam2"/>
+        <param name="device_user_id" type="string" value="depth"/>
+        <param name="camera_frame" type="string" value="arena_camera_depth"/>
+        <param name="camera_info_url" type="string" value=""/>
+        <param name="image_encoding" type="string" value="mono8"/>
+        <param name="frame_rate" type="double" value="5.0"/>
+        <param name="exposure" type="double" value="10000.0"/>
+        <param name="gain" type="double" value="0.5"/>
+        <param name="gamma" type="double" value="1.0"/>
+        <param name="brightness" type="int" value="100"/>
+        <param name="brightness_continuous" type="bool" value="true"/>
+        <param name="exposure_auto" type="bool" value="false"/>
+        <param name="gain_auto" type="bool" value="false"/>
+        <param name="mtu_size" type="int" value="9000"/>
     </node>
 </launch>

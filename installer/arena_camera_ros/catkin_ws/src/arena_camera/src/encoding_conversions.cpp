@@ -114,7 +114,7 @@ bool ros2GenAPI(const std::string& ros_enc, std::string& gen_api_enc)
     * - sensor_msgs::image_encodings::BAYER_GBRG16
     * - sensor_msgs::image_encodings::BAYER_GRBG16
     * - sensor_msgs::image_encodings::BAYER_GRBG8
-    * - sensor_msgs::image_encodings::YUV422
+    * - sensor_msgs::image_encodings::YUV422 
     */
     return false;
   }

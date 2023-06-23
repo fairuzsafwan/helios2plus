@@ -56,6 +56,7 @@ set(CATKIN_COMPONENTS
      roslaunch 
      sensor_msgs
 )
+set(ROS_BUILD_TYPE Debug)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -164,6 +165,7 @@ add_executable(
         src/main.cpp
 )
 
+message (WARNING "include dir ${arena_sdk_INCLUDE_DIRS}")
 # needed ".h"s
 target_include_directories(
     ${arena_camera_node_name}

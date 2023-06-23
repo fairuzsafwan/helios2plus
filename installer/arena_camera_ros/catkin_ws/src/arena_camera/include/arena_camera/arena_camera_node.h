@@ -108,12 +108,18 @@ protected:
   * @return false if an error occurred
   */
   bool initAndRegister();
+  
+  void calibrateRGBD();
 
   /**
   * Start the camera and initialize the messages
   * @return
   */
   bool startGrabbing();
+
+  cv::Mat* AcquireImageAndInterpretData(Arena::IDevice* pDevice);
+
+  cv::Mat* GetDepthMap(Arena::IDevice* pDevice);
 
   bool setImageEncoding(const std::string& ros_encoding);
 
@@ -123,7 +129,6 @@ protected:
   * @return
   */
   void setupRectification();
-  void calibrateRGBD();
 
   /**
   * Returns the total number of subscribers on any advertised image topic.
@@ -134,6 +139,8 @@ protected:
   * Returns the number of subscribers for the raw image topic
   */
   uint32_t getNumSubscribersRaw() const;
+
+  uint32_t getNumSubscribersDepth() const;
 
   /**
   * Returns the number of subscribers for the rect image topic
@@ -355,6 +362,8 @@ protected:
   bool setAutoflash(const int output_id, camera_control_msgs::SetBool::Request& req,
                     camera_control_msgs::SetBool::Response& res);
 
+  void assignCameraIntrinsicParameters(sensor_msgs::CameraInfo& cam_info_K);
+
   ros::NodeHandle nh_;
   ArenaCameraParameter arena_camera_parameter_set_;
   ros::ServiceServer set_binning_srv_;
@@ -370,6 +379,7 @@ protected:
 
   image_transport::ImageTransport* it_;
   image_transport::CameraPublisher img_raw_pub_;
+  image_transport::CameraPublisher img_depth_pub_;
 
   ros::Publisher* img_rect_pub_;
   image_geometry::PinholeCameraModel* pinhole_model_;
@@ -378,6 +388,8 @@ protected:
   GrabImagesAS* grab_imgs_rect_as_;
 
   sensor_msgs::Image img_raw_msg_;
+  sensor_msgs::ImagePtr img_depth_msg;
+  cv_bridge::CvImage cv_depth_img;
   cv_bridge::CvImage* cv_bridge_img_rect_;
 
   camera_info_manager::CameraInfoManager* camera_info_manager_;
@@ -386,6 +398,7 @@ protected:
   std::array<float, 256> brightness_exp_lut_;
 
   bool is_sleeping_;
+  bool config_file_available_;
   boost::recursive_mutex grab_mutex_;
 
   /// diagnostics:

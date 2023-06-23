@@ -41,6 +41,8 @@ namespace arena_camera
 ArenaCameraParameter::ArenaCameraParameter()
   : camera_frame_("arena_camera")
   , device_user_id_("")
+  , hdr_mode_("")
+  , distance_mode_("")
   , frame_rate_(5.0)
   , camera_info_url_("")
   , image_encoding_("")
@@ -73,7 +75,7 @@ ArenaCameraParameter::ArenaCameraParameter()
   , inter_pkg_delay_(1000)
   , shutter_mode_(SM_DEFAULT)
   , auto_flash_(false)
-{
+{ 
 }
 
 ArenaCameraParameter::~ArenaCameraParameter()
@@ -85,6 +87,18 @@ void ArenaCameraParameter::readFromRosParameterServer(const ros::NodeHandle& nh)
   nh.param<std::string>("camera_frame", camera_frame_, "arena_camera");
 
   nh.param<std::string>("device_user_id", device_user_id_, "");
+
+  if (nh.hasParam("hdr_mode"))
+  {
+    nh.getParam("hdr_mode", hdr_mode_);
+    ROS_DEBUG_STREAM("hdr_mode is given and has value " << hdr_mode_);
+  }
+
+  if (nh.hasParam("distance_mode"))
+  {
+    nh.getParam("distance_mode", distance_mode_);
+    ROS_DEBUG_STREAM("distance_mode is given and has value " << distance_mode_);
+  }
 
   if (nh.hasParam("frame_rate"))
   {
@@ -488,6 +502,16 @@ void ArenaCameraParameter::setCameraInfoURL(const ros::NodeHandle& nh, const std
 {
   camera_info_url_ = camera_info_url;
   nh.setParam("camera_info_url", camera_info_url_);
+}
+
+const std::string ArenaCameraParameter::hdrMode() const
+{
+  return hdr_mode_;
+}
+
+const std::string ArenaCameraParameter::distanceMode() const
+{
+  return distance_mode_;
 }
 
 }  // namespace arena_camera
