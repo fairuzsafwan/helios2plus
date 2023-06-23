@@ -10,13 +10,10 @@ services:
     build:
       context: .
       dockerfile: ./docker/Dockerfile
-    container_name: mnrobot.helios
+    container_name: helios
     volumes:
       - ./:/temp
       - "/tmp/.X11-unix:/tmp/.X11-unix"
-    #   - /tmp/.X11-unix:/tmp/.X11-unix
-    #  - "./src/food_placement_detection:/app/mnrobot_lunchbox/src/food_placement_detection"
-    #  - "./src/mnrobot_msgs:/app/mnrobot_lunchbox/src/mnrobot_msgs"
     #ports:
     #  - "3000:3000"
     #env_file:
@@ -25,20 +22,16 @@ services:
     tty: true
     privileged: true
     environment:
-      #- ROS_MASTER_URI=http://172.16.0.3:11311
-      #- ROS_IP=172.16.0.41
-      #- ROS_MASTER_URI=http://192.168.101.71:11311
+      #- ROS_MASTER_URI=http://0.0.0.0:11311
+      #- ROS_IP=0.0.0.0
       - PYTHONUNBUFFERED=1
       - TZ=Asia/Tokyo
       - QT_X11_NO_MITSHM=1
       - DISPLAY=$DISPLAY
-        # - ROS_WEBSOCKET_IP=192.168.100.90
-    #command: ["/bin/bash", "-c", "roscore"]
+        # - ROS_WEBSOCKET_IP=0.0.0.0
     command: sleep infinity
-    #command: ["ls"]
     #devices:
     #  - "/dev/video0:/dev/video0"
-    #command: ["/bin/bash", "-c", "chmod u+x ./mnrobot_zivid/script/entrypoint.sh; /root/mnrobot_zivid/script/entrypoint.sh"]
     deploy:
       resources:
         reservations:

@@ -12,7 +12,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 ##############################################################################
 # 1. install bootstrap dependencies
 ##############################################################################
-#RUN apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -113,21 +112,23 @@ RUN cmake -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-$OPENCV_VERSION/modu
     ..
 RUN make -j$(nproc) && make install
 
-
-
-WORKDIR ${PROJECT_ROOT}
+#WORKDIR ${PROJECT_ROOT}
 
 ##############################################################################
 # 5. INSTALL OPENCL Driver
 ##############################################################################
 
-RUN apt-get update && \
-     apt-get install -y software-properties-common wget  
+# RUN apt-get update && \
+#      apt-get install -y software-properties-common wget  
  
-#INSTALL opencl driver
-RUN add-apt-repository ppa:graphics-drivers/ppa
+# #INSTALL opencl driver
+# RUN add-apt-repository ppa:graphics-drivers/ppa
+# RUN apt-get update && \
+#      apt-get install -y nvidia-driver-510 nvidia-cuda-toolkit clinfo 
 RUN apt-get update && \
-     apt-get install -y nvidia-driver-510 nvidia-cuda-toolkit clinfo 
+    apt install -y wget xz-utils ocl-icd-libopencl1 opencl-headers clinfo
+RUN mkdir -p /etc/OpenCL/vendors && \
+    echo "libnvidia-opencl.so.1" > /etc/OpenCL/vendors/nvidia.icd
 
 
 
@@ -177,13 +178,8 @@ ARG PKG_HELIOS=helios_ws
 
 ARG PKG_HELIOS_ros=helios
 
-# WORKDIR ${PROJECT_ROOT}
-# RUN mkdir -p ${PROJECT_ROOT}/${WS_NAME}/script
-# RUN mkdir -p ${PROJECT_ROOT}/${WS_NAME}/src
 RUN mkdir -p ${PROJECT_ROOT}/${WS_NAME}/src/${PKG_HELIOS_ros}/src
 
-#RUN /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; cd ${WS_NAME}/src; catkin_create_pkg ${PKG_NAME} mnrobot_msgs actionlib_msgs rospy std_msgs image_transport cv_bridge"
-#RUN /bin/bash -c "cd ${WS_NAME}; rosdep install --from-paths src -i -y --rosdistro noetic"
 
 WORKDIR ${DEVEL_ROOT}
 
@@ -202,28 +198,16 @@ RUN python3 -m pip install --no-cache-dir scikit-image
 #RUN git clone -b develop https://github.com/ros-drivers/usb_cam.git ${WS_NAME}/src/${PKG_USB_CAM}
 #RUN /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; cd ${WS_NAME}; catkin_make"
 
-#WORKDIR ${PROJECT_ROOT}
 
-COPY ./helios_test.py ${PROJECT_ROOT}/helios_test.py
+COPY ./script/helios_test.py ${PROJECT_ROOT}/helios_test.py
 
 COPY ./installer/arena_camera_ros ${HELIOS_DIR}/${PKG_HELIOS}
-
-#RUN git clone https://github.com/lucidvisionlabs/arena_camera_ros.git ${HELIOS_DIR}/${PKG_HELIOS}
-
-#WORKDIR ${HELIOS_DIR}/${PKG_HELIOS}
-
-#RUN git checkout tags/v1.5
-
 
 
 
 
 WORKDIR ${DEVEL_ROOT}
 
-#WORKDIR ${PROJECT_ROOT}
-#RUN source /opt/ros/noetic/setup.bash
-#RUN ln -s /${HELIOS_DIR}/${PKG_HELIOS}/catkin_ws/src/CMakeLists.txt /${PROJECT_ROOT}/${WS_NAME}/src/${PKG_HELIOS_ros}/src/CMakeLists.txt
-#RUN chmod +x /${PROJECT_ROOT}/${WS_NAME}/src/${PKG_HELIOS}/CMakeLists.txt
 RUN ln -s /${HELIOS_DIR}/${PKG_HELIOS}/catkin_ws/src/arena_camera /${PROJECT_ROOT}/${WS_NAME}/src/${PKG_HELIOS_ros}/src/arena_camera
 RUN ln -s /${HELIOS_DIR}/${PKG_HELIOS}/catkin_ws/src/camera_control_msgs /${PROJECT_ROOT}/${WS_NAME}/src/${PKG_HELIOS_ros}/src/camera_control_msgs
 RUN chmod +x /${PROJECT_ROOT}/${WS_NAME}/src/${PKG_HELIOS_ros}/src/arena_camera/*
@@ -237,43 +221,9 @@ RUN ln -s /${HELIOS_DIR}/${PKG_HELIOS}/catkin_ws/inc/image_encodings.h /opt/ros/
 
 
 
-#apt-utils unzip tar curl xz-utils ocl-icd-libopencl1 opencl-headers nvidia-modprobe kmod
-
-#RUN mkdir -p /etc/OpenCL/vendors && \
-#    echo "libnvidia-opencl.so.1" > /etc/OpenCL/vendors/nvidia.icd
-#ENV NVIDIA_VISIBLE_DEVICES all
-#ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
-
-
-
-
-#RUN ln -s ${DEVEL_ROOT}/${WS_NAME}/src/${PKG_FOOD} /${PROJECT_ROOT}/${WS_NAME}/src/${PKG_FOOD}
-#RUN ln -s ${DEVEL_ROOT}/${WS_NAME}/src/${PKG_MNROBOT_MSGS} /${PROJECT_ROOT}/${WS_NAME}/src/${PKG_MNROBOT_MSGS}
-#RUN ln -s ${DEVEL_ROOT}/${WS_NAME}/script/entrypoint.sh /${PROJECT_ROOT}/${WS_NAME}/script
-#RUN ln -s ${DEVEL_ROOT}/${WS_NAME}/script/FileCameraZividOne.zfc /${PROJECT_ROOT}/${WS_NAME}/script
-#RUN ln -s ${DEVEL_ROOT}/${WS_NAME}/script/client.sh /${PROJECT_ROOT}/${WS_NAME}/script
-#RUN ln -s ${DEVEL_ROOT}/${WS_NAME}/script/roscore.sh /${PROJECT_ROOT}/${WS_NAME}/script
-#RUN ln -s ${DEVEL_ROOT}/${WS_NAME}/src/helios_test.py /${PROJECT_ROOT}/${WS_NAME}/helios_test.py
-#RUN git clone -b noetic https://github.com/ros-perception/vision_opencv.git ${WS_NAME}/src/vision_opencv
-#COPY ./config/cvbridge_CMakeLists.txt ${WS_NAME}/src/vision_opencv/cv_bridge/CMakeLists.txt
-#RUN git clone -b develop https://github.com/ros-drivers/usb_cam.git ${WS_NAME}/src/${PKG_USB_CAM}
-
-#ARG nvidia_binary_version="510.108.03"
-#ARG nvidia_binary="NVIDIA-Linux-x86_64-${nvidia_binary_version}.run"
-#RUN wget -q https://us.download.nvidia.com/XFree86/Linux-x86_64/${nvidia_binary_version}/${nvidia_binary} && \
-#    chmod +x ${nvidia_binary} && \
-#    ./${nvidia_binary} --accept-license --ui=none --no-kernel-module --no-questions && \
-#    rm -rf ${nvidia_binary}
-
-
-
-
 WORKDIR ${PROJECT_ROOT}/${WS_NAME}
-# RUN /bin/bash -c "rosdep install --from-paths ./ -i -y --rosdistro noetic"
+
 RUN /bin/bash -c "export ARENA_ROOT=${HELIOS_DIR}/ArenaSDK_Linux_x64; export ARENA_CONFIG_ROOT=/${PROJECT_ROOT}/${WS_NAME}/src/${PKG_HELIOS_ros}; source /opt/ros/${ROS_DISTRO}/setup.bash; catkin build"
-
-
-#RUN /bin/bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; cd ${WS_NAME}; catkin_make -DCATKIN_WHITELIST_PACKAGES=""; source devel/setup.bash"
 
 RUN /bin/bash -c ". /opt/ros/$ROS_DISTRO/setup.bash"
 RUN /bin/bash -c ". ${PROJECT_ROOT}/${WS_NAME}/devel/setup.bash"
