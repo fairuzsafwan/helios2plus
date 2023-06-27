@@ -8,8 +8,7 @@
 - [x] include python-helios wrapper
 - [x] include Nvidia-driver
 - [x] include OpenCL
-- [ ] Test with actual helios Camera
-- [ ] upload and install repo to zotac
+- [x] Test with actual helios Camera
 
 
 ## How to run
